@@ -1,8 +1,11 @@
+---
+const base = import.meta.env.BASE_URL;
+---
 <footer class="bg-[var(--primary-text)] text-white">
   <div class="container mx-auto px-6 py-12">
     <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
       <div class="col-span-1 md:col-span-2">
-        <a class="flex items-center gap-3 text-2xl font-bold" href="/">
+        <a class="flex items-center gap-3 text-2xl font-bold" href={base || '/'}>
           <svg class="h-8 w-8 text-[var(--accent-gold)]" fill="none" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
             <path d="M24 4C25.7818 14.2173 33.7827 22.2182 44 24C33.7827 25.7818 25.7818 33.7827 24 44C22.2182 33.7827 14.2173 25.7818 4 24C14.2173 22.2182 22.2182 14.2173 24 4Z" fill="#C0B283"></path>
           </svg>
@@ -13,10 +16,10 @@
       <div>
         <h4 class="text-lg font-semibold mb-4 text-[var(--accent-gold)]">Quick Links</h4>
         <ul>
-          <li class="mb-2"><a class="hover:text-[var(--accent-gold)] transition-colors" href="/aboutus">About Us</a></li>
-          <li class="mb-2"><a class="hover:text-[var(--accent-gold)] transition-colors" href="/services">Services</a></li>
-          <li class="mb-2"><a class="hover:text-[var(--accent-gold)] transition-colors" href="/patientjourney">The Patient Journey</a></li>
-          <li class="mb-2"><a class="hover:text-[var(--accent-gold)] transition-colors" href="/contact">Contact Us</a></li>
+          <li class="mb-2"><a class="hover:text-[var(--accent-gold)] transition-colors" href=`${base}/aboutus`>About Us</a></li>
+          <li class="mb-2"><a class="hover:text-[var(--accent-gold)] transition-colors" href=`${base}/services`>Services</a></li>
+          <li class="mb-2"><a class="hover:text-[var(--accent-gold)] transition-colors" href=`${base}/patientjourney`>The Patient Journey</a></li>
+          <li class="mb-2"><a class="hover:text-[var(--accent-gold)] transition-colors" href=`${base}/contact`>Contact Us</a></li>
         </ul>
       </div>
       <div>
