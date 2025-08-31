@@ -1,0 +1,29 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --primary-text: #36454F;
+  --background: #FDFDFD;
+  --accent-gold: #C0B283;
+  --accent-green: #8A9A5B;
+  --accent-blue: #778899;
+  --secondary-text: #5E6C77;
+}
+body {
+  font-family: 'Raleway', sans-serif;
+  background-color: var(--background);
+  color: var(--primary-text);
+}
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Cormorant Garamond', serif;
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-[var(--accent-gold)] text-white hover:bg-opacity-90 transition-colors duration-300;
+  }
+  .nav-link {
+    @apply text-[var(--primary-text)] hover:text-[var(--accent-gold)] transition-colors duration-300 relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-[var(--accent-gold)] after:transition-all after:duration-300 hover:after:w-full;
+  }
+}

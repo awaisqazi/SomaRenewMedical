@@ -1,16 +1,71 @@
 ---
-
+import MainLayout from '../layouts/MainLayout.astro';
 ---
+<MainLayout title="Home">
+  <section class="relative bg-cover bg-center min-h-[60vh] flex items-center" style='background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url("https://storage.googleapis.com/stitch-assets/images/people/wlf-3.jpg")'>
+    <div class="container mx-auto px-6 text-center text-white">
+      <h1 class="text-4xl md:text-6xl font-bold mb-4">The Physican-Led Path to Sustainable Weight Loss</h1>
+      <p class="text-lg md:text-xl max-w-3xl mx-auto mb-8">
+        At SomaRenew Medical, we combine medical integrity with luxury care to create a personalized weight loss plan that delivers lasting results.
+      </p>
+      <a class="btn-primary py-3 px-8 rounded-full text-lg font-semibold transition-transform transform hover:scale-105" href="/consultation">Schedule My Consultation</a>
+    </div>
+  </section>
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+  <section class="py-20">
+    <div class="container mx-auto px-6 text-center">
+      <h2 class="text-4xl font-bold mb-6">Where Personalized Medicine Meets Modern Wellness</h2>
+      <p class="max-w-4xl mx-auto text-lg text-gray-600 leading-relaxed">
+        Welcome to SomaRenew Medical, a new kind of wellness clinic dedicated to helping you achieve your weight loss goals safely and effectively. We’re redefining the
+        journey with a smarter, science-based approach. Our expert medical team combines FDA-approved medications, cutting-edge technology, and personalized physician
+        guidance to help you not only lose weight, but build a foundation for lifelong health and vitality.
+      </p>
+    </div>
+  </section>
+
+  <section class="bg-gray-50 py-20">
+    <div class="container mx-auto px-6">
+      <h2 class="text-4xl font-bold text-center mb-12">Your Transformation is Our Priority</h2>
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div class="bg-white p-8 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 flex flex-col items-center text-center">
+          <div class="bg-opacity-10 p-4 rounded-full mb-6">
+            <svg class="h-10 w-10 text-[var(--accent-gold)]" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+          </div>
+          <h3 class="text-2xl font-semibold mb-4">Physician-Guided Care</h3>
+          <p class="text-gray-600 leading-relaxed">
+            Every step of your journey is supervised by a licensed physician. We don't use cookie-cutter plans—we create a path tailored to your unique health profile and
+            goals.
+          </p>
+        </div>
+        <div class="bg-white p-8 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 flex flex-col items-center text-center">
+          <div class="bg-opacity-10 p-4 rounded-full mb-6">
+            <svg class="h-10 w-10 text-[var(--accent-green)]" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+          </div>
+          <h3 class="text-2xl font-semibold mb-4">FDA-Approved Solutions</h3>
+          <p class="text-gray-600 leading-relaxed">
+            Your safety is paramount. We use only the most effective, regulated treatments and medications backed by rigorous clinical science.
+          </p>
+        </div>
+        <div class="bg-white p-8 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 flex flex-col items-center text-center">
+          <div class="bg-opacity-10 p-4 rounded-full mb-6">
+            <svg class="h-10 w-10 text-[var(--accent-blue)]" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+          </div>
+          <h3 class="text-2xl font-semibold mb-4">High-Tech, High-Touch</h3>
+          <p class="text-gray-600 leading-relaxed">
+            We combine modern diagnostics and state-of-the-art treatments with compassionate, one-on-one attention to ensure you feel supported and empowered.
+          </p>
+        </div>
+        <div class="bg-white p-8 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 flex flex-col items-center text-center">
+          <div class="bg-opacity-10 p-4 rounded-full mb-6">
+            <svg class="h-10 w-10 text-[var(--accent-gold)]" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9 17a2 2 0 11-4 0 2 2 0 014 0zM19 17a2 2 0 11-4 0 2 2 0 014 0z"></path><path d="M13 16V6a1 1 0 00-1-1H4a1 1 0 00-1 1v10a1 1 0 001 1h1m8-1a1 1 0 01-1 1H9m4-1V8a1 1 0 011-1h2a1 1 0 011 1v8a1 1 0 01-1 1h-2a1 1 0 01-1-1z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+          </div>
+          <h3 class="text-2xl font-semibold mb-4">Sustainable Results</h3>
+          <p class="text-gray-600 leading-relaxed">
+            We’re not just about the number on the scale. We’re about helping you improve your metabolic health, increase your energy, and live a better, more confident
+            life—long-term.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+</MainLayout>
