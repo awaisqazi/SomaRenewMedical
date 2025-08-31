@@ -1,11 +1,15 @@
 name: Deploy to GitHub Pages
 
 on:
-  # Trigger the workflow every time you push to the `main` branch
   push:
     branches: [ main ]
-  # Allows you to run this workflow manually from the Actions tab on GitHub.
   workflow_dispatch:
+
+# This is the new, important part
+permissions:
+  contents: read
+  pages: write
+  id-token: write
 
 jobs:
   build:
