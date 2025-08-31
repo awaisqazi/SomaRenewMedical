@@ -2,25 +2,8 @@
 const pathname = Astro.url.pathname;
 const base = import.meta.env.BASE_URL;
 
-// Helper function to create the full URL and check for active state
-function createLink(path: string, name: string) {
-    const fullPath = base + (path === '/' ? '' : path);
-    // The home page is a special case
-    const isActive = path === '/' ? pathname === base : pathname.startsWith(fullPath);
-    return {
-        href: fullPath,
-        text: name,
-        activeClass: isActive ? "font-bold text-[var(--accent-gold)]" : ""
-    };
-}
-
-const navLinks = [
-    createLink('/', 'Home'),
-    createLink('aboutus', 'About Us'),
-    createLink('services', 'Services'),
-    createLink('patientjourney', 'The Patient Journey'),
-    createLink('contact', 'Contact Us'),
-]
+// A little helper to handle the homepage path correctly, which sometimes has a trailing slash
+const homePath = base.endsWith('/') ? base : base + '/';
 ---
 <header x-data="{ isOpen: false }" @keydown.escape.window="isOpen = false" class="sticky top-0 z-50 bg-[var(--background)]/80 backdrop-blur-sm">
   <div class="container mx-auto px-6 py-4">
@@ -33,11 +16,13 @@ const navLinks = [
       </a>
       
       <nav class="hidden md:flex items-center gap-8">
-        {navLinks.map(link => (
-          <a class:list={["nav-link text-lg", link.activeClass]} href={link.href}>{link.text}</a>
-        ))}
+        <a class:list={["nav-link text-lg", { "font-bold text-[var(--accent-gold)]": pathname === base || pathname === homePath }]} href={base}>Home</a>
+        <a class:list={["nav-link text-lg", { "font-bold text-[var(--accent-gold)]": pathname.startsWith(`${base}/aboutus`) }]} href=`${base}/aboutus`>About Us</a>
+        <a class:list={["nav-link text-lg", { "font-bold text-[var(--accent-gold)]": pathname.startsWith(`${base}/services`) }]} href=`${base}/services`>Services</a>
+        <a class:list={["nav-link text-lg", { "font-bold text-[var(--accent-gold)]": pathname.startsWith(`${base}/patientjourney`) }]} href=`${base}/patientjourney`>The Patient Journey</a>
+        <a class:list={["nav-link text-lg", { "font-bold text-[var(--accent-gold)]": pathname.startsWith(`${base}/contact`) }]} href=`${base}/contact`>Contact Us</a>
       </nav>
-      <a class="btn-primary hidden md:inline-block rounded-full px-8 py-3 text-lg font-semibold tracking-wide" href=`${base}consultation`>Schedule My Consultation</a>
+      <a class="btn-primary hidden md:inline-block rounded-full px-8 py-3 text-lg font-semibold tracking-wide" href=`${base}/consultation`>Schedule My Consultation</a>
       
       <button @click="isOpen = !isOpen" class="md:hidden text-3xl text-[var(--primary-text)]">
         ☰
@@ -46,9 +31,11 @@ const navLinks = [
 
     <nav x-show="isOpen" @click.away="isOpen = false" class="w-full md:hidden" x-transition>
       <div class="flex flex-col items-center gap-4 py-8">
-        {navLinks.map(link => (
-          <a class:list={["nav-link text-lg", link.activeClass]} href={link.href}>{link.text}</a>
-        ))}
+        <a class:list={["nav-link text-lg", { "font-bold text-[var(--accent-gold)]": pathname === base || pathname === homePath }]} href={base}>Home</a>
+        <a class:list={["nav-link text-lg", { "font-bold text-[var(--accent-gold)]": pathname.startsWith(`${base}/aboutus`) }]} href=`${base}/aboutus`>About Us</a>
+        <a class:list={["nav-link text-lg", { "font-bold text-[var(--accent-gold)]": pathname.startsWith(`${base}/services`) }]} href=`${base}/services`>Services</a>
+        <a class:list={["nav-link text-lg", { "font-bold text-[var(--accent-gold)]": pathname.startsWith(`${base}/patientjourney`) }]} href=`${base}/patientjourney`>The Patient Journey</a>
+        <a class:list={["nav-link text-lg", { "font-bold text-[var(--accent-gold)]": pathname.startsWith(`${base}/contact`) }]} href=`${base}/contact`>Contact Us</a>
       </div>
     </nav>
   </div>
