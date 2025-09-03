@@ -4,7 +4,7 @@ import alpine from "@astrojs/alpinejs";
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://awaisqazi.github.io',
-  base: '/SomaRenewMedical',
+  site: 'https://www.somarenewmedical.com',
+  //base: '/SomaRenewMedical',
   integrations: [tailwind(), alpine()]
 });
