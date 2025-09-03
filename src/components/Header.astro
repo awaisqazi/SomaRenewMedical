@@ -1,10 +1,12 @@
 ---
+import DevelopmentBanner from '../components/DevelopmentBanner.astro';
 const pathname = Astro.url.pathname;
 const base = import.meta.env.BASE_URL;
 
 // A little helper to handle the homepage path correctly, which sometimes has a trailing slash
 const homePath = base.endsWith('/') ? base : base + '/';
 ---
+<DevelopmentBanner />
 <header x-data="{ isOpen: false }" @keydown.escape.window="isOpen = false" class="sticky top-0 z-50 bg-[var(--background)]/80 backdrop-blur-sm">
   <div class="container mx-auto px-6 py-4">
     <div class="flex flex-wrap items-center justify-between">
