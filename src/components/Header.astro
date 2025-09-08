@@ -1,13 +1,11 @@
 ---
-import DevelopmentBanner from '../components/DevelopmentBanner.astro';
 const pathname = Astro.url.pathname;
 const base = import.meta.env.BASE_URL;
 
 // A little helper to handle the homepage path correctly, which sometimes has a trailing slash
 const homePath = base.endsWith('/') ? base : base + '/';
 ---
-<DevelopmentBanner />
-<header x-data="{ isOpen: false }" @keydown.escape.window="isOpen = false" class="sticky top-0 z-50 bg-[var(--background)]/80 backdrop-blur-sm" style="padding-top: 40px;">
+<header x-data="{ isOpen: false }" @keydown.escape.window="isOpen = false" class="bg-[var(--background)]/80 backdrop-blur-sm">
   <div class="container mx-auto px-6 py-4">
     <div class="flex flex-wrap items-center justify-between">
       <a class="flex items-center gap-3 text-2xl font-bold text-[var(--primary-text)]" href={base}>
@@ -19,12 +17,12 @@ const homePath = base.endsWith('/') ? base : base + '/';
       
       <nav class="hidden md:flex items-center gap-8">
         <a class:list={["nav-link text-lg", { "font-bold text-[var(--accent-gold)]": pathname === base || pathname === homePath }]} href={base}>Home</a>
-        <a class:list={["nav-link text-lg", { "font-bold text-[var(--accent-gold)]": pathname.startsWith(`/aboutus`) }]} href="/aboutus">About Us</a>
-        <a class:list={["nav-link text-lg", { "font-bold text-[var(--accent-gold)]": pathname.startsWith(`/services`) }]} href="/services">Services</a>
-        <a class:list={["nav-link text-lg", { "font-bold text-[var(--accent-gold)]": pathname.startsWith(`/patientjourney`) }]} href="/patientjourney">The Patient Journey</a>
-        <a class:list={["nav-link text-lg", { "font-bold text-[var(--accent-gold)]": pathname.startsWith(`/contact`) }]} href="/contact">Contact Us</a>
+        <a class:list={["nav-link text-lg", { "font-bold text-[var(--accent-gold)]": pathname.startsWith(`${base}/aboutus`) }]} href=`${base}/aboutus`>About Us</a>
+        <a class:list={["nav-link text-lg", { "font-bold text-[var(--accent-gold)]": pathname.startsWith(`${base}/services`) }]} href=`${base}/services`>Services</a>
+        <a class:list={["nav-link text-lg", { "font-bold text-[var(--accent-gold)]": pathname.startsWith(`${base}/patientjourney`) }]} href=`${base}/patientjourney`>The Patient Journey</a>
+        <a class:list={["nav-link text-lg", { "font-bold text-[var(--accent-gold)]": pathname.startsWith(`${base}/contact`) }]} href=`${base}/contact`>Contact Us</a>
       </nav>
-      <a class="btn-primary hidden md:inline-block rounded-full px-8 py-3 text-lg font-semibold tracking-wide" href="/consultation">Schedule My Consultation</a>
+      <a class="btn-primary hidden md:inline-block rounded-full px-8 py-3 text-lg font-semibold tracking-wide" href=`${base}/consultation`>Schedule My Consultation</a>
       
       <button @click="isOpen = !isOpen" class="md:hidden text-3xl text-[var(--primary-text)]">
         ☰
@@ -34,10 +32,10 @@ const homePath = base.endsWith('/') ? base : base + '/';
     <nav x-show="isOpen" @click.away="isOpen = false" class="w-full md:hidden" x-transition>
       <div class="flex flex-col items-center gap-4 py-8">
         <a class:list={["nav-link text-lg", { "font-bold text-[var(--accent-gold)]": pathname === base || pathname === homePath }]} href={base}>Home</a>
-        <a class:list={["nav-link text-lg", { "font-bold text-[var(--accent-gold)]": pathname.startsWith(`/aboutus`) }]} href="/aboutus">About Us</a>
-        <a class:list={["nav-link text-lg", { "font-bold text-[var(--accent-gold)]": pathname.startsWith(`/services`) }]} href="/services">Services</a>
-        <a class:list={["nav-link text-lg", { "font-bold text-[var(--accent-gold)]": pathname.startsWith(`/patientjourney`) }]} href="/patientjourney">The Patient Journey</a>
-        <a class:list={["nav-link text-lg", { "font-bold text-[var(--accent-gold)]": pathname.startsWith(`/contact`) }]} href="/contact">Contact Us</a>
+        <a class:list={["nav-link text-lg", { "font-bold text-[var(--accent-gold)]": pathname.startsWith(`${base}/aboutus`) }]} href=`${base}/aboutus`>About Us</a>
+        <a class:list={["nav-link text-lg", { "font-bold text-[var(--accent-gold)]": pathname.startsWith(`${base}/services`) }]} href=`${base}/services`>Services</a>
+        <a class:list={["nav-link text-lg", { "font-bold text-[var(--accent-gold)]": pathname.startsWith(`${base}/patientjourney`) }]} href=`${base}/patientjourney`>The Patient Journey</a>
+        <a class:list={["nav-link text-lg", { "font-bold text-[var(--accent-gold)]": pathname.startsWith(`${base}/contact`) }]} href=`${base}/contact`>Contact Us</a>
       </div>
     </nav>
   </div>
