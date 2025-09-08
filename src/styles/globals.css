@@ -27,3 +27,9 @@ h1, h2, h3, h4, h5, h6 {
     @apply text-[var(--primary-text)] hover:text-[var(--accent-gold)] transition-colors duration-300 relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-[var(--accent-gold)] after:transition-all after:duration-300 hover:after:w-full;
   }
 }
+
+.logo-img {
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
+}
