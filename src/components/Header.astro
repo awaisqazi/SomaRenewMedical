@@ -16,11 +16,11 @@ const homePath = base.endsWith('/') ? base : base + '/';
       </a>
       
       <nav class="hidden md:flex items-center gap-8">
-        <a class:list={["nav-link text-lg", { "font-bold text-[var(--accent-gold)]": pathname === base || pathname === homePath }]} href={base}>Home</a>
+        <a class:list={["nav-link text-lg", { "font-bold text-[var(--accent-gold)]": pathname === base || pathname === homePath }]} href="/">Home</a>
         <a class:list={["nav-link text-lg", { "font-bold text-[var(--accent-gold)]": pathname.startsWith(`${base}/aboutus`) }]} href="/aboutus">About Us</a>
-        <a class:list={["nav-link text-lg", { "font-bold text-[var(--accent-gold)]": pathname.startsWith(`${base}/services`) }]} href=`${base}/services`>Services</a>
-        <a class:list={["nav-link text-lg", { "font-bold text-[var(--accent-gold)]": pathname.startsWith(`${base}/patientjourney`) }]} href=`${base}/patientjourney`>The Patient Journey</a>
-        <a class:list={["nav-link text-lg", { "font-bold text-[var(--accent-gold)]": pathname.startsWith(`${base}/contact`) }]} href=`${base}/contact`>Contact Us</a>
+        <a class:list={["nav-link text-lg", { "font-bold text-[var(--accent-gold)]": pathname.startsWith(`${base}/services`) }]} href="/services">Services</a>
+        <a class:list={["nav-link text-lg", { "font-bold text-[var(--accent-gold)]": pathname.startsWith(`${base}/patientjourney`) }]} href="/patientjourney">The Patient Journey</a>
+        <a class:list={["nav-link text-lg", { "font-bold text-[var(--accent-gold)]": pathname.startsWith(`${base}/contact`) }]} href="/contact">Contact Us</a>
       </nav>
       <a class="btn-primary hidden md:inline-block rounded-full px-8 py-3 text-lg font-semibold tracking-wide" href=`${base}/consultation`>Schedule My Consultation</a>
       
