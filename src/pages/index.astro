@@ -1,44 +1,82 @@
 ---
 import MainLayout from "../layouts/MainLayout.astro";
+import heroImage from "../images/hero.png";
 ---
 
 <MainLayout title="Home">
   <!-- Hero Section with Warm Charcoal Overlay -->
   <section
-    class="relative bg-cover bg-center min-h-[70vh] flex items-center"
-    style='background-image: linear-gradient(rgba(54, 69, 79, 0.5), rgba(54, 69, 79, 0.7)), url("https://storage.googleapis.com/stitch-assets/images/people/wlf-3.jpg")'
+    class="hero-section relative min-h-[70vh] md:min-h-[80vh] flex items-center overflow-hidden"
   >
-    <div class="container mx-auto px-6 text-center text-white">
-      <p
-        class="text-[var(--soma-gold)] uppercase tracking-[0.3em] text-sm mb-4 font-medium"
+    <!-- Background Image with Overlay -->
+    <div class="absolute inset-0 z-0">
+      <img
+        src={heroImage.src}
+        alt="SomaRenew Medical Hero"
+        class="w-full h-full object-cover object-center md:object-top"
+        loading="eager"
+      />
+      <!-- Gradient Overlay for Text Readability -->
+      <div
+        class="absolute inset-0 bg-gradient-to-b from-[rgba(54,69,79,0.6)] via-[rgba(54,69,79,0.5)] to-[rgba(54,69,79,0.75)]"
       >
-        Welcome to SomaRenew Medical
-      </p>
-      <h1 class="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
-        The Physician-Led Path<br class="hidden md:block" /> to Transformation
-      </h1>
-      <p
-        class="text-lg md:text-xl max-w-3xl mx-auto mb-10 text-gray-200 leading-relaxed"
+      </div>
+      <!-- Additional overlay for mobile to ensure readability -->
+      <div class="absolute inset-0 bg-[rgba(54,69,79,0.15)] md:bg-transparent">
+      </div>
+    </div>
+
+    <div
+      class="container mx-auto px-4 md:px-6 text-center text-white relative z-10"
+    >
+      <!-- Frosted Glass Card for Text Readability -->
+      <div
+        class="hero-glass-card inline-block px-8 py-10 md:px-16 md:py-14 rounded-3xl max-w-4xl mx-auto"
+        style="
+          background: rgba(54, 69, 79, 0.75);
+          backdrop-filter: blur(20px);
+          -webkit-backdrop-filter: blur(20px);
+          border: 1px solid rgba(192, 178, 131, 0.2);
+          box-shadow: 
+            0 25px 50px -12px rgba(0, 0, 0, 0.4),
+            inset 0 1px 0 rgba(255, 255, 255, 0.1);
+        "
       >
-        Combining GLP-1 Medications, Peptide Therapy, and Advanced Body
-        Contouring for personalized, lasting results in a serene, luxury
-        environment.
-      </p>
-      <div class="flex flex-col sm:flex-row gap-4 justify-center">
-        <a
-          class="btn-primary py-4 px-10 rounded-full text-lg font-semibold transition-all duration-300 hover:scale-105 shadow-lg"
-          href="/consultation">Schedule My Consultation</a
+        <p
+          class="text-[var(--soma-gold)] uppercase tracking-[0.2em] md:tracking-[0.3em] text-xs md:text-sm mb-4 font-semibold"
         >
-        <a
-          class="py-4 px-10 rounded-full text-lg font-semibold border-2 border-white/30 text-white backdrop-blur-sm transition-all duration-300 hover:bg-white/10 hover:border-white/50"
-          href="/services">View Our Services</a
+          Welcome to SomaRenew Medical
+        </p>
+        <h1
+          class="text-white text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 md:mb-6 leading-tight"
         >
+          The Physician-Led Path<br class="hidden sm:block" /> to Transformation
+        </h1>
+        <p
+          class="text-sm md:text-base lg:text-lg max-w-2xl mx-auto mb-8 md:mb-10 text-gray-200 leading-relaxed"
+        >
+          Combining GLP-1 Medications, Peptide Therapy, and Advanced Body
+          Contouring for personalized, lasting results in a serene, luxury
+          environment.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-3 md:gap-4 justify-center">
+          <a
+            class="btn-primary py-3 md:py-4 px-8 md:px-10 rounded-full text-base md:text-lg font-semibold transition-all duration-300 hover:scale-105 shadow-lg"
+            href="/consultation">Schedule My Consultation</a
+          >
+          <a
+            class="py-3 md:py-4 px-8 md:px-10 rounded-full text-base md:text-lg font-semibold border-2 border-white/40 text-white transition-all duration-300 hover:bg-white/15 hover:border-white/70"
+            href="/services">View Our Services</a
+          >
+        </div>
       </div>
     </div>
     <!-- Scroll Indicator -->
-    <div class="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
+    <div
+      class="absolute bottom-6 md:bottom-8 left-1/2 -translate-x-1/2 animate-bounce"
+    >
       <svg
-        class="w-6 h-6 text-white/60"
+        class="w-5 h-5 md:w-6 md:h-6 text-white/70"
         fill="none"
         stroke="currentColor"
         viewBox="0 0 24 24"
