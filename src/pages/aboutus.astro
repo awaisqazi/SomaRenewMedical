@@ -25,23 +25,87 @@ import MainLayout from "../layouts/MainLayout.astro";
       >
       <div class="h-px w-16 bg-[var(--soma-gold)] mx-auto mb-8"></div>
       <h1
-        class="text-4xl md:text-6xl lg:text-7xl font-bold text-[var(--charcoal)] leading-tight mb-8"
+        class="text-4xl md:text-6xl lg:text-7xl font-bold text-[var(--charcoal)] leading-tight mb-12"
       >
         Redefining Wellness Through<br class="hidden md:block" /> Innovation and Compassionate
         Care
       </h1>
-      <p
-        class="max-w-3xl mx-auto text-xl md:text-2xl text-gray-600 leading-relaxed"
-      >
-        At SomaRenew Medical, we combine <strong class="text-[var(--charcoal)]"
-          >Luxury Care</strong
-        > with
-        <strong class="text-[var(--charcoal)]">Medical Integrity</strong> to create
-        your personal
-        <strong class="text-[var(--charcoal)]">Serene Sanctuary</strong> for transformation.
-        Our mission is to empower you on your wellness journey by treating the root
-        causes—not just the symptoms.
-      </p>
+
+      <!-- Mission & Vision Cards -->
+      <div class="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto text-left">
+        <!-- Mission -->
+        <div
+          class="bg-white/60 backdrop-blur-sm rounded-3xl p-8 border border-[var(--soma-gold)]/10"
+          style="box-shadow: 0 10px 40px rgba(54, 69, 79, 0.06);"
+        >
+          <div class="flex items-center gap-3 mb-4">
+            <div
+              class="w-10 h-10 rounded-xl bg-[var(--soma-gold)]/10 flex items-center justify-center"
+            >
+              <svg
+                class="w-5 h-5 text-[var(--soma-gold)]"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="1.5"
+                  d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+              </svg>
+            </div>
+            <h2 class="text-xl font-bold text-[var(--charcoal)]">
+              Our Mission
+            </h2>
+          </div>
+          <p class="text-gray-600 leading-relaxed">
+            To empower individuals on their weight loss journey through
+            personalized medical care, FDA-approved medications,
+            state-of-the-art technology, and science-based hydration
+            solutions—promoting sustainable health, vitality, and lasting
+            transformation.
+          </p>
+        </div>
+
+        <!-- Vision -->
+        <div
+          class="bg-white/60 backdrop-blur-sm rounded-3xl p-8 border border-[var(--sage-green)]/10"
+          style="box-shadow: 0 10px 40px rgba(54, 69, 79, 0.06);"
+        >
+          <div class="flex items-center gap-3 mb-4">
+            <div
+              class="w-10 h-10 rounded-xl bg-[var(--sage-green)]/10 flex items-center justify-center"
+            >
+              <svg
+                class="w-5 h-5 text-[var(--sage-green)]"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="1.5"
+                  d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="1.5"
+                  d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"
+                ></path>
+              </svg>
+            </div>
+            <h2 class="text-xl font-bold text-[var(--charcoal)]">Our Vision</h2>
+          </div>
+          <p class="text-gray-600 leading-relaxed">
+            To be the premier destination for personalized, medically guided
+            weight loss—where innovation, FDA-approved treatments, and
+            compassionate care come together to redefine wellness and inspire
+            lifelong confidence.
+          </p>
+        </div>
+      </div>
     </div>
   </section>
 

@@ -77,23 +77,44 @@ const homePath = base.endsWith("/") ? base : base + "/";
           href="/contact">Contact Us</a
         >
       </nav>
-      <a
-        class="hidden md:inline-flex items-center gap-2 rounded-full bg-[var(--soma-gold)] px-7 py-3 text-base font-semibold text-[var(--charcoal)] transition-all duration-300 hover:bg-[#D4C89A] hover:scale-105 shadow-md"
-        href="/consultation"
-      >
-        Schedule Consultation
-        <svg
-          class="w-4 h-4"
-          fill="none"
-          stroke="currentColor"
-          viewBox="0 0 24 24"
-          ><path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="2"
-            d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg
+      <div class="hidden md:flex items-center gap-3">
+        <a
+          class="inline-flex items-center gap-2 rounded-full border border-[var(--charcoal)]/20 px-5 py-2.5 text-sm font-medium text-[var(--charcoal)] transition-all duration-300 hover:border-[var(--soma-gold)] hover:text-[var(--soma-gold)]"
+          href="#"
         >
-      </a>
+          <svg
+            class="w-4 h-4"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
+            ></path>
+          </svg>
+          Patient Portal
+        </a>
+        <a
+          class="inline-flex items-center gap-2 rounded-full bg-[var(--soma-gold)] px-7 py-3 text-base font-semibold text-[var(--charcoal)] transition-all duration-300 hover:bg-[#D4C89A] hover:scale-105 shadow-md"
+          href="/consultation"
+        >
+          Schedule Consultation
+          <svg
+            class="w-4 h-4"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+            ><path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg
+          >
+        </a>
+      </div>
 
       <button
         @click="isOpen = !isOpen"
@@ -206,7 +227,13 @@ const homePath = base.endsWith("/") ? base : base + "/";
           href="/contact">Contact Us</a
         >
         <a
-          class="mt-4 w-full max-w-xs rounded-full bg-[var(--soma-gold)] px-6 py-3 text-center font-semibold text-[var(--charcoal)] transition-all duration-300 hover:bg-[#D4C89A]"
+          class="mt-4 w-full max-w-xs rounded-full border border-[var(--charcoal)]/20 px-6 py-3 text-center font-medium text-[var(--charcoal)] transition-all duration-300 hover:border-[var(--soma-gold)] hover:text-[var(--soma-gold)]"
+          href="#"
+        >
+          Patient Portal
+        </a>
+        <a
+          class="w-full max-w-xs rounded-full bg-[var(--soma-gold)] px-6 py-3 text-center font-semibold text-[var(--charcoal)] transition-all duration-300 hover:bg-[#D4C89A]"
           href="/consultation"
         >
           Schedule Consultation
