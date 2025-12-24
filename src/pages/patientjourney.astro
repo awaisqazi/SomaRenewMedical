@@ -1,70 +1,233 @@
 ---
-import MainLayout from '../layouts/MainLayout.astro';
+import MainLayout from "../layouts/MainLayout.astro";
 ---
+
 <MainLayout title="The Patient Journey">
-  <section class="py-20 md:py-32">
-    <div class="container mx-auto px-6 text-center">
-      <h1 class="text-4xl md:text-6xl font-bold text-[var(--primary-text)] mb-4">Your Path to a Renewed You</h1>
-      <p class="text-lg md:text-xl text-[var(--primary-text)] max-w-3xl mx-auto">
-        We believe in a transparent, supportive, and collaborative process. Here is what you can expect on your journey with us.
+  <!-- Hero Section -->
+  <section
+    class="relative py-24 md:py-32 overflow-hidden"
+    style="background: linear-gradient(135deg, #FDFDFD 0%, #F8F6F0 100%);"
+  >
+    <div
+      class="absolute top-0 right-0 w-96 h-96 bg-[var(--soma-gold)]/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2"
+    >
+    </div>
+
+    <div class="container mx-auto px-6 text-center relative z-10">
+      <span
+        class="inline-block text-[var(--soma-gold)] uppercase tracking-[0.25em] text-sm font-semibold mb-4"
+        >Your Journey</span
+      >
+      <div class="h-px w-16 bg-[var(--soma-gold)] mx-auto mb-8"></div>
+      <h1 class="text-4xl md:text-6xl font-bold text-[var(--charcoal)] mb-6">
+        Your Path to a Renewed You
+      </h1>
+      <p
+        class="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed"
+      >
+        We believe in a transparent, supportive, and collaborative process. Here
+        is what you can expect on your transformation journey with us.
       </p>
     </div>
   </section>
 
-  <section class="pb-20 md:pb-32">
+  <!-- Journey Steps Section -->
+  <section class="py-20 md:py-32" style="background-color: #F5F3ED;">
     <div class="container mx-auto px-6">
-      <div class="relative">
-        <div aria-hidden="true" class="absolute left-1/2 top-0 h-full w-px bg-gray-200 hidden md:block"></div>
-        <div class="grid md:grid-cols-2 gap-16 md:gap-20 items-start">
-          <div class="flex flex-col items-center md:items-end">
-            <div class="md:text-right max-w-md">
-              <div class="flex items-center justify-center md:justify-end gap-4 mb-4">
-                <h3 class="text-2xl md:text-3xl font-semibold text-[var(--primary-text)]">Your Comprehensive Consultation</h3>
-                <span class="flex items-center justify-center w-12 h-12 rounded-full bg-[var(--accent-green)] text-white text-xl font-bold">1</span>
-              </div>
-              <p class="text-[var(--primary-text)]/80 mb-6">
-                Your journey begins with a private, in-depth consultation with our physician. We take the time to listen to your story, understand your goals, and conduct a thorough health assessment.
-              </p>
-              <div class="aspect-w-4 aspect-h-3 rounded-lg overflow-hidden shadow-lg">
-                <img alt="A serene consultation room with a doctor and a patient." class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDGwzcrdBYHavDD1bcvtEsfdHOkoCsWXhhhWL4WS58g-XbDN5-4CdUxnCLTmbRRJyFVwmX9D9afDmbKz3Rx1OaniL2EvNQS4-UXjk0vnzJlOEgdyvTNvp97a6eOQdXAE8ikjUujH2k1GbblYy9sAHaKIYl6QKB9WwczIvPTbozLp3qYuTQpGnq_aJMU1Fjr9bPXFOyIZ1rpVYs2kwekgokr38WVvRxPWqRpqLzViFSD2eh6P9rRWnlF89AElwrQylUsF-LXnxoS_UHE"/>
-              </div>
+      <div class="max-w-5xl mx-auto">
+        <!-- Step 1 -->
+        <div
+          class="relative flex flex-col md:flex-row items-center gap-8 md:gap-16 mb-20 md:mb-28"
+        >
+          <!-- Content -->
+          <div class="flex-1 order-2 md:order-1 text-center md:text-right">
+            <div class="inline-flex items-center gap-3 mb-4">
+              <span
+                class="flex items-center justify-center w-14 h-14 rounded-2xl bg-[var(--sage-green)] text-white text-xl font-bold shadow-lg"
+                >1</span
+              >
             </div>
-          </div>
-          <div class="hidden md:block"></div>
-
-          <div class="hidden md:block"></div>
-          <div class="flex flex-col items-center md:items-start">
-            <div class="max-w-md">
-              <div class="flex items-center justify-center md:justify-start gap-4 mb-4">
-                <span class="flex items-center justify-center w-12 h-12 rounded-full bg-[var(--accent-blue)] text-white text-xl font-bold">2</span>
-                <h3 class="text-2xl md:text-3xl font-semibold text-[var(--primary-text)]">Your Personalized Plan</h3>
-              </div>
-              <p class="text-[var(--primary-text)]/80 mb-6">
-                Using the insights from your consultation, our medical team designs a personalized treatment plan just for you.
-              </p>
-              <div class="aspect-w-4 aspect-h-3 rounded-lg overflow-hidden shadow-lg">
-                <img alt="A doctor reviewing a personalized plan on a tablet." class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBR6LwFnRPrwADhVUIqZfxp9CIvaF8vN5ePFCpiqCBjUdDSqzj1zxeyJb-fifr9mgiG2uPCFHioHHtvpN945FJfeK-skRQBzGS4tKt70JxwGkASoe8-J1SnWAIKUyBC0gVfpT6dlXsJf3bkFpnE3RotiEabi5PzailTvBhlG__XvGcUw58ytsFkkJEGRWM-onW1eRx1FVspOuVIyCJp0QHsyXwgh-35UHhSSUmDVIoHV0IXrbYrwoXUmvPyinNixvbknHgvB7FE_fTN"/>
-              </div>
-            </div>
+            <h3
+              class="text-2xl md:text-3xl font-bold text-[var(--charcoal)] mb-4"
+            >
+              Your Comprehensive Consultation
+            </h3>
+            <p class="text-gray-600 leading-relaxed max-w-md ml-auto">
+              Your journey begins with a private, in-depth consultation with our
+              physician. We take the time to listen to your story, understand
+              your goals, and conduct a thorough health assessment.
+            </p>
           </div>
 
-          <div class="flex flex-col items-center md:items-end">
-            <div class="md:text-right max-w-md">
-              <div class="flex items-center justify-center md:justify-end gap-4 mb-4">
-                <h3 class="text-2xl md:text-3xl font-semibold text-[var(--primary-text)]">Ongoing Physician Guidance & Support</h3>
-                <span class="flex items-center justify-center w-12 h-12 rounded-full bg-[var(--accent-gold)] text-white text-xl font-bold">3</span>
+          <!-- Image -->
+          <div class="flex-1 order-1 md:order-2">
+            <div class="relative group">
+              <div
+                class="absolute -inset-4 bg-gradient-to-br from-[var(--sage-green)]/20 to-transparent rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+              >
               </div>
-              <p class="text-[var(--primary-text)]/80 mb-6">
-                You will have regular follow-up appointments with our team to monitor your results, make any necessary adjustments, and provide the guidance you need to succeed.
-              </p>
-              <div class="aspect-w-4 aspect-h-3 rounded-lg overflow-hidden shadow-lg">
-                <img alt="A supportive doctor listening to a patient in a comfortable setting." class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCCkQCrhZzB_35qFTIRzqUd8xnOlOm-W0hnkZ6EFweVvt9nPSp942wCoBUD6aNYgR_A14W5edq2n5q7elmpYAr3JWU1BebU59cesGs00qYxXTbO6K5PUI7Eu7dYmTwOEOXRFSY0DSJewIwIggYwWujfmC8umMDUhXlXw8VedtUd1wnNJg7Ab9kZVa15mITGzwnHKNND-as-7vsDlnCDqV7ZVnrdq8TDsbv7s8XlPvOmaNjTu02w01lab9mr_dpz95nf-lOkRl08J0bc"/>
+              <div
+                class="relative rounded-2xl overflow-hidden shadow-xl"
+                style="box-shadow: 0 20px 50px rgba(54, 69, 79, 0.15);"
+              >
+                <img
+                  alt="A serene consultation room with a doctor and a patient."
+                  class="w-full h-64 md:h-80 object-cover transition-transform duration-700 group-hover:scale-105"
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuDGwzcrdBYHavDD1bcvtEsfdHOkoCsWXhhhWL4WS58g-XbDN5-4CdUxnCLTmbRRJyFVwmX9D9afDmbKz3Rx1OaniL2EvNQS4-UXjk0vnzJlOEgdyvTNvp97a6eOQdXAE8ikjUujH2k1GbblYy9sAHaKIYl6QKB9WwczIvPTbozLp3qYuTQpGnq_aJMU1Fjr9bPXFOyIZ1rpVYs2kwekgokr38WVvRxPWqRpqLzViFSD2eh6P9rRWnlF89AElwrQylUsF-LXnxoS_UHE"
+                />
               </div>
             </div>
           </div>
-          <div class="hidden md:block"></div>
+
+          <!-- Connector Line -->
+          <div
+            class="hidden md:block absolute left-1/2 top-full h-20 w-px bg-gradient-to-b from-[var(--sage-green)] to-[var(--dusty-blue)] -translate-x-1/2"
+          >
+          </div>
+        </div>
+
+        <!-- Step 2 -->
+        <div
+          class="relative flex flex-col md:flex-row items-center gap-8 md:gap-16 mb-20 md:mb-28"
+        >
+          <!-- Image -->
+          <div class="flex-1">
+            <div class="relative group">
+              <div
+                class="absolute -inset-4 bg-gradient-to-br from-[var(--dusty-blue)]/20 to-transparent rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+              >
+              </div>
+              <div
+                class="relative rounded-2xl overflow-hidden shadow-xl"
+                style="box-shadow: 0 20px 50px rgba(54, 69, 79, 0.15);"
+              >
+                <img
+                  alt="A doctor reviewing a personalized plan on a tablet."
+                  class="w-full h-64 md:h-80 object-cover transition-transform duration-700 group-hover:scale-105"
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuBR6LwFnRPrwADhVUIqZfxp9CIvaF8vN5ePFCpiqCBjUdDSqzj1zxeyJb-fifr9mgiG2uPCFHioHHtvpN945FJfeK-skRQBzGS4tKt70JxwGkASoe8-J1SnWAIKUyBC0gVfpT6dlXsJf3bkFpnE3RotiEabi5PzailTvBhlG__XvGcUw58ytsFkkJEGRWM-onW1eRx1FVspOuVIyCJp0QHsyXwgh-35UHhSSUmDVIoHV0IXrbYrwoXUmvPyinNixvbknHgvB7FE_fTN"
+                />
+              </div>
+            </div>
+          </div>
+
+          <!-- Content -->
+          <div class="flex-1 text-center md:text-left">
+            <div class="inline-flex items-center gap-3 mb-4">
+              <span
+                class="flex items-center justify-center w-14 h-14 rounded-2xl bg-[var(--dusty-blue)] text-white text-xl font-bold shadow-lg"
+                >2</span
+              >
+            </div>
+            <h3
+              class="text-2xl md:text-3xl font-bold text-[var(--charcoal)] mb-4"
+            >
+              Your Personalized Plan
+            </h3>
+            <p class="text-gray-600 leading-relaxed max-w-md">
+              Using the insights from your consultation, our medical team
+              designs a personalized treatment plan just for you—combining the
+              right medications, therapies, and support for your unique needs.
+            </p>
+          </div>
+
+          <!-- Connector Line -->
+          <div
+            class="hidden md:block absolute left-1/2 top-full h-20 w-px bg-gradient-to-b from-[var(--dusty-blue)] to-[var(--soma-gold)] -translate-x-1/2"
+          >
+          </div>
+        </div>
+
+        <!-- Step 3 -->
+        <div
+          class="relative flex flex-col md:flex-row items-center gap-8 md:gap-16"
+        >
+          <!-- Content -->
+          <div class="flex-1 order-2 md:order-1 text-center md:text-right">
+            <div class="inline-flex items-center gap-3 mb-4">
+              <span
+                class="flex items-center justify-center w-14 h-14 rounded-2xl bg-[var(--soma-gold)] text-[var(--charcoal)] text-xl font-bold shadow-lg"
+                >3</span
+              >
+            </div>
+            <h3
+              class="text-2xl md:text-3xl font-bold text-[var(--charcoal)] mb-4"
+            >
+              Ongoing Physician Guidance & Support
+            </h3>
+            <p class="text-gray-600 leading-relaxed max-w-md ml-auto">
+              You will have regular follow-up appointments with our team to
+              monitor your results, make any necessary adjustments, and provide
+              the guidance and encouragement you need to succeed.
+            </p>
+          </div>
+
+          <!-- Image -->
+          <div class="flex-1 order-1 md:order-2">
+            <div class="relative group">
+              <div
+                class="absolute -inset-4 bg-gradient-to-br from-[var(--soma-gold)]/20 to-transparent rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+              >
+              </div>
+              <div
+                class="relative rounded-2xl overflow-hidden shadow-xl"
+                style="box-shadow: 0 20px 50px rgba(54, 69, 79, 0.15);"
+              >
+                <img
+                  alt="A supportive doctor listening to a patient in a comfortable setting."
+                  class="w-full h-64 md:h-80 object-cover transition-transform duration-700 group-hover:scale-105"
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuCCkQCrhZzB_35qFTIRzqUd8xnOlOm-W0hnkZ6EFweVvt9nPSp942wCoBUD6aNYgR_A14W5edq2n5q7elmpYAr3JWU1BebU59cesGs00qYxXTbO6K5PUI7Eu7dYmTwOEOXRFSY0DSJewIwIggYwWujfmC8umMDUhXlXw8VedtUd1wnNJg7Ab9kZVa15mITGzwnHKNND-as-7vsDlnCDqV7ZVnrdq8TDsbv7s8XlPvOmaNjTu02w01lab9mr_dpz95nf-lOkRl08J0bc"
+                />
+              </div>
+            </div>
+          </div>
         </div>
       </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section
+    class="relative py-24 overflow-hidden"
+    style="background: linear-gradient(135deg, #36454F 0%, #2A363E 100%);"
+  >
+    <div
+      class="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-[var(--soma-gold)]/30 to-transparent"
+    >
+    </div>
+    <div
+      class="absolute bottom-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-[var(--soma-gold)]/30 to-transparent"
+    >
+    </div>
+
+    <div class="container mx-auto px-6 text-center relative z-10">
+      <span
+        class="inline-block text-[var(--soma-gold)] uppercase tracking-[0.25em] text-sm font-semibold mb-4"
+        >Take The First Step</span
+      >
+      <h2 class="text-3xl md:text-5xl font-bold text-white mb-6">
+        Ready to Start Your Journey?
+      </h2>
+      <p class="max-w-2xl mx-auto text-lg text-gray-400 mb-10">
+        Schedule your complimentary consultation and discover your personalized
+        path to transformation.
+      </p>
+      <a
+        class="inline-flex items-center gap-3 rounded-full bg-[var(--soma-gold)] px-10 py-4 text-lg font-semibold text-[var(--charcoal)] transition-all duration-300 hover:bg-[#D4C89A] hover:scale-105 shadow-lg"
+        href="/consultation"
+      >
+        Schedule My Consultation
+        <svg
+          class="w-5 h-5"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+          ><path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg
+        >
+      </a>
     </div>
   </section>
 </MainLayout>

@@ -2,34 +2,164 @@
 @tailwind components;
 @tailwind utilities;
 
+/* ==========================================================================
+   SomaRenew Medical - Brand Style Guide
+   
+   Fonts:
+   - Headlines (H1-H6): 'Cormorant Garamond' (Sophisticated, Title Case)
+   - Body/Buttons: 'Raleway' (Clean, Geometric)
+   
+   Color Palette:
+   - Primary Text/Dark BG: Charcoal #36454F
+   - Accents/CTAs: Soma Gold #C0B283
+   - Backgrounds: Warm White #FDFDFD
+   - Secondary: Sage Green #8A9A5B, Dusty Blue #778899
+   
+   Vibe: Serene Sanctuary - Warm, Inviting, Luxurious (NOT clinical)
+   ========================================================================== */
+
 :root {
-  --primary-text: #36454F;
-  --background: #FDFDFD;
-  --accent-gold: #C0B283;
-  --accent-green: #8A9A5B;
-  --accent-blue: #778899;
+  /* Core Brand Colors */
+  --charcoal: #36454F;
+  --soma-gold: #C0B283;
+  --warm-white: #FDFDFD;
+  --sage-green: #8A9A5B;
+  --dusty-blue: #778899;
+  
+  /* Semantic Aliases */
+  --primary-text: var(--charcoal);
+  --background: var(--warm-white);
+  --accent-gold: var(--soma-gold);
+  --accent-green: var(--sage-green);
+  --accent-blue: var(--dusty-blue);
   --secondary-text: #5E6C77;
+  
+  /* Sanctuary Atmosphere - Warm tones to avoid clinical feel */
+  --warm-shadow: rgba(54, 69, 79, 0.08);
+  --soft-glow: rgba(192, 178, 131, 0.15);
+  --serene-gradient: linear-gradient(135deg, var(--warm-white) 0%, #F8F6F0 100%);
 }
+
+/* Base Typography */
 body {
   font-family: 'Raleway', sans-serif;
   background-color: var(--background);
   color: var(--primary-text);
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
+
+/* Sophisticated Headlines - Title Case styling */
 h1, h2, h3, h4, h5, h6 {
   font-family: 'Cormorant Garamond', serif;
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: 0.01em;
+  color: var(--primary-text);
 }
+
+h1 { font-size: 3rem; font-weight: 700; }
+h2 { font-size: 2.25rem; }
+h3 { font-size: 1.875rem; }
+h4 { font-size: 1.5rem; }
+h5 { font-size: 1.25rem; }
+h6 { font-size: 1.125rem; }
 
 @layer components {
+  /* Primary Button - Warm, Luxurious Gold CTA */
   .btn-primary {
-    @apply bg-[var(--accent-gold)] text-white hover:bg-opacity-90 transition-colors duration-300;
+    @apply font-medium tracking-wide transition-all duration-300;
+    background-color: var(--soma-gold);
+    color: var(--charcoal);
+    box-shadow: 0 4px 14px var(--warm-shadow);
   }
+  
+  .btn-primary:hover {
+    background-color: #D4C89A;
+    transform: translateY(-1px);
+    box-shadow: 0 6px 20px var(--warm-shadow);
+  }
+  
+  /* Secondary Button - Outlined, Elegant */
+  .btn-secondary {
+    @apply font-medium tracking-wide transition-all duration-300;
+    background-color: transparent;
+    color: var(--charcoal);
+    border: 2px solid var(--soma-gold);
+  }
+  
+  .btn-secondary:hover {
+    background-color: var(--soma-gold);
+    color: var(--charcoal);
+  }
+  
+  /* Navigation Link - Sophisticated Underline Effect */
   .nav-link {
-    @apply text-[var(--primary-text)] hover:text-[var(--accent-gold)] transition-colors duration-300 relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-[var(--accent-gold)] after:transition-all after:duration-300 hover:after:w-full;
+    @apply text-[var(--primary-text)] transition-colors duration-300 relative;
+    @apply after:content-[''] after:absolute after:bottom-0 after:left-0;
+    @apply after:w-0 after:h-0.5 after:bg-[var(--accent-gold)] after:transition-all after:duration-300;
+  }
+  
+  .nav-link:hover {
+    color: var(--soma-gold);
+  }
+  
+  .nav-link:hover::after {
+    width: 100%;
+  }
+  
+  /* Sanctuary Card - Warm, Inviting Container */
+  .sanctuary-card {
+    @apply rounded-2xl p-8 transition-all duration-300;
+    background-color: var(--warm-white);
+    box-shadow: 0 4px 24px var(--warm-shadow);
+    border: 1px solid rgba(192, 178, 131, 0.1);
+  }
+  
+  .sanctuary-card:hover {
+    box-shadow: 0 8px 32px var(--warm-shadow);
+    transform: translateY(-2px);
+  }
+  
+  /* Section with Warm Gradient Background */
+  .sanctuary-section {
+    background: var(--serene-gradient);
+  }
+  
+  /* Gold Accent Border/Divider */
+  .gold-accent-border {
+    border-color: var(--soma-gold);
+  }
+  
+  /* Warm Text Highlight */
+  .text-gold {
+    color: var(--soma-gold);
+  }
+  
+  .text-sage {
+    color: var(--sage-green);
+  }
+  
+  .text-dusty {
+    color: var(--dusty-blue);
   }
 }
 
+/* Logo Image Rendering Optimization */
 .logo-img {
   -webkit-transform: translate3d(0, 0, 0);
   transform: translate3d(0, 0, 0);
   backface-visibility: hidden;
+}
+
+/* Smooth Scroll for Sanctuary Feel */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Selection Styling - Gold Accent */
+::selection {
+  background-color: var(--soma-gold);
+  color: var(--charcoal);
 }
