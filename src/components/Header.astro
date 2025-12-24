@@ -9,7 +9,8 @@ const homePath = base.endsWith("/") ? base : base + "/";
 <header
   x-data="{ isOpen: false }"
   @keydown.escape.window="isOpen = false"
-  class="bg-[var(--warm-white)]/95 backdrop-blur-md border-b border-[var(--soma-gold)]/10"
+  class="relative bg-gradient-to-r from-[#36454F] via-[#3D4E5A] to-[#36454F] shadow-lg"
+  style="box-shadow: 0 4px 20px rgba(192, 178, 131, 0.15), inset 0 -1px 0 rgba(192, 178, 131, 0.3);"
 >
   <div class="container mx-auto px-6 py-4">
     <div class="flex flex-wrap items-center justify-between">
@@ -23,63 +24,29 @@ const homePath = base.endsWith("/") ? base : base + "/";
 
       <nav class="hidden md:flex items-center gap-8">
         <a
-          class:list={[
-            "nav-link text-base font-medium",
-            {
-              "!text-[var(--soma-gold)] font-semibold":
-                pathname === base || pathname === homePath,
-            },
-          ]}
+          class="text-base font-medium text-white/90 hover:text-[var(--soma-gold)] transition-colors duration-300"
           href="/">Home</a
         >
         <a
-          class:list={[
-            "nav-link text-base font-medium",
-            {
-              "!text-[var(--soma-gold)] font-semibold": pathname.startsWith(
-                `${base}/aboutus`,
-              ),
-            },
-          ]}
+          class="text-base font-medium text-white/90 hover:text-[var(--soma-gold)] transition-colors duration-300"
           href="/aboutus">About Us</a
         >
         <a
-          class:list={[
-            "nav-link text-base font-medium",
-            {
-              "!text-[var(--soma-gold)] font-semibold": pathname.startsWith(
-                `${base}/services`,
-              ),
-            },
-          ]}
+          class="text-base font-medium text-white/90 hover:text-[var(--soma-gold)] transition-colors duration-300"
           href="/services">Services</a
         >
         <a
-          class:list={[
-            "nav-link text-base font-medium",
-            {
-              "!text-[var(--soma-gold)] font-semibold": pathname.startsWith(
-                `${base}/patientjourney`,
-              ),
-            },
-          ]}
+          class="text-base font-medium text-white/90 hover:text-[var(--soma-gold)] transition-colors duration-300"
           href="/patientjourney">The Patient Journey</a
         >
         <a
-          class:list={[
-            "nav-link text-base font-medium",
-            {
-              "!text-[var(--soma-gold)] font-semibold": pathname.startsWith(
-                `${base}/contact`,
-              ),
-            },
-          ]}
+          class="text-base font-medium text-white/90 hover:text-[var(--soma-gold)] transition-colors duration-300"
           href="/contact">Contact Us</a
         >
       </nav>
       <div class="hidden md:flex items-center gap-3">
         <a
-          class="inline-flex items-center gap-2 rounded-full border border-[var(--charcoal)]/20 px-5 py-2.5 text-sm font-medium text-[var(--charcoal)] transition-all duration-300 hover:border-[var(--soma-gold)] hover:text-[var(--soma-gold)]"
+          class="inline-flex items-center gap-2 rounded-full border border-[var(--soma-gold)]/50 px-5 py-2.5 text-sm font-medium text-[var(--soma-gold)] transition-all duration-300 hover:bg-[var(--soma-gold)]/10 hover:border-[var(--soma-gold)]"
           href="#"
         >
           <svg
@@ -118,7 +85,9 @@ const homePath = base.endsWith("/") ? base : base + "/";
 
       <button
         @click="isOpen = !isOpen"
-        class="md:hidden p-2 rounded-lg text-[var(--charcoal)] hover:bg-[var(--soma-gold)]/10 transition-colors"
+        class="md:hidden p-3 rounded-xl text-white hover:bg-[var(--soma-gold)]/20 hover:text-[var(--soma-gold)] transition-colors"
+        :class="{ 'bg-[var(--soma-gold)]/20 text-[var(--soma-gold)]': isOpen }"
+        aria-label="Toggle mobile menu"
       >
         <svg
           x-show="!isOpen"
@@ -155,19 +124,19 @@ const homePath = base.endsWith("/") ? base : base + "/";
       x-show="isOpen"
       @click.away="isOpen = false"
       class="w-full md:hidden"
-      x-transition:enter="transition ease-out duration-200"
-      x-transition:enter-start="opacity-0 -translate-y-2"
+      x-transition:enter="transition ease-out duration-300"
+      x-transition:enter-start="opacity-0 -translate-y-4"
       x-transition:enter-end="opacity-100 translate-y-0"
-      x-transition:leave="transition ease-in duration-150"
+      x-transition:leave="transition ease-in duration-200"
       x-transition:leave-start="opacity-100 translate-y-0"
-      x-transition:leave-end="opacity-0 -translate-y-2"
+      x-transition:leave-end="opacity-0 -translate-y-4"
     >
       <div
-        class="flex flex-col items-center gap-4 py-8 border-t border-[var(--soma-gold)]/10 mt-4"
+        class="flex flex-col items-center gap-2 py-6 border-t border-[var(--soma-gold)]/20 mt-4 bg-[var(--warm-white)]"
       >
         <a
           class:list={[
-            "text-lg font-medium py-2 transition-colors",
+            "text-lg font-medium py-3 min-h-[48px] flex items-center transition-colors",
             {
               "text-[var(--soma-gold)]":
                 pathname === base || pathname === homePath,
@@ -180,7 +149,7 @@ const homePath = base.endsWith("/") ? base : base + "/";
         >
         <a
           class:list={[
-            "text-lg font-medium py-2 transition-colors",
+            "text-lg font-medium py-3 min-h-[48px] flex items-center transition-colors",
             {
               "text-[var(--soma-gold)]": pathname.startsWith(`${base}/aboutus`),
               "text-[var(--charcoal)] hover:text-[var(--soma-gold)]":
@@ -191,7 +160,7 @@ const homePath = base.endsWith("/") ? base : base + "/";
         >
         <a
           class:list={[
-            "text-lg font-medium py-2 transition-colors",
+            "text-lg font-medium py-3 min-h-[48px] flex items-center transition-colors",
             {
               "text-[var(--soma-gold)]": pathname.startsWith(
                 `${base}/services`,
@@ -204,7 +173,7 @@ const homePath = base.endsWith("/") ? base : base + "/";
         >
         <a
           class:list={[
-            "text-lg font-medium py-2 transition-colors",
+            "text-lg font-medium py-3 min-h-[48px] flex items-center transition-colors",
             {
               "text-[var(--soma-gold)]": pathname.startsWith(
                 `${base}/patientjourney`,
@@ -217,7 +186,7 @@ const homePath = base.endsWith("/") ? base : base + "/";
         >
         <a
           class:list={[
-            "text-lg font-medium py-2 transition-colors",
+            "text-lg font-medium py-3 min-h-[48px] flex items-center transition-colors",
             {
               "text-[var(--soma-gold)]": pathname.startsWith(`${base}/contact`),
               "text-[var(--charcoal)] hover:text-[var(--soma-gold)]":
@@ -227,13 +196,13 @@ const homePath = base.endsWith("/") ? base : base + "/";
           href="/contact">Contact Us</a
         >
         <a
-          class="mt-4 w-full max-w-xs rounded-full border border-[var(--charcoal)]/20 px-6 py-3 text-center font-medium text-[var(--charcoal)] transition-all duration-300 hover:border-[var(--soma-gold)] hover:text-[var(--soma-gold)]"
+          class="mt-4 w-full max-w-xs rounded-full border border-[var(--charcoal)]/20 px-6 py-3.5 min-h-[48px] text-center font-medium text-[var(--charcoal)] transition-all duration-300 hover:border-[var(--soma-gold)] hover:text-[var(--soma-gold)]"
           href="#"
         >
           Patient Portal
         </a>
         <a
-          class="w-full max-w-xs rounded-full bg-[var(--soma-gold)] px-6 py-3 text-center font-semibold text-[var(--charcoal)] transition-all duration-300 hover:bg-[#D4C89A]"
+          class="w-full max-w-xs rounded-full bg-[var(--soma-gold)] px-6 py-3.5 min-h-[48px] text-center font-semibold text-[var(--charcoal)] transition-all duration-300 hover:bg-[#D4C89A]"
           href="/consultation"
         >
           Schedule Consultation

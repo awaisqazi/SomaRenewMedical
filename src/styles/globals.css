@@ -25,7 +25,7 @@
   --warm-white: #FDFDFD;
   --sage-green: #8A9A5B;
   --dusty-blue: #778899;
-  
+
   /* Semantic Aliases */
   --primary-text: var(--charcoal);
   --background: var(--warm-white);
@@ -33,7 +33,7 @@
   --accent-green: var(--sage-green);
   --accent-blue: var(--dusty-blue);
   --secondary-text: #5E6C77;
-  
+
   /* Sanctuary Atmosphere - Warm tones to avoid clinical feel */
   --warm-shadow: rgba(54, 69, 79, 0.08);
   --soft-glow: rgba(192, 178, 131, 0.15);
@@ -51,7 +51,12 @@ body {
 }
 
 /* Sophisticated Headlines - Title Case styling */
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-family: 'Cormorant Garamond', serif;
   font-weight: 600;
   line-height: 1.2;
@@ -59,14 +64,33 @@ h1, h2, h3, h4, h5, h6 {
   color: var(--primary-text);
 }
 
-h1 { font-size: 3rem; font-weight: 700; }
-h2 { font-size: 2.25rem; }
-h3 { font-size: 1.875rem; }
-h4 { font-size: 1.5rem; }
-h5 { font-size: 1.25rem; }
-h6 { font-size: 1.125rem; }
+h1 {
+  font-size: 3rem;
+  font-weight: 700;
+}
+
+h2 {
+  font-size: 2.25rem;
+}
+
+h3 {
+  font-size: 1.875rem;
+}
+
+h4 {
+  font-size: 1.5rem;
+}
+
+h5 {
+  font-size: 1.25rem;
+}
+
+h6 {
+  font-size: 1.125rem;
+}
 
 @layer components {
+
   /* Primary Button - Warm, Luxurious Gold CTA */
   .btn-primary {
     @apply font-medium tracking-wide transition-all duration-300;
@@ -74,13 +98,13 @@ h6 { font-size: 1.125rem; }
     color: var(--charcoal);
     box-shadow: 0 4px 14px var(--warm-shadow);
   }
-  
+
   .btn-primary:hover {
     background-color: #D4C89A;
     transform: translateY(-1px);
     box-shadow: 0 6px 20px var(--warm-shadow);
   }
-  
+
   /* Secondary Button - Outlined, Elegant */
   .btn-secondary {
     @apply font-medium tracking-wide transition-all duration-300;
@@ -88,27 +112,27 @@ h6 { font-size: 1.125rem; }
     color: var(--charcoal);
     border: 2px solid var(--soma-gold);
   }
-  
+
   .btn-secondary:hover {
     background-color: var(--soma-gold);
     color: var(--charcoal);
   }
-  
+
   /* Navigation Link - Sophisticated Underline Effect */
   .nav-link {
     @apply text-[var(--primary-text)] transition-colors duration-300 relative;
     @apply after:content-[''] after:absolute after:bottom-0 after:left-0;
     @apply after:w-0 after:h-0.5 after:bg-[var(--accent-gold)] after:transition-all after:duration-300;
   }
-  
+
   .nav-link:hover {
     color: var(--soma-gold);
   }
-  
+
   .nav-link:hover::after {
     width: 100%;
   }
-  
+
   /* Sanctuary Card - Warm, Inviting Container */
   .sanctuary-card {
     @apply rounded-2xl p-8 transition-all duration-300;
@@ -116,31 +140,31 @@ h6 { font-size: 1.125rem; }
     box-shadow: 0 4px 24px var(--warm-shadow);
     border: 1px solid rgba(192, 178, 131, 0.1);
   }
-  
+
   .sanctuary-card:hover {
     box-shadow: 0 8px 32px var(--warm-shadow);
     transform: translateY(-2px);
   }
-  
+
   /* Section with Warm Gradient Background */
   .sanctuary-section {
     background: var(--serene-gradient);
   }
-  
+
   /* Gold Accent Border/Divider */
   .gold-accent-border {
     border-color: var(--soma-gold);
   }
-  
+
   /* Warm Text Highlight */
   .text-gold {
     color: var(--soma-gold);
   }
-  
+
   .text-sage {
     color: var(--sage-green);
   }
-  
+
   .text-dusty {
     color: var(--dusty-blue);
   }
@@ -162,4 +186,97 @@ html {
 ::selection {
   background-color: var(--soma-gold);
   color: var(--charcoal);
+}
+
+/* ==========================================================================
+   Mobile Responsiveness - Serene Sanctuary on Small Screens
+   ========================================================================== */
+
+/* Mobile Typography Scaling */
+@media (max-width: 767px) {
+  h1 {
+    font-size: 2rem;
+  }
+
+  h2 {
+    font-size: 1.75rem;
+  }
+
+  h3 {
+    font-size: 1.5rem;
+  }
+
+  h4 {
+    font-size: 1.25rem;
+  }
+
+  h5 {
+    font-size: 1.125rem;
+  }
+
+  h6 {
+    font-size: 1rem;
+  }
+
+  body {
+    font-size: 16px;
+    /* Minimum 16px for readability */
+  }
+}
+
+@layer components {
+
+  /* Touch-Friendly Button - Min 48px height for accessibility */
+  .btn-touch-friendly {
+    @apply min-h-[48px] px-6 py-3;
+  }
+
+  /* Mobile Container - Consistent horizontal padding */
+  .container-mobile {
+    @apply px-5 sm:px-6;
+  }
+
+  /* Mobile Section Spacing - Airy feel */
+  .section-mobile {
+    @apply py-16 sm:py-20 md:py-24;
+  }
+
+  /* Mobile Card Stack - For consistent vertical flow */
+  .card-stack-mobile {
+    @apply flex flex-col gap-6;
+  }
+
+  /* Mobile Hero Text - Readable on small screens */
+  .hero-title-mobile {
+    @apply text-3xl sm:text-4xl md:text-5xl lg:text-6xl;
+  }
+
+  .hero-subtitle-mobile {
+    @apply text-base sm:text-lg md:text-xl;
+  }
+
+  /* Mobile Form Input - Full width on small screens */
+  .input-mobile {
+    @apply w-full min-h-[48px];
+  }
+
+  /* Mobile Menu Link - Adequate touch target */
+  .mobile-menu-link {
+    @apply min-h-[48px] flex items-center justify-center;
+  }
+}
+
+/* Ensure buttons have minimum touch target */
+.btn-primary {
+  min-height: 48px;
+}
+
+/* Iframe responsiveness */
+iframe {
+  max-width: 100%;
+}
+
+/* Mobile menu smooth transitions */
+[x-cloak] {
+  display: none !important;
 }
