@@ -51,10 +51,13 @@ const { title } = Astro.props;
             name="description"
             content="SomaRenew Medical - Your serene sanctuary for personalized, physician-guided medical weight loss. Experience compassionate care in a warm, inviting environment."
         />
+        
+        <!-- Alpine.js for interactive components -->
+        <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
     </head>
     <body class="antialiased">
         <!-- Sticky container for banner + header -->
-        <div class="sticky top-0 z-50">
+        <div class="sticky top-0 z-[100]">
             <DevelopmentBanner />
             <Header />
         </div>
