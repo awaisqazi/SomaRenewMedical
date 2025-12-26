@@ -1,249 +1,608 @@
 ---
 import MainLayout from "../layouts/MainLayout.astro";
+
+const steps = [
+  {
+    id: 1,
+    label: "Digital Discovery",
+    headline: "Effortless Scheduling.",
+    body: "Browse our curated service menu from the comfort of your home. Select your preferred time, secure your appointment with a deposit, and receive instant confirmation—seamlessly.",
+    image: "https://placehold.co/800x1000/C0B283/36454F?text=Booking+Interface",
+    imageAlt: "Pabau online booking interface showing available appointment times"
+  },
+  {
+    id: 2,
+    label: "Digital Intake",
+    headline: "Your Story, Before You Arrive.",
+    body: "No clipboards. No waiting. Complete your comprehensive health history and consent forms digitally via our secure portal before you even step through our doors.",
+    image: "https://placehold.co/800x1000/778899/FDFDFD?text=Digital+Forms",
+    imageAlt: "Secure digital health intake form on a tablet device"
+  },
+  {
+    id: 3,
+    label: "Sanctuary Arrival",
+    headline: "Step Into Serenity.",
+    body: "Arrive at Soma Renew, where clinical excellence meets spa-like tranquility. Enjoy complementary amenities while we prepare your treatment suite.",
+    image: "https://placehold.co/800x1000/8A9A5B/FDFDFD?text=Tranquil+Space",
+    imageAlt: "Serene clinic interior with warm lighting and comfortable seating"
+  },
+  {
+    id: 4,
+    label: "Expert Consultation",
+    headline: "Collaborative Care.",
+    body: "Sit down with our specialists to review your digital intake. We listen to your goals first, then design a bespoke plan involving Semaglutide, Tirzepatide, or Peptide therapies.",
+    image: "https://placehold.co/800x1000/36454F/C0B283?text=Consultation",
+    imageAlt: "Doctor and patient in a collaborative consultation session"
+  },
+  {
+    id: 5,
+    label: "Seamless Checkout",
+    headline: "Integrated Wellness.",
+    body: "Checkout is frictionless. Your treatment plan, future appointments, and membership perks are all managed centrally in your patient portal.",
+    image: "https://placehold.co/800x1000/C0B283/36454F?text=Patient+Portal",
+    imageAlt: "Patient portal dashboard showing treatment plan and appointments"
+  }
+];
+
+const bookingUrl = "https://partner.pabau.com/online-bookings/soma-renew-medical?groupCategory=0&category=195676&serviceType=0";
 ---
 
-<MainLayout title="The Patient Journey">
-  <!-- Hero Section -->
-  <section
-    class="relative py-24 md:py-32 overflow-hidden"
-    style="background: linear-gradient(135deg, #FDFDFD 0%, #F8F6F0 100%);"
-  >
-    <div
-      class="absolute top-0 right-0 w-96 h-96 bg-[var(--soma-gold)]/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2"
-    >
+<MainLayout title="Your Concierge Experience">
+  <!-- Hero Section - Full Screen with Parallax Background -->
+  <section class="hero-section relative min-h-screen flex items-center justify-center overflow-hidden">
+    <!-- Animated Background Elements -->
+    <div class="absolute inset-0 bg-gradient-to-br from-warm-white via-[#F8F6F0] to-warm-white"></div>
+    
+    <!-- Floating Orbs -->
+    <div class="parallax-orb orb-1 absolute w-[600px] h-[600px] rounded-full opacity-30 blur-[100px] pointer-events-none"
+         style="background: radial-gradient(circle, var(--soma-gold) 0%, transparent 70%); top: -10%; right: -10%;"></div>
+    <div class="parallax-orb orb-2 absolute w-[400px] h-[400px] rounded-full opacity-20 blur-[80px] pointer-events-none"
+         style="background: radial-gradient(circle, var(--sage-green) 0%, transparent 70%); bottom: 10%; left: -5%;"></div>
+    <div class="parallax-orb orb-3 absolute w-[300px] h-[300px] rounded-full opacity-25 blur-[60px] pointer-events-none"
+         style="background: radial-gradient(circle, var(--dusty-blue) 0%, transparent 70%); top: 40%; left: 60%;"></div>
+    
+    <!-- Geometric Accent Lines -->
+    <div class="absolute inset-0 overflow-hidden pointer-events-none">
+      <svg class="absolute w-full h-full opacity-5" viewBox="0 0 1440 900" fill="none" preserveAspectRatio="xMidYMid slice">
+        <path d="M0 450 Q 360 300 720 450 T 1440 450" stroke="var(--soma-gold)" stroke-width="1" fill="none"/>
+        <path d="M0 500 Q 360 350 720 500 T 1440 500" stroke="var(--soma-gold)" stroke-width="0.5" fill="none"/>
+        <circle cx="720" cy="450" r="300" stroke="var(--soma-gold)" stroke-width="0.5" fill="none" opacity="0.3"/>
+      </svg>
     </div>
 
-    <div class="container mx-auto px-6 text-center relative z-10">
-      <span
-        class="inline-block text-[var(--soma-gold)] uppercase tracking-[0.25em] text-sm font-semibold mb-4"
-        >Your Journey</span
-      >
-      <div class="h-px w-16 bg-[var(--soma-gold)] mx-auto mb-8"></div>
-      <h1 class="text-4xl md:text-6xl font-bold text-[var(--charcoal)] mb-6">
-        Your Path to a Renewed You
-      </h1>
-      <p
-        class="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed"
-      >
-        We believe in a transparent, supportive, and collaborative process. Here
-        is what you can expect on your transformation journey with us.
-      </p>
+    <!-- Hero Content -->
+    <div class="relative z-10 container mx-auto px-6 text-center">
+      <div class="hero-content max-w-5xl mx-auto">
+        <!-- Overline -->
+        <span class="hero-animate hero-delay-1 inline-block text-soma-gold uppercase tracking-[0.3em] text-xs sm:text-sm font-semibold mb-6 opacity-0">
+          The Concierge Experience
+        </span>
+        
+        <!-- Decorative Line -->
+        <div class="hero-animate hero-delay-2 h-px w-24 bg-gradient-to-r from-transparent via-soma-gold to-transparent mx-auto mb-10 opacity-0"></div>
+        
+        <!-- Main Headline -->
+        <h1 class="hero-animate hero-delay-3 text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-serif font-bold text-charcoal mb-8 leading-[1.1] opacity-0">
+          Your Journey,
+          <span class="block mt-2 text-soma-gold">Reimagined.</span>
+        </h1>
+        
+        <!-- Subheadline -->
+        <p class="hero-animate hero-delay-4 text-lg sm:text-xl md:text-2xl text-secondary-text max-w-2xl mx-auto leading-relaxed mb-12 font-light opacity-0">
+          From digital discovery to integrated wellness, experience healthcare 
+          designed around <em class="text-charcoal font-medium not-italic">you</em>.
+        </p>
+        
+        <!-- CTA Button -->
+        <a href={bookingUrl}
+           target="_blank"
+           rel="noopener noreferrer"
+           class="hero-animate hero-delay-5 inline-flex items-center gap-3 btn-primary rounded-full px-10 py-5 text-lg font-semibold opacity-0 group">
+          <span>Begin Your Journey</span>
+          <svg class="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+
+    <!-- Scroll Indicator -->
+    <div class="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-3 opacity-60 hero-animate hero-delay-6">
+      <span class="text-xs uppercase tracking-[0.2em] text-charcoal/60 font-medium">Discover</span>
+      <div class="scroll-indicator w-6 h-10 rounded-full border-2 border-charcoal/30 flex justify-center pt-2">
+        <div class="w-1.5 h-1.5 rounded-full bg-soma-gold animate-bounce"></div>
+      </div>
     </div>
   </section>
 
-  <!-- Journey Steps Section -->
-  <section class="py-20 md:py-32" style="background-color: #F5F3ED;">
-    <div class="container mx-auto px-6">
-      <div class="max-w-5xl mx-auto">
-        <!-- Step 1 -->
-        <div
-          class="relative flex flex-col md:flex-row items-center gap-8 md:gap-16 mb-20 md:mb-28"
-        >
-          <!-- Content -->
-          <div class="flex-1 order-2 md:order-1 text-center md:text-right">
-            <div class="inline-flex items-center gap-3 mb-4">
-              <span
-                class="flex items-center justify-center w-14 h-14 rounded-2xl bg-[var(--sage-green)] text-white text-xl font-bold shadow-lg"
-                >1</span
-              >
+  <!-- Journey Section - Desktop Sticky Experience -->
+  <section class="journey-section hidden lg:block relative bg-gradient-to-b from-warm-white via-[#F8F6F0] to-warm-white">
+    <div class="container mx-auto px-6 lg:px-12 xl:px-20">
+      <div class="grid grid-cols-12 gap-8 xl:gap-16">
+        
+        <!-- Left Side - Sticky Images -->
+        <div class="col-span-5 relative">
+          <div class="sticky top-32 h-[70vh]">
+            <div class="journey-images relative w-full h-full">
+              {steps.map((step, index) => (
+                <div class={`journey-image absolute inset-0 transition-all duration-700 ease-out ${index === 0 ? 'opacity-100 scale-100' : 'opacity-0 scale-95'}`}
+                     data-step={step.id}>
+                  <div class="relative h-full rounded-3xl overflow-hidden shadow-warm-lg">
+                    <!-- Image Gradient Overlay -->
+                    <div class="absolute inset-0 bg-gradient-to-t from-charcoal/20 via-transparent to-transparent z-10"></div>
+                    <img src={step.image}
+                         alt={step.imageAlt}
+                         class="w-full h-full object-cover"
+                         loading={index === 0 ? "eager" : "lazy"}/>
+                  </div>
+                  <!-- Step Number Badge -->
+                  <div class="absolute -bottom-4 -right-4 w-20 h-20 rounded-2xl bg-soma-gold flex items-center justify-center shadow-gold-glow z-20">
+                    <span class="text-3xl font-serif font-bold text-charcoal">{step.id}</span>
+                  </div>
+                </div>
+              ))}
             </div>
-            <h3
-              class="text-2xl md:text-3xl font-bold text-[var(--charcoal)] mb-4"
-            >
-              Your Comprehensive Consultation
-            </h3>
-            <p class="text-gray-600 leading-relaxed max-w-md ml-auto">
-              Your journey begins with a private, in-depth consultation with our
-              physician. We take the time to listen to your story, understand
-              your goals, and conduct a thorough health assessment—including a
-              review for <strong class="text-[var(--charcoal)]"
-                >Hormone Replacement</strong
-              > and
-              <strong class="text-[var(--charcoal)]">Peptide Therapy</strong> suitability.
-            </p>
-          </div>
-
-          <!-- Image -->
-          <div class="flex-1 order-1 md:order-2">
-            <div class="relative group">
-              <div
-                class="absolute -inset-4 bg-gradient-to-br from-[var(--sage-green)]/20 to-transparent rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"
-              >
-              </div>
-              <div
-                class="relative rounded-2xl overflow-hidden shadow-xl"
-                style="box-shadow: 0 20px 50px rgba(54, 69, 79, 0.15);"
-              >
-                <img
-                  alt="A serene consultation room with a doctor and a patient."
-                  class="w-full h-64 md:h-80 object-cover transition-transform duration-700 group-hover:scale-105"
-                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuDGwzcrdBYHavDD1bcvtEsfdHOkoCsWXhhhWL4WS58g-XbDN5-4CdUxnCLTmbRRJyFVwmX9D9afDmbKz3Rx1OaniL2EvNQS4-UXjk0vnzJlOEgdyvTNvp97a6eOQdXAE8ikjUujH2k1GbblYy9sAHaKIYl6QKB9WwczIvPTbozLp3qYuTQpGnq_aJMU1Fjr9bPXFOyIZ1rpVYs2kwekgokr38WVvRxPWqRpqLzViFSD2eh6P9rRWnlF89AElwrQylUsF-LXnxoS_UHE"
-                />
-              </div>
-            </div>
-          </div>
-
-          <!-- Connector Line -->
-          <div
-            class="hidden md:block absolute left-1/2 top-full h-20 w-px bg-gradient-to-b from-[var(--sage-green)] to-[var(--dusty-blue)] -translate-x-1/2"
-          >
           </div>
         </div>
 
-        <!-- Step 2 -->
-        <div
-          class="relative flex flex-col md:flex-row items-center gap-8 md:gap-16 mb-20 md:mb-28"
-        >
-          <!-- Image -->
-          <div class="flex-1">
-            <div class="relative group">
-              <div
-                class="absolute -inset-4 bg-gradient-to-br from-[var(--dusty-blue)]/20 to-transparent rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"
-              >
-              </div>
-              <div
-                class="relative rounded-2xl overflow-hidden shadow-xl"
-                style="box-shadow: 0 20px 50px rgba(54, 69, 79, 0.15);"
-              >
-                <img
-                  alt="A doctor reviewing a personalized plan on a tablet."
-                  class="w-full h-64 md:h-80 object-cover transition-transform duration-700 group-hover:scale-105"
-                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuBR6LwFnRPrwADhVUIqZfxp9CIvaF8vN5ePFCpiqCBjUdDSqzj1zxeyJb-fifr9mgiG2uPCFHioHHtvpN945FJfeK-skRQBzGS4tKt70JxwGkASoe8-J1SnWAIKUyBC0gVfpT6dlXsJf3bkFpnE3RotiEabi5PzailTvBhlG__XvGcUw58ytsFkkJEGRWM-onW1eRx1FVspOuVIyCJp0QHsyXwgh-35UHhSSUmDVIoHV0IXrbYrwoXUmvPyinNixvbknHgvB7FE_fTN"
-                />
-              </div>
-            </div>
-          </div>
-
-          <!-- Content -->
-          <div class="flex-1 text-center md:text-left">
-            <div class="inline-flex items-center gap-3 mb-4">
-              <span
-                class="flex items-center justify-center w-14 h-14 rounded-2xl bg-[var(--dusty-blue)] text-white text-xl font-bold shadow-lg"
-                >2</span
-              >
-            </div>
-            <h3
-              class="text-2xl md:text-3xl font-bold text-[var(--charcoal)] mb-4"
-            >
-              Your Personalized Plan
-            </h3>
-            <p class="text-gray-600 leading-relaxed max-w-md">
-              Using the insights from your consultation, our medical team
-              designs a personalized treatment plan just for you—including
-              selection of the appropriate medication (<strong
-                class="text-[var(--charcoal)]">Semaglutide</strong
-              > or
-              <strong class="text-[var(--charcoal)]">Tirzepatide</strong>) or a
-              customized
-              <strong class="text-[var(--charcoal)]"
-                >body contouring schedule</strong
-              >.
-            </p>
-          </div>
-
-          <!-- Connector Line -->
-          <div
-            class="hidden md:block absolute left-1/2 top-full h-20 w-px bg-gradient-to-b from-[var(--dusty-blue)] to-[var(--soma-gold)] -translate-x-1/2"
-          >
-          </div>
-        </div>
-
-        <!-- Step 3 -->
-        <div
-          class="relative flex flex-col md:flex-row items-center gap-8 md:gap-16"
-        >
-          <!-- Content -->
-          <div class="flex-1 order-2 md:order-1 text-center md:text-right">
-            <div class="inline-flex items-center gap-3 mb-4">
-              <span
-                class="flex items-center justify-center w-14 h-14 rounded-2xl bg-[var(--soma-gold)] text-[var(--charcoal)] text-xl font-bold shadow-lg"
-                >3</span
-              >
-            </div>
-            <h3
-              class="text-2xl md:text-3xl font-bold text-[var(--charcoal)] mb-4"
-            >
-              Monthly Guidance & Optimization
-            </h3>
-            <p class="text-gray-600 leading-relaxed max-w-md ml-auto">
-              Your subscription includes <strong class="text-[var(--charcoal)]"
-                >monthly visits</strong
-              > with our physician for progress monitoring, dosage adjustments, and
-              ongoing support. Each visit includes
-              <strong class="text-[var(--soma-gold)]"
-                >complementary IV nutrient therapy</strong
-              >
-              to optimize your results and overall wellness.
-            </p>
-          </div>
-
-          <!-- Image -->
-          <div class="flex-1 order-1 md:order-2">
-            <div class="relative group">
-              <div
-                class="absolute -inset-4 bg-gradient-to-br from-[var(--soma-gold)]/20 to-transparent rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"
-              >
-              </div>
-              <div
-                class="relative rounded-2xl overflow-hidden shadow-xl"
-                style="box-shadow: 0 20px 50px rgba(54, 69, 79, 0.15);"
-              >
-                <img
-                  alt="A supportive doctor listening to a patient in a comfortable setting."
-                  class="w-full h-64 md:h-80 object-cover transition-transform duration-700 group-hover:scale-105"
-                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuCCkQCrhZzB_35qFTIRzqUd8xnOlOm-W0hnkZ6EFweVvt9nPSp942wCoBUD6aNYgR_A14W5edq2n5q7elmpYAr3JWU1BebU59cesGs00qYxXTbO6K5PUI7Eu7dYmTwOEOXRFSY0DSJewIwIggYwWujfmC8umMDUhXlXw8VedtUd1wnNJg7Ab9kZVa15mITGzwnHKNND-as-7vsDlnCDqV7ZVnrdq8TDsbv7s8XlPvOmaNjTu02w01lab9mr_dpz95nf-lOkRl08J0bc"
-                />
+        <!-- Right Side - Scrolling Content -->
+        <div class="col-span-7 py-32">
+          {steps.map((step, index) => (
+            <div class="journey-step min-h-[80vh] flex items-center" data-step={step.id}>
+              <div class={`journey-step-content transition-all duration-700 ${index === 0 ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
+                <!-- Step Label -->
+                <span class="inline-block text-soma-gold uppercase tracking-[0.25em] text-sm font-semibold mb-4">
+                  Step {step.id} — {step.label}
+                </span>
+                
+                <!-- Headline -->
+                <h2 class="text-4xl xl:text-5xl 2xl:text-6xl font-serif font-bold text-charcoal mb-6 leading-tight">
+                  {step.headline}
+                </h2>
+                
+                <!-- Body -->
+                <p class="text-lg xl:text-xl text-secondary-text leading-relaxed max-w-xl mb-8">
+                  {step.body}
+                </p>
+                
+                <!-- Progress Indicator -->
+                <div class="flex items-center gap-3">
+                  {steps.map((_, i) => (
+                    <div class={`h-1 rounded-full transition-all duration-500 ${i < step.id ? 'w-8 bg-soma-gold' : 'w-4 bg-charcoal/20'}`}></div>
+                  ))}
+                </div>
               </div>
             </div>
-          </div>
+          ))}
         </div>
       </div>
     </div>
   </section>
 
-  <!-- CTA Section -->
-  <section
-    class="relative py-24 overflow-hidden"
-    style="background: linear-gradient(135deg, #36454F 0%, #2A363E 100%);"
-  >
-    <div
-      class="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-[var(--soma-gold)]/30 to-transparent"
-    >
+  <!-- Journey Section - Mobile Vertical Stack -->
+  <section class="journey-mobile lg:hidden py-20 bg-gradient-to-b from-warm-white to-[#F8F6F0]">
+    <div class="container mx-auto px-6">
+      <!-- Section Header -->
+      <div class="text-center mb-16">
+        <span class="inline-block text-soma-gold uppercase tracking-[0.25em] text-sm font-semibold mb-4">
+          The Journey
+        </span>
+        <h2 class="text-3xl sm:text-4xl font-serif font-bold text-charcoal">
+          Five Steps to Wellness
+        </h2>
+      </div>
+
+      <!-- Mobile Steps -->
+      <div class="max-w-lg mx-auto space-y-4">
+        {steps.map((step, index) => (
+          <div class="mobile-step group opacity-0 translate-y-8" data-step={step.id}>
+            <!-- Image -->
+            <div class="relative rounded-2xl overflow-hidden shadow-warm mb-6 transition-transform duration-500 group-hover:scale-[1.02]">
+              <div class="absolute inset-0 bg-gradient-to-t from-charcoal/30 via-transparent to-transparent z-10"></div>
+              <img src={step.image}
+                   alt={step.imageAlt}
+                   class="w-full h-64 sm:h-80 object-cover"
+                   loading="lazy"/>
+              <!-- Step Badge -->
+              <div class="absolute top-4 left-4 z-20 w-12 h-12 rounded-xl bg-soma-gold/90 backdrop-blur-sm flex items-center justify-center">
+                <span class="text-xl font-serif font-bold text-charcoal">{step.id}</span>
+              </div>
+            </div>
+            
+            <!-- Content -->
+            <div class="px-2 pb-8">
+              <span class="text-soma-gold uppercase tracking-[0.2em] text-xs font-semibold mb-2 block">
+                {step.label}
+              </span>
+              <h3 class="text-2xl sm:text-3xl font-serif font-bold text-charcoal mb-4">
+                {step.headline}
+              </h3>
+              <p class="text-base sm:text-lg text-secondary-text leading-relaxed">
+                {step.body}
+              </p>
+            </div>
+            
+            <!-- Connector Line -->
+            {index < steps.length - 1 && (
+              <div class="flex justify-center pb-8">
+                <div class="w-px h-16 bg-gradient-to-b from-soma-gold via-soma-gold/50 to-transparent"></div>
+              </div>
+            )}
+          </div>
+        ))}
+      </div>
     </div>
-    <div
-      class="absolute bottom-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-[var(--soma-gold)]/30 to-transparent"
-    >
+  </section>
+
+  <!-- Final CTA Section -->
+  <section class="cta-section relative py-32 md:py-40 overflow-hidden">
+    <!-- Background -->
+    <div class="absolute inset-0 bg-gradient-to-br from-charcoal via-[#2A363E] to-[#1E2A32]"></div>
+    
+    <!-- Decorative Elements -->
+    <div class="absolute inset-0 overflow-hidden pointer-events-none">
+      <!-- Top Gold Line -->
+      <div class="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-soma-gold/40 to-transparent"></div>
+      <!-- Bottom Gold Line -->
+      <div class="absolute bottom-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-soma-gold/40 to-transparent"></div>
+      
+      <!-- Repeating Logo Pattern Background -->
+      <div class="cta-logo-pattern absolute inset-0 overflow-hidden" aria-hidden="true">
+        <div class="logo-pattern-inner absolute -inset-[50%] w-[200%] h-[200%]" style="
+          background-image: url('/logo.png');
+          background-size: 280px auto;
+          background-repeat: repeat;
+          opacity: 0.025;
+          filter: brightness(0) invert(1);
+          transform: rotate(-12deg);
+        "></div>
+      </div>
+      
+      <!-- Floating Orb -->
+      <div class="absolute w-[500px] h-[500px] rounded-full blur-[150px] opacity-20 -top-48 -right-48"
+           style="background: radial-gradient(circle, var(--soma-gold) 0%, transparent 70%);"></div>
     </div>
 
-    <div class="container mx-auto px-6 text-center relative z-10">
-      <span
-        class="inline-block text-[var(--soma-gold)] uppercase tracking-[0.25em] text-sm font-semibold mb-4"
-        >Take The First Step</span
-      >
-      <h2 class="text-3xl md:text-5xl font-bold text-white mb-6">
-        Ready to Start Your Journey?
-      </h2>
-      <p class="max-w-2xl mx-auto text-lg text-gray-400 mb-10">
-        Schedule your complimentary consultation and discover your personalized
-        path to transformation.
-      </p>
-      <a
-        class="inline-flex items-center gap-3 rounded-full bg-[var(--soma-gold)] px-10 py-4 text-lg font-semibold text-[var(--charcoal)] transition-all duration-300 hover:bg-[#D4C89A] hover:scale-105 shadow-lg"
-        href="/consultation"
-      >
-        Schedule My Consultation
-        <svg
-          class="w-5 h-5"
-          fill="none"
-          stroke="currentColor"
-          viewBox="0 0 24 24"
-          ><path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="2"
-            d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg
-        >
-      </a>
+    <!-- Content -->
+    <div class="relative z-10 container mx-auto px-6 text-center">
+      <div class="cta-content max-w-3xl mx-auto">
+        <!-- Overline -->
+        <span class="cta-animate inline-block text-soma-gold uppercase tracking-[0.3em] text-sm font-semibold mb-6 opacity-0">
+          Begin Today
+        </span>
+        
+        <!-- Headline -->
+        <h2 class="cta-animate text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-white mb-8 leading-tight opacity-0">
+          Your Transformation
+          <span class="block text-soma-gold">Awaits.</span>
+        </h2>
+        
+        <!-- Body -->
+        <p class="cta-animate text-lg sm:text-xl text-white/60 max-w-xl mx-auto leading-relaxed mb-12 opacity-0">
+          Book your consultation through our seamless digital portal. 
+          Select your time, and step into a new chapter of wellness.
+        </p>
+        
+        <!-- CTA Button -->
+        <a href={bookingUrl}
+           target="_blank"
+           rel="noopener noreferrer"
+           class="cta-animate inline-flex items-center gap-4 bg-soma-gold hover:bg-[#D4C89A] text-charcoal rounded-full px-12 py-6 text-lg font-semibold transition-all duration-300 hover:scale-105 shadow-gold-glow opacity-0 group">
+          <span>Schedule Your Consultation</span>
+          <svg class="w-6 h-6 transition-transform duration-300 group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+          </svg>
+        </a>
+        
+        <!-- Trust Indicators -->
+        <div class="cta-animate mt-16 flex flex-wrap justify-center gap-8 text-white/40 text-sm opacity-0">
+          <div class="flex items-center gap-2">
+            <svg class="w-5 h-5 text-soma-gold" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+            </svg>
+            <span>Secure Booking</span>
+          </div>
+          <div class="flex items-center gap-2">
+            <svg class="w-5 h-5 text-soma-gold" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+            </svg>
+            <span>Instant Confirmation</span>
+          </div>
+          <div class="flex items-center gap-2">
+            <svg class="w-5 h-5 text-soma-gold" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+            </svg>
+            <span>Physician-Guided Care</span>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 </MainLayout>
+
+<style>
+  /* Hero Animations */
+  .hero-animate {
+    transform: translateY(30px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+  }
+  
+  .hero-animate.in-view {
+    opacity: 1 !important;
+    transform: translateY(0);
+  }
+  
+  .hero-delay-1 { transition-delay: 0.1s; }
+  .hero-delay-2 { transition-delay: 0.2s; }
+  .hero-delay-3 { transition-delay: 0.3s; }
+  .hero-delay-4 { transition-delay: 0.5s; }
+  .hero-delay-5 { transition-delay: 0.7s; }
+  .hero-delay-6 { transition-delay: 0.9s; }
+
+  /* Parallax Orbs - Mouse Movement */
+  .parallax-orb {
+    transition: transform 0.3s ease-out;
+    will-change: transform;
+  }
+
+  /* Desktop Journey Section */
+  .journey-step-content {
+    transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+  }
+  
+  .journey-step-content.in-view {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .journey-image {
+    transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+  }
+
+  /* Mobile Journey Animations */
+  .mobile-step {
+    transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+  }
+  
+  .mobile-step.in-view {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* CTA Animations */
+  .cta-animate {
+    transform: translateY(30px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+  }
+  
+  .cta-animate.in-view {
+    opacity: 1 !important;
+    transform: translateY(0);
+  }
+  
+  .cta-animate:nth-child(1) { transition-delay: 0.1s; }
+  .cta-animate:nth-child(2) { transition-delay: 0.2s; }
+  .cta-animate:nth-child(3) { transition-delay: 0.3s; }
+  .cta-animate:nth-child(4) { transition-delay: 0.4s; }
+  .cta-animate:nth-child(5) { transition-delay: 0.5s; }
+
+  /* Scroll Indicator Animation */
+  .scroll-indicator .animate-bounce {
+    animation: scrollBounce 2s ease-in-out infinite;
+  }
+  
+  @keyframes scrollBounce {
+    0%, 100% { transform: translateY(0); opacity: 1; }
+    50% { transform: translateY(12px); opacity: 0.5; }
+  }
+
+  /* Smooth scroll for journey section */
+  @media (min-width: 1024px) {
+    .journey-section {
+      scroll-behavior: smooth;
+    }
+  }
+
+  /* CTA Logo Pattern */
+  .cta-logo-pattern {
+    pointer-events: none;
+  }
+  
+  .logo-pattern-inner {
+    will-change: transform;
+    /* No transition needed - we want immediate response to scroll */
+  }
+
+  /* Responsive pattern sizing */
+  @media (max-width: 768px) {
+    .logo-pattern-inner {
+      background-size: 180px auto !important;
+    }
+  }
+  
+  @media (min-width: 769px) and (max-width: 1024px) {
+    .logo-pattern-inner {
+      background-size: 220px auto !important;
+    }
+  }
+</style>
+
+<script>
+  // Wait for DOM to be ready
+  document.addEventListener('DOMContentLoaded', () => {
+    // ===== Hero Section Animations =====
+    const heroAnimateElements = document.querySelectorAll('.hero-animate');
+    
+    // Trigger hero animations after a short delay
+    setTimeout(() => {
+      heroAnimateElements.forEach(el => {
+        el.classList.add('in-view');
+      });
+    }, 100);
+
+    // ===== Parallax Effect for Background Orbs =====
+    const heroSection = document.querySelector('.hero-section');
+    const orbs = document.querySelectorAll('.parallax-orb');
+    
+    if (heroSection && orbs.length > 0) {
+      heroSection.addEventListener('mousemove', (e) => {
+        const rect = heroSection.getBoundingClientRect();
+        const x = (e.clientX - rect.left) / rect.width - 0.5;
+        const y = (e.clientY - rect.top) / rect.height - 0.5;
+        
+        orbs.forEach((orb, index) => {
+          const speed = (index + 1) * 20;
+          const orbElement = orb as HTMLElement;
+          orbElement.style.transform = `translate(${x * speed}px, ${y * speed}px)`;
+        });
+      });
+    }
+
+    // ===== Desktop Journey Section - IntersectionObserver =====
+    const journeySteps = document.querySelectorAll('.journey-section .journey-step');
+    const journeyImages = document.querySelectorAll('.journey-image');
+    const journeyContentElements = document.querySelectorAll('.journey-section .journey-step-content');
+
+    if (journeySteps.length > 0) {
+      let currentActiveStep = 0;
+      
+      const updateActiveStep = (stepIndex: number) => {
+        if (stepIndex === currentActiveStep) return;
+        currentActiveStep = stepIndex;
+        
+        // Update images
+        journeyImages.forEach((img, index) => {
+          const imgElement = img as HTMLElement;
+          if (index === stepIndex) {
+            imgElement.classList.add('opacity-100', 'scale-100');
+            imgElement.classList.remove('opacity-0', 'scale-95');
+          } else {
+            imgElement.classList.remove('opacity-100', 'scale-100');
+            imgElement.classList.add('opacity-0', 'scale-95');
+          }
+        });
+
+        // Update content visibility
+        journeyContentElements.forEach((content, index) => {
+          const contentElement = content as HTMLElement;
+          if (index === stepIndex) {
+            contentElement.classList.add('opacity-100', 'translate-y-0');
+            contentElement.classList.remove('opacity-0', 'translate-y-8');
+          } else {
+            contentElement.classList.remove('opacity-100', 'translate-y-0');
+            contentElement.classList.add('opacity-0', 'translate-y-8');
+          }
+        });
+      };
+
+      // Create observer for each step
+      const stepObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            const step = entry.target as HTMLElement;
+            const stepId = parseInt(step.dataset.step || '1') - 1;
+            updateActiveStep(stepId);
+          }
+        });
+      }, {
+        threshold: 0.5,
+        rootMargin: '-20% 0px -20% 0px'
+      });
+
+      journeySteps.forEach(step => {
+        stepObserver.observe(step);
+      });
+      
+      // Initialize first step
+      updateActiveStep(0);
+    }
+
+    // ===== Mobile Journey Section - Intersection Observer =====
+    const mobileSteps = document.querySelectorAll('.mobile-step');
+    
+    if (mobileSteps.length > 0) {
+      const mobileObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('in-view');
+          }
+        });
+      }, {
+        threshold: 0.2,
+        rootMargin: '0px 0px -10% 0px'
+      });
+
+      mobileSteps.forEach(step => {
+        mobileObserver.observe(step);
+      });
+    }
+
+    // ===== CTA Section Animations =====
+    const ctaElements = document.querySelectorAll('.cta-animate');
+    
+    if (ctaElements.length > 0) {
+      const ctaObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            // Stagger the animations
+            const element = entry.target as HTMLElement;
+            const siblings = Array.from(ctaElements);
+            const index = siblings.indexOf(element);
+            
+            setTimeout(() => {
+              element.classList.add('in-view');
+            }, index * 100);
+          }
+        });
+      }, {
+        threshold: 0.2,
+        rootMargin: '0px 0px -10% 0px'
+      });
+
+      ctaElements.forEach(el => {
+        ctaObserver.observe(el);
+      });
+    }
+
+    // ===== CTA Logo Pattern Parallax =====
+    const ctaSection = document.querySelector('.cta-section');
+    const logoPattern = document.querySelector('.logo-pattern-inner') as HTMLElement;
+    
+    if (ctaSection && logoPattern) {
+      // Use scroll position directly for smoother, more visible parallax
+      const updatePatternParallax = () => {
+        const rect = ctaSection.getBoundingClientRect();
+        const viewportHeight = window.innerHeight;
+        
+        // Only apply effect when section is in view
+        if (rect.top < viewportHeight && rect.bottom > 0) {
+          // Calculate scroll position relative to section (creates continuous movement)
+          // This gives us a value that changes as we scroll through the section
+          const scrollOffset = window.scrollY;
+          
+          // Use modulo to create continuous movement effect
+          // Multiplier controls speed: higher = faster movement
+          const translateY = (scrollOffset * 0.15) % 200;
+          const translateX = (scrollOffset * 0.08) % 100;
+          
+          logoPattern.style.transform = `rotate(-12deg) translate(${-translateX}px, ${-translateY}px)`;
+        }
+      };
+
+      // Use requestAnimationFrame for smooth 60fps updates
+      let ticking = false;
+      window.addEventListener('scroll', () => {
+        if (!ticking) {
+          window.requestAnimationFrame(() => {
+            updatePatternParallax();
+            ticking = false;
+          });
+          ticking = true;
+        }
+      }, { passive: true });
+      
+      // Initial position
+      updatePatternParallax();
+    }
+  });
+</script>
