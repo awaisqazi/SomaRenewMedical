@@ -4,11 +4,9 @@ import heroImage from "../images/hero.png";
 ---
 
 <MainLayout title="Home">
-  <!-- Hero Section with Warm Charcoal Overlay -->
-  <section
-    class="hero-section relative min-h-[70vh] md:min-h-[80vh] flex items-center overflow-hidden"
-  >
-    <!-- Background Image with Overlay -->
+  <!-- Hero Section with Premium Glassmorphism -->
+  <section class="hero-section relative min-h-[90vh] md:min-h-screen flex items-center justify-center overflow-hidden">
+    <!-- Hero Background Image - Full Visibility -->
     <div class="absolute inset-0 z-0">
       <img
         src={heroImage.src}
@@ -16,107 +14,89 @@ import heroImage from "../images/hero.png";
         class="w-full h-full object-cover object-center md:object-top"
         loading="eager"
       />
-      <!-- Gradient Overlay for Text Readability -->
-      <div
-        class="absolute inset-0 bg-gradient-to-b from-[rgba(54,69,79,0.6)] via-[rgba(54,69,79,0.5)] to-[rgba(54,69,79,0.75)]"
-      >
-      </div>
-      <!-- Additional overlay for mobile to ensure readability -->
-      <div class="absolute inset-0 bg-[rgba(54,69,79,0.15)] md:bg-transparent">
-      </div>
+      <!-- Sophisticated Gradient Overlay -->
+      <div class="absolute inset-0 bg-gradient-to-b from-charcoal/40 via-charcoal/30 to-charcoal/50"></div>
+      <!-- Subtle warm tint overlay -->
+      <div class="absolute inset-0 bg-gradient-to-tr from-charcoal/20 via-transparent to-soma-gold/10"></div>
     </div>
+    
+    <!-- Floating Parallax Orbs (behind glass card) -->
+    <div class="parallax-orb orb-1 absolute w-[500px] h-[500px] rounded-full opacity-20 blur-[120px] pointer-events-none z-[1]"
+         style="background: radial-gradient(circle, var(--soma-gold) 0%, transparent 70%); top: 5%; right: 5%;"></div>
+    <div class="parallax-orb orb-2 absolute w-[350px] h-[350px] rounded-full opacity-15 blur-[100px] pointer-events-none z-[1]"
+         style="background: radial-gradient(circle, var(--sage-green) 0%, transparent 70%); bottom: 15%; left: 10%;"></div>
 
-    <div
-      class="container mx-auto px-4 md:px-6 text-center text-white relative z-10"
-    >
-      <!-- Frosted Glass Card for Text Readability -->
-      <div
-        class="hero-glass-card inline-block px-8 py-10 md:px-16 md:py-14 rounded-3xl max-w-4xl mx-auto"
-        style="
-          background: rgba(54, 69, 79, 0.75);
-          backdrop-filter: blur(20px);
-          -webkit-backdrop-filter: blur(20px);
-          border: 1px solid rgba(192, 178, 131, 0.2);
-          box-shadow: 
-            0 25px 50px -12px rgba(0, 0, 0, 0.4),
-            inset 0 1px 0 rgba(255, 255, 255, 0.1);
-        "
-      >
-        <p
-          class="text-[var(--soma-gold)] uppercase tracking-[0.2em] md:tracking-[0.3em] text-xs md:text-sm mb-4 font-semibold"
-        >
+    <!-- Hero Content with Premium Glass Card -->
+    <div class="relative z-10 container mx-auto px-4 md:px-6 text-center">
+      <!-- Premium Glassmorphism Card -->
+      <div class="hero-glass-card hero-animate hero-delay-1 inline-block px-8 py-10 md:px-16 md:py-14 lg:px-20 lg:py-16 rounded-[2rem] max-w-4xl mx-auto opacity-0">
+        
+        <!-- Overline -->
+        <p class="hero-animate hero-delay-2 text-soma-gold uppercase tracking-[0.2em] md:tracking-[0.3em] text-xs md:text-sm mb-5 font-semibold opacity-0">
           Welcome to SomaRenew Medical
         </p>
-        <h1
-          class="text-white text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 md:mb-6 leading-tight"
-        >
-          The Physician-Led Path<br class="hidden sm:block" /> to Transformation
+        
+        <!-- Main Headline - Editorial Typography -->
+        <h1 class="hero-animate hero-delay-3 text-white text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-serif font-bold mb-5 md:mb-6 leading-[1.15] opacity-0">
+          The Physician-Led Path<br class="hidden sm:block" />
+          <span class="text-soma-gold">to Transformation</span>
         </h1>
-        <p
-          class="text-sm md:text-base lg:text-lg max-w-2xl mx-auto mb-8 md:mb-10 text-gray-200 leading-relaxed"
-        >
+        
+        <!-- Subheadline -->
+        <p class="hero-animate hero-delay-4 text-sm md:text-base lg:text-lg max-w-2xl mx-auto mb-8 md:mb-10 text-gray-200/90 leading-relaxed opacity-0">
           Combining GLP-1 Medications, Peptide Therapy, and Advanced Body
           Contouring for personalized, lasting results in a serene, luxury
           environment.
         </p>
-        <div class="flex flex-col sm:flex-row gap-3 md:gap-4 justify-center">
+        
+        <!-- CTA Buttons -->
+        <div class="hero-animate hero-delay-5 flex flex-col sm:flex-row gap-3 md:gap-4 justify-center opacity-0">
           <a
-            class="btn-primary py-3 md:py-4 px-8 md:px-10 rounded-full text-base md:text-lg font-semibold transition-all duration-300 hover:scale-105 shadow-lg"
-            href="/consultation">Schedule My Consultation</a
+            class="inline-flex items-center justify-center gap-2 bg-soma-gold hover:bg-[#D4C89A] text-charcoal py-3.5 md:py-4 px-8 md:px-10 rounded-full text-base md:text-lg font-semibold transition-all duration-300 hover:scale-[1.02] shadow-lg hover:shadow-xl group"
+            href="/consultation"
           >
+            <span>Schedule My Consultation</span>
+            <svg class="w-4 h-4 md:w-5 md:h-5 transition-transform duration-300 group-hover:translate-x-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+            </svg>
+          </a>
           <a
-            class="py-3 md:py-4 px-8 md:px-10 rounded-full text-base md:text-lg font-semibold border-2 border-white/40 text-white transition-all duration-300 hover:bg-white/15 hover:border-white/70"
-            href="/services">View Our Services</a
+            class="inline-flex items-center justify-center py-3.5 md:py-4 px-8 md:px-10 rounded-full text-base md:text-lg font-semibold border-2 border-white/30 text-white transition-all duration-300 hover:bg-white/10 hover:border-white/50"
+            href="/services"
           >
+            View Our Services
+          </a>
         </div>
       </div>
     </div>
+
     <!-- Scroll Indicator -->
-    <div
-      class="absolute bottom-6 md:bottom-8 left-1/2 -translate-x-1/2 animate-bounce"
-    >
-      <svg
-        class="w-5 h-5 md:w-6 md:h-6 text-white/70"
-        fill="none"
-        stroke="currentColor"
-        viewBox="0 0 24 24"
-      >
-        <path
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          stroke-width="2"
-          d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
-      </svg>
+    <div class="absolute bottom-6 md:bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 hero-animate hero-delay-6 opacity-0">
+      <span class="text-[10px] md:text-xs uppercase tracking-[0.2em] text-white/50 font-medium">Discover</span>
+      <div class="scroll-indicator w-5 h-8 md:w-6 md:h-10 rounded-full border-2 border-white/30 flex justify-center pt-1.5 md:pt-2">
+        <div class="w-1 h-1 md:w-1.5 md:h-1.5 rounded-full bg-soma-gold animate-bounce"></div>
+      </div>
     </div>
   </section>
 
-  <!-- Welcome Section with Decorative Elements -->
+  <!-- Welcome/Philosophy Section -->
   <section
-    class="py-24 relative overflow-hidden"
+    class="py-24 md:py-32 relative overflow-hidden"
     style="background: linear-gradient(135deg, #FDFDFD 0%, #F8F6F0 100%);"
   >
     <!-- Decorative Background Elements -->
-    <div
-      class="absolute top-0 right-0 w-96 h-96 bg-[var(--soma-gold)]/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2"
-    >
-    </div>
-    <div
-      class="absolute bottom-0 left-0 w-64 h-64 bg-[var(--sage-green)]/5 rounded-full blur-3xl translate-y-1/2 -translate-x-1/2"
-    >
-    </div>
+    <div class="absolute top-0 right-0 w-96 h-96 bg-[var(--soma-gold)]/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2"></div>
+    <div class="absolute bottom-0 left-0 w-64 h-64 bg-[var(--sage-green)]/5 rounded-full blur-3xl translate-y-1/2 -translate-x-1/2"></div>
 
     <div class="container mx-auto px-6 text-center relative z-10">
-      <div class="inline-block mb-6">
-        <span
-          class="text-[var(--soma-gold)] uppercase tracking-[0.25em] text-sm font-semibold"
-          >Our Philosophy</span
-        >
-        <div class="h-px w-16 bg-[var(--soma-gold)] mx-auto mt-3"></div>
+      <div class="fade-in-up inline-block mb-6">
+        <span class="text-soma-gold uppercase tracking-[0.25em] text-sm font-semibold">Our Philosophy</span>
+        <div class="h-px w-16 bg-soma-gold mx-auto mt-3"></div>
       </div>
-      <h2 class="text-4xl md:text-5xl font-bold mb-8">
+      <h2 class="fade-in-up text-4xl md:text-5xl lg:text-6xl font-serif font-bold mb-8 text-charcoal">
         Where Personalized Medicine<br class="hidden md:block" /> Meets Modern Wellness
       </h2>
-      <p class="max-w-3xl mx-auto text-lg text-gray-600 leading-relaxed">
+      <p class="fade-in-up max-w-3xl mx-auto text-lg md:text-xl text-secondary-text leading-relaxed">
         Welcome to SomaRenew Medical, a sanctuary dedicated to helping you
         achieve your transformation goals safely and effectively. Our expert
         medical team combines FDA-approved medications, cutting-edge technology,
@@ -126,277 +106,144 @@ import heroImage from "../images/hero.png";
     </div>
   </section>
 
-  <!-- Premium Feature Grid -->
-  <section class="py-24 relative" style="background-color: #F5F3ED;">
+  <!-- Premium Feature Grid - Sanctuary Cards -->
+  <section class="py-24 md:py-32 relative" style="background-color: #F5F3ED;">
     <div class="container mx-auto px-6">
       <!-- Section Header -->
       <div class="text-center mb-16">
-        <span
-          class="text-[var(--soma-gold)] uppercase tracking-[0.25em] text-sm font-semibold"
-          >Our Approach</span
-        >
-        <div class="h-px w-16 bg-[var(--soma-gold)] mx-auto mt-3 mb-6"></div>
-        <h2 class="text-4xl md:text-5xl font-bold">
+        <span class="fade-in-up text-soma-gold uppercase tracking-[0.25em] text-sm font-semibold">Our Approach</span>
+        <div class="fade-in-up h-px w-16 bg-soma-gold mx-auto mt-3 mb-6"></div>
+        <h2 class="fade-in-up text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-charcoal">
           Your Transformation is Our Priority
         </h2>
       </div>
 
       <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
-        <!-- Card 1: Medical Weight Loss -->
+        <!-- Card 1: FDA-Approved Solutions -->
         <div
-          class="group relative bg-white rounded-3xl p-8 transition-all duration-500 hover:-translate-y-2"
-          style="box-shadow: 0 10px 40px rgba(54, 69, 79, 0.08);"
+          class="sanctuary-feature-card fade-in-up group relative bg-white rounded-3xl p-8 border border-[var(--soma-gold)]/20 transition-all duration-500 hover:-translate-y-1 hover:shadow-warm-lg"
         >
-          <!-- Top Accent Line -->
-          <div
-            class="absolute top-0 left-8 right-8 h-1 bg-gradient-to-r from-transparent via-[var(--soma-gold)] to-transparent rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500"
-          >
-          </div>
-
           <!-- Icon Container -->
           <div class="relative mb-8">
-            <div
-              class="w-20 h-20 rounded-2xl bg-gradient-to-br from-[var(--soma-gold)]/20 to-[var(--soma-gold)]/5 flex items-center justify-center group-hover:scale-110 transition-transform duration-500"
-            >
-              <svg
-                class="h-10 w-10 text-[var(--soma-gold)]"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="1.5"
-                  d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+            <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-soma-gold/20 to-soma-gold/5 flex items-center justify-center transition-all duration-500 group-hover:scale-110">
+              <svg class="h-8 w-8 text-soma-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 10V3L4 14h7v7l9-11h-7z"/>
               </svg>
-            </div>
-            <!-- Decorative Ring -->
-            <div
-              class="absolute -top-2 -left-2 w-24 h-24 border border-[var(--soma-gold)]/20 rounded-2xl rotate-6 group-hover:rotate-12 transition-transform duration-500"
-            >
             </div>
           </div>
 
-          <h3 class="text-xl font-bold mb-4 text-[var(--charcoal)]">
+          <h3 class="text-xl font-serif font-bold mb-4 text-charcoal">
             FDA-Approved Solutions
           </h3>
-          <p class="text-gray-600 leading-relaxed text-sm">
+          <p class="text-secondary-text leading-relaxed text-sm">
             We use only safe, regulated treatments backed by clinical science.
           </p>
 
           <!-- Bottom Link -->
           <a
             href="/services"
-            class="inline-flex items-center gap-2 mt-6 text-[var(--soma-gold)] font-semibold text-sm group-hover:gap-3 transition-all duration-300"
+            class="inline-flex items-center gap-2 mt-6 text-soma-gold font-semibold text-sm group-hover:gap-3 transition-all duration-300"
           >
             Learn More
-            <svg
-              class="w-4 h-4"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-              ><path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg
-            >
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+            </svg>
           </a>
         </div>
 
-        <!-- Card 2: Body Contouring -->
+        <!-- Card 2: Personalized for Your Body -->
         <div
-          class="group relative bg-white rounded-3xl p-8 transition-all duration-500 hover:-translate-y-2"
-          style="box-shadow: 0 10px 40px rgba(54, 69, 79, 0.08);"
+          class="sanctuary-feature-card fade-in-up group relative bg-white rounded-3xl p-8 border border-[var(--soma-gold)]/20 transition-all duration-500 hover:-translate-y-1 hover:shadow-warm-lg"
         >
-          <!-- Top Accent Line -->
-          <div
-            class="absolute top-0 left-8 right-8 h-1 bg-gradient-to-r from-transparent via-[var(--sage-green)] to-transparent rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500"
-          >
-          </div>
-
           <!-- Icon Container -->
           <div class="relative mb-8">
-            <div
-              class="w-20 h-20 rounded-2xl bg-gradient-to-br from-[var(--sage-green)]/20 to-[var(--sage-green)]/5 flex items-center justify-center group-hover:scale-110 transition-transform duration-500"
-            >
-              <svg
-                class="h-10 w-10 text-[var(--sage-green)]"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="1.5"
-                  d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"
-                ></path>
+            <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-sage-green/20 to-sage-green/5 flex items-center justify-center transition-all duration-500 group-hover:scale-110">
+              <svg class="h-8 w-8 text-sage-green" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
               </svg>
-            </div>
-            <!-- Decorative Ring -->
-            <div
-              class="absolute -top-2 -left-2 w-24 h-24 border border-[var(--sage-green)]/20 rounded-2xl rotate-6 group-hover:rotate-12 transition-transform duration-500"
-            >
             </div>
           </div>
 
-          <h3 class="text-xl font-bold mb-4 text-[var(--charcoal)]">
+          <h3 class="text-xl font-serif font-bold mb-4 text-charcoal">
             Personalized for Your Body
           </h3>
-          <p class="text-gray-600 leading-relaxed text-sm">
-            No cookie-cutter plans—just the right path for your unique goals and
-            health profile.
+          <p class="text-secondary-text leading-relaxed text-sm">
+            No cookie-cutter plans—just the right path for your unique goals and health profile.
           </p>
 
           <!-- Bottom Link -->
           <a
             href="/services"
-            class="inline-flex items-center gap-2 mt-6 text-[var(--sage-green)] font-semibold text-sm group-hover:gap-3 transition-all duration-300"
+            class="inline-flex items-center gap-2 mt-6 text-sage-green font-semibold text-sm group-hover:gap-3 transition-all duration-300"
           >
             Learn More
-            <svg
-              class="w-4 h-4"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-              ><path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg
-            >
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+            </svg>
           </a>
         </div>
 
-        <!-- Card 3: IV & Hormone Therapy -->
+        <!-- Card 3: High-Tech, High-Touch Care -->
         <div
-          class="group relative bg-white rounded-3xl p-8 transition-all duration-500 hover:-translate-y-2"
-          style="box-shadow: 0 10px 40px rgba(54, 69, 79, 0.08);"
+          class="sanctuary-feature-card fade-in-up group relative bg-white rounded-3xl p-8 border border-[var(--soma-gold)]/20 transition-all duration-500 hover:-translate-y-1 hover:shadow-warm-lg"
         >
-          <!-- Top Accent Line -->
-          <div
-            class="absolute top-0 left-8 right-8 h-1 bg-gradient-to-r from-transparent via-[var(--dusty-blue)] to-transparent rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500"
-          >
-          </div>
-
           <!-- Icon Container -->
           <div class="relative mb-8">
-            <div
-              class="w-20 h-20 rounded-2xl bg-gradient-to-br from-[var(--dusty-blue)]/20 to-[var(--dusty-blue)]/5 flex items-center justify-center group-hover:scale-110 transition-transform duration-500"
-            >
-              <svg
-                class="h-10 w-10 text-[var(--dusty-blue)]"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="1.5"
-                  d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"
-                ></path>
+            <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-dusty-blue/20 to-dusty-blue/5 flex items-center justify-center transition-all duration-500 group-hover:scale-110">
+              <svg class="h-8 w-8 text-dusty-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"/>
               </svg>
-            </div>
-            <!-- Decorative Ring -->
-            <div
-              class="absolute -top-2 -left-2 w-24 h-24 border border-[var(--dusty-blue)]/20 rounded-2xl rotate-6 group-hover:rotate-12 transition-transform duration-500"
-            >
             </div>
           </div>
 
-          <h3 class="text-xl font-bold mb-4 text-[var(--charcoal)]">
+          <h3 class="text-xl font-serif font-bold mb-4 text-charcoal">
             High-Tech, High-Touch Care
           </h3>
-          <p class="text-gray-600 leading-relaxed text-sm">
-            We combine modern diagnostics with compassionate, one-on-one
-            attention.
+          <p class="text-secondary-text leading-relaxed text-sm">
+            We combine modern diagnostics with compassionate, one-on-one attention.
           </p>
 
           <!-- Bottom Link -->
           <a
             href="/services"
-            class="inline-flex items-center gap-2 mt-6 text-[var(--dusty-blue)] font-semibold text-sm group-hover:gap-3 transition-all duration-300"
+            class="inline-flex items-center gap-2 mt-6 text-dusty-blue font-semibold text-sm group-hover:gap-3 transition-all duration-300"
           >
             Learn More
-            <svg
-              class="w-4 h-4"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-              ><path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg
-            >
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+            </svg>
           </a>
         </div>
 
-        <!-- Card 4: Sustainable Results -->
+        <!-- Card 4: Real, Sustainable Results -->
         <div
-          class="group relative bg-white rounded-3xl p-8 transition-all duration-500 hover:-translate-y-2"
-          style="box-shadow: 0 10px 40px rgba(54, 69, 79, 0.08);"
+          class="sanctuary-feature-card fade-in-up group relative bg-white rounded-3xl p-8 border border-[var(--soma-gold)]/20 transition-all duration-500 hover:-translate-y-1 hover:shadow-warm-lg"
         >
-          <!-- Top Accent Line -->
-          <div
-            class="absolute top-0 left-8 right-8 h-1 bg-gradient-to-r from-transparent via-[var(--soma-gold)] to-transparent rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500"
-          >
-          </div>
-
           <!-- Icon Container -->
           <div class="relative mb-8">
-            <div
-              class="w-20 h-20 rounded-2xl bg-gradient-to-br from-[var(--soma-gold)]/20 to-[var(--soma-gold)]/5 flex items-center justify-center group-hover:scale-110 transition-transform duration-500"
-            >
-              <svg
-                class="h-10 w-10 text-[var(--soma-gold)]"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="1.5"
-                  d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"
-                ></path>
+            <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-soma-gold/20 to-soma-gold/5 flex items-center justify-center transition-all duration-500 group-hover:scale-110">
+              <svg class="h-8 w-8 text-soma-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"/>
               </svg>
-            </div>
-            <!-- Decorative Ring -->
-            <div
-              class="absolute -top-2 -left-2 w-24 h-24 border border-[var(--soma-gold)]/20 rounded-2xl rotate-6 group-hover:rotate-12 transition-transform duration-500"
-            >
             </div>
           </div>
 
-          <h3 class="text-xl font-bold mb-4 text-[var(--charcoal)]">
+          <h3 class="text-xl font-serif font-bold mb-4 text-charcoal">
             Real, Sustainable Results
           </h3>
-          <p class="text-gray-600 leading-relaxed text-sm">
-            We're not just about losing weight. We're about helping you live
-            better—long-term.
+          <p class="text-secondary-text leading-relaxed text-sm">
+            We're not just about losing weight. We're about helping you live better—long-term.
           </p>
 
           <!-- Bottom Link -->
           <a
             href="/consultation"
-            class="inline-flex items-center gap-2 mt-6 text-[var(--soma-gold)] font-semibold text-sm group-hover:gap-3 transition-all duration-300"
+            class="inline-flex items-center gap-2 mt-6 text-soma-gold font-semibold text-sm group-hover:gap-3 transition-all duration-300"
           >
             Get Started
-            <svg
-              class="w-4 h-4"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-              ><path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg
-            >
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+            </svg>
           </a>
         </div>
       </div>
@@ -405,28 +252,19 @@ import heroImage from "../images/hero.png";
 
   <!-- FAQ Section -->
   <section
-    class="py-24 relative overflow-hidden"
+    class="py-24 md:py-32 relative overflow-hidden"
     style="background: linear-gradient(135deg, #FDFDFD 0%, #F8F6F0 100%);"
   >
     <!-- Decorative Elements -->
-    <div
-      class="absolute top-0 left-0 w-64 h-64 bg-[var(--soma-gold)]/5 rounded-full blur-3xl -translate-y-1/2 -translate-x-1/2"
-    >
-    </div>
-    <div
-      class="absolute bottom-0 right-0 w-96 h-96 bg-[var(--sage-green)]/5 rounded-full blur-3xl translate-y-1/2 translate-x-1/2"
-    >
-    </div>
+    <div class="absolute top-0 left-0 w-64 h-64 bg-[var(--soma-gold)]/5 rounded-full blur-3xl -translate-y-1/2 -translate-x-1/2"></div>
+    <div class="absolute bottom-0 right-0 w-96 h-96 bg-[var(--sage-green)]/5 rounded-full blur-3xl translate-y-1/2 translate-x-1/2"></div>
 
     <div class="container mx-auto px-6 relative z-10">
       <!-- Section Header -->
       <div class="text-center mb-16">
-        <span
-          class="text-[var(--soma-gold)] uppercase tracking-[0.25em] text-sm font-semibold"
-          >Have Questions?</span
-        >
-        <div class="h-px w-16 bg-[var(--soma-gold)] mx-auto mt-3 mb-6"></div>
-        <h2 class="text-4xl md:text-5xl font-bold text-[var(--charcoal)]">
+        <span class="fade-in-up text-soma-gold uppercase tracking-[0.25em] text-sm font-semibold">Have Questions?</span>
+        <div class="fade-in-up h-px w-16 bg-soma-gold mx-auto mt-3 mb-6"></div>
+        <h2 class="fade-in-up text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-charcoal">
           Frequently Asked Questions
         </h2>
       </div>
@@ -434,98 +272,46 @@ import heroImage from "../images/hero.png";
       <!-- FAQ Accordion -->
       <div class="max-w-3xl mx-auto space-y-4">
         <!-- FAQ Item 1 -->
-        <div
-          class="bg-white rounded-2xl overflow-hidden"
-          style="box-shadow: 0 10px 40px rgba(54, 69, 79, 0.08);"
-        >
+        <div class="fade-in-up bg-white rounded-3xl overflow-hidden border border-[var(--soma-gold)]/20 shadow-warm">
           <details class="group">
-            <summary
-              class="flex items-center justify-between gap-4 p-6 cursor-pointer list-none font-semibold text-[var(--charcoal)] text-lg hover:text-[var(--soma-gold)] transition-colors"
-            >
+            <summary class="flex items-center justify-between gap-4 p-6 cursor-pointer list-none font-serif font-semibold text-charcoal text-lg hover:text-soma-gold transition-colors">
               <span>Are your treatments safe?</span>
-              <svg
-                class="w-5 h-5 text-[var(--soma-gold)] flex-shrink-0 transition-transform duration-300 group-open:rotate-180"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M19 9l-7 7-7-7"></path>
+              <svg class="w-5 h-5 text-soma-gold flex-shrink-0 transition-transform duration-300 group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
               </svg>
             </summary>
-            <div class="px-6 pb-6 text-gray-600 leading-relaxed">
-              Yes. We only use <strong class="text-[var(--charcoal)]"
-                >FDA-approved medications</strong
-              > and <strong class="text-[var(--charcoal)]"
-                >medical-grade equipment</strong
-              >, all overseen by licensed healthcare professionals.
+            <div class="px-6 pb-6 text-secondary-text leading-relaxed">
+              Yes. We only use <strong class="text-charcoal">FDA-approved medications</strong> and <strong class="text-charcoal">medical-grade equipment</strong>, all overseen by licensed healthcare professionals.
             </div>
           </details>
         </div>
 
         <!-- FAQ Item 2 -->
-        <div
-          class="bg-white rounded-2xl overflow-hidden"
-          style="box-shadow: 0 10px 40px rgba(54, 69, 79, 0.08);"
-        >
+        <div class="fade-in-up bg-white rounded-3xl overflow-hidden border border-[var(--soma-gold)]/20 shadow-warm">
           <details class="group">
-            <summary
-              class="flex items-center justify-between gap-4 p-6 cursor-pointer list-none font-semibold text-[var(--charcoal)] text-lg hover:text-[var(--soma-gold)] transition-colors"
-            >
+            <summary class="flex items-center justify-between gap-4 p-6 cursor-pointer list-none font-serif font-semibold text-charcoal text-lg hover:text-soma-gold transition-colors">
               <span>Do I need a referral or prior diagnosis?</span>
-              <svg
-                class="w-5 h-5 text-[var(--soma-gold)] flex-shrink-0 transition-transform duration-300 group-open:rotate-180"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M19 9l-7 7-7-7"></path>
+              <svg class="w-5 h-5 text-soma-gold flex-shrink-0 transition-transform duration-300 group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
               </svg>
             </summary>
-            <div class="px-6 pb-6 text-gray-600 leading-relaxed">
-              No referral is needed. We will perform a <strong
-                class="text-[var(--charcoal)]"
-                >thorough health assessment</strong
-              > to design a plan just for you.
+            <div class="px-6 pb-6 text-secondary-text leading-relaxed">
+              No referral is needed. We will perform a <strong class="text-charcoal">thorough health assessment</strong> to design a plan just for you.
             </div>
           </details>
         </div>
 
         <!-- FAQ Item 3 -->
-        <div
-          class="bg-white rounded-2xl overflow-hidden"
-          style="box-shadow: 0 10px 40px rgba(54, 69, 79, 0.08);"
-        >
+        <div class="fade-in-up bg-white rounded-3xl overflow-hidden border border-[var(--soma-gold)]/20 shadow-warm">
           <details class="group">
-            <summary
-              class="flex items-center justify-between gap-4 p-6 cursor-pointer list-none font-semibold text-[var(--charcoal)] text-lg hover:text-[var(--soma-gold)] transition-colors"
-            >
+            <summary class="flex items-center justify-between gap-4 p-6 cursor-pointer list-none font-serif font-semibold text-charcoal text-lg hover:text-soma-gold transition-colors">
               <span>How soon will I see results?</span>
-              <svg
-                class="w-5 h-5 text-[var(--soma-gold)] flex-shrink-0 transition-transform duration-300 group-open:rotate-180"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M19 9l-7 7-7-7"></path>
+              <svg class="w-5 h-5 text-soma-gold flex-shrink-0 transition-transform duration-300 group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
               </svg>
             </summary>
-            <div class="px-6 pb-6 text-gray-600 leading-relaxed">
-              While every journey is unique, most clients begin to see <strong
-                class="text-[var(--charcoal)]"
-                >measurable changes in the first few weeks</strong
-              > with consistent support.
+            <div class="px-6 pb-6 text-secondary-text leading-relaxed">
+              While every journey is unique, most clients begin to see <strong class="text-charcoal">measurable changes in the first few weeks</strong> with consistent support.
             </div>
           </details>
         </div>
@@ -533,54 +319,357 @@ import heroImage from "../images/hero.png";
     </div>
   </section>
 
-  <!-- Premium CTA Section -->
-  <section
-    class="relative py-24 overflow-hidden"
-    style="background: linear-gradient(135deg, #36454F 0%, #2A363E 100%);"
-  >
+  <!-- Premium CTA Section - Patterned Logo Background -->
+  <section class="cta-section relative py-32 md:py-40 overflow-hidden">
+    <!-- Background -->
+    <div class="absolute inset-0 bg-gradient-to-br from-charcoal via-[#2A363E] to-[#1E2A32]"></div>
+    
     <!-- Decorative Elements -->
-    <div
-      class="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-[var(--soma-gold)]/30 to-transparent"
-    >
-    </div>
-    <div
-      class="absolute bottom-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-[var(--soma-gold)]/30 to-transparent"
-    >
-    </div>
-    <div
-      class="absolute top-1/2 right-0 w-96 h-96 bg-[var(--soma-gold)]/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2"
-    >
+    <div class="absolute inset-0 overflow-hidden pointer-events-none">
+      <!-- Top Gold Line -->
+      <div class="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-soma-gold/40 to-transparent"></div>
+      <!-- Bottom Gold Line -->
+      <div class="absolute bottom-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-soma-gold/40 to-transparent"></div>
+      
+      <!-- Repeating Logo Pattern Background -->
+      <div class="cta-logo-pattern absolute inset-0 overflow-hidden" aria-hidden="true">
+        <div class="logo-pattern-inner absolute -inset-[50%] w-[200%] h-[200%]" style="
+          background-image: url('/logo.png');
+          background-size: 280px auto;
+          background-repeat: repeat;
+          opacity: 0.025;
+          filter: brightness(0) invert(1);
+          transform: rotate(-12deg);
+        "></div>
+      </div>
+      
+      <!-- Floating Orb -->
+      <div class="absolute w-[500px] h-[500px] rounded-full blur-[150px] opacity-20 -top-48 -right-48"
+           style="background: radial-gradient(circle, var(--soma-gold) 0%, transparent 70%);"></div>
     </div>
 
-    <div class="container mx-auto px-6 text-center relative z-10">
-      <span
-        class="inline-block text-[var(--soma-gold)] uppercase tracking-[0.25em] text-sm font-semibold mb-4"
-        >Begin Today</span
-      >
-      <h2 class="text-3xl md:text-5xl font-bold text-white mb-6">
-        Ready to Begin Your Transformation?
-      </h2>
-      <p class="text-lg text-gray-400 max-w-2xl mx-auto mb-10 leading-relaxed">
-        Schedule your complimentary consultation today and discover your
-        personalized path to lasting results with our expert medical team.
-      </p>
-      <a
-        class="inline-flex items-center gap-3 rounded-full bg-[var(--soma-gold)] px-10 py-4 text-lg font-semibold text-[var(--charcoal)] transition-all duration-300 hover:bg-[#D4C89A] hover:scale-105 shadow-lg hover:shadow-xl"
-        href="/consultation"
-      >
-        Book My Free Consultation
-        <svg
-          class="w-5 h-5"
-          fill="none"
-          stroke="currentColor"
-          viewBox="0 0 24 24"
-          ><path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="2"
-            d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg
+    <!-- Content -->
+    <div class="relative z-10 container mx-auto px-6 text-center">
+      <div class="cta-content max-w-3xl mx-auto">
+        <!-- Overline -->
+        <span class="cta-animate inline-block text-soma-gold uppercase tracking-[0.3em] text-sm font-semibold mb-6 opacity-0">
+          Begin Today
+        </span>
+        
+        <!-- Headline -->
+        <h2 class="cta-animate text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-white mb-8 leading-tight opacity-0">
+          Ready to Begin Your
+          <span class="block text-soma-gold">Transformation?</span>
+        </h2>
+        
+        <!-- Body -->
+        <p class="cta-animate text-lg sm:text-xl text-white/60 max-w-xl mx-auto leading-relaxed mb-12 opacity-0">
+          Schedule your complimentary consultation today and discover your
+          personalized path to lasting results with our expert medical team.
+        </p>
+        
+        <!-- CTA Button -->
+        <a
+          href="/consultation"
+          class="cta-animate inline-flex items-center gap-4 bg-soma-gold hover:bg-[#D4C89A] text-charcoal rounded-full px-12 py-6 text-lg font-semibold transition-all duration-300 hover:scale-105 shadow-gold-glow opacity-0 group"
         >
-      </a>
+          <span>Book My Free Consultation</span>
+          <svg class="w-6 h-6 transition-transform duration-300 group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+          </svg>
+        </a>
+        
+        <!-- Trust Indicators -->
+        <div class="cta-animate mt-16 flex flex-wrap justify-center gap-8 text-white/40 text-sm opacity-0">
+          <div class="flex items-center gap-2">
+            <svg class="w-5 h-5 text-soma-gold" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+            </svg>
+            <span>Physician-Guided</span>
+          </div>
+          <div class="flex items-center gap-2">
+            <svg class="w-5 h-5 text-soma-gold" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+            </svg>
+            <span>Personalized Care</span>
+          </div>
+          <div class="flex items-center gap-2">
+            <svg class="w-5 h-5 text-soma-gold" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+            </svg>
+            <span>Lasting Results</span>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 </MainLayout>
+
+<style>
+  /* Hero Animations */
+  .hero-animate {
+    transform: translateY(30px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+  }
+  
+  .hero-animate.in-view {
+    opacity: 1 !important;
+    transform: translateY(0);
+  }
+  
+  .hero-delay-1 { transition-delay: 0.1s; }
+  .hero-delay-2 { transition-delay: 0.2s; }
+  .hero-delay-3 { transition-delay: 0.3s; }
+  .hero-delay-4 { transition-delay: 0.5s; }
+  .hero-delay-5 { transition-delay: 0.7s; }
+  .hero-delay-6 { transition-delay: 0.9s; }
+
+  /* Premium Glassmorphism Card */
+  .hero-glass-card {
+    background: linear-gradient(
+      135deg,
+      rgba(54, 69, 79, 0.85) 0%,
+      rgba(54, 69, 79, 0.75) 50%,
+      rgba(42, 54, 62, 0.80) 100%
+    );
+    backdrop-filter: blur(24px) saturate(1.2);
+    -webkit-backdrop-filter: blur(24px) saturate(1.2);
+    border: 1px solid rgba(192, 178, 131, 0.25);
+    box-shadow: 
+      0 32px 64px -12px rgba(0, 0, 0, 0.35),
+      0 16px 32px -8px rgba(0, 0, 0, 0.25),
+      inset 0 1px 0 rgba(255, 255, 255, 0.08),
+      inset 0 -1px 0 rgba(0, 0, 0, 0.1),
+      0 0 0 1px rgba(192, 178, 131, 0.1);
+    position: relative;
+    overflow: hidden;
+  }
+
+  /* Subtle inner glow effect */
+  .hero-glass-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(
+      90deg,
+      transparent 0%,
+      rgba(192, 178, 131, 0.4) 20%,
+      rgba(255, 255, 255, 0.15) 50%,
+      rgba(192, 178, 131, 0.4) 80%,
+      transparent 100%
+    );
+  }
+
+  /* Ambient glow behind card */
+  .hero-glass-card::after {
+    content: '';
+    position: absolute;
+    inset: -2px;
+    background: linear-gradient(
+      135deg,
+      rgba(192, 178, 131, 0.15) 0%,
+      transparent 40%,
+      transparent 60%,
+      rgba(192, 178, 131, 0.1) 100%
+    );
+    border-radius: inherit;
+    z-index: -1;
+    filter: blur(20px);
+    opacity: 0.6;
+  }
+
+  /* Parallax Orbs - Mouse Movement */
+  .parallax-orb {
+    transition: transform 0.3s ease-out;
+    will-change: transform;
+  }
+
+  /* Fade In Up Animation for scroll-triggered elements */
+  .fade-in-up {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+  }
+  
+  .fade-in-up.in-view {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* Stagger delays for cards */
+  .sanctuary-feature-card:nth-child(1) { transition-delay: 0.1s; }
+  .sanctuary-feature-card:nth-child(2) { transition-delay: 0.2s; }
+  .sanctuary-feature-card:nth-child(3) { transition-delay: 0.3s; }
+  .sanctuary-feature-card:nth-child(4) { transition-delay: 0.4s; }
+
+  /* CTA Animations */
+  .cta-animate {
+    transform: translateY(30px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+  }
+  
+  .cta-animate.in-view {
+    opacity: 1 !important;
+    transform: translateY(0);
+  }
+  
+  .cta-animate:nth-child(1) { transition-delay: 0.1s; }
+  .cta-animate:nth-child(2) { transition-delay: 0.2s; }
+  .cta-animate:nth-child(3) { transition-delay: 0.3s; }
+  .cta-animate:nth-child(4) { transition-delay: 0.4s; }
+  .cta-animate:nth-child(5) { transition-delay: 0.5s; }
+
+  /* Scroll Indicator Animation */
+  .scroll-indicator .animate-bounce {
+    animation: scrollBounce 2s ease-in-out infinite;
+  }
+  
+  @keyframes scrollBounce {
+    0%, 100% { transform: translateY(0); opacity: 1; }
+    50% { transform: translateY(12px); opacity: 0.5; }
+  }
+
+  /* CTA Logo Pattern */
+  .cta-logo-pattern {
+    pointer-events: none;
+  }
+  
+  .logo-pattern-inner {
+    will-change: transform;
+  }
+
+  /* Responsive pattern sizing */
+  @media (max-width: 768px) {
+    .logo-pattern-inner {
+      background-size: 180px auto !important;
+    }
+  }
+  
+  @media (min-width: 769px) and (max-width: 1024px) {
+    .logo-pattern-inner {
+      background-size: 220px auto !important;
+    }
+  }
+</style>
+
+<script>
+  // Wait for DOM to be ready
+  document.addEventListener('DOMContentLoaded', () => {
+    // ===== Hero Section Animations =====
+    const heroAnimateElements = document.querySelectorAll('.hero-animate');
+    
+    // Trigger hero animations after a short delay
+    setTimeout(() => {
+      heroAnimateElements.forEach(el => {
+        el.classList.add('in-view');
+      });
+    }, 100);
+
+    // ===== Parallax Effect for Background Orbs =====
+    const heroSection = document.querySelector('.hero-section');
+    const orbs = document.querySelectorAll('.parallax-orb');
+    
+    if (heroSection && orbs.length > 0) {
+      heroSection.addEventListener('mousemove', (e) => {
+        const rect = heroSection.getBoundingClientRect();
+        const x = (e.clientX - rect.left) / rect.width - 0.5;
+        const y = (e.clientY - rect.top) / rect.height - 0.5;
+        
+        orbs.forEach((orb, index) => {
+          const speed = (index + 1) * 20;
+          const orbElement = orb as HTMLElement;
+          orbElement.style.transform = `translate(${x * speed}px, ${y * speed}px)`;
+        });
+      });
+    }
+
+    // ===== Fade In Up Animation for scroll-triggered elements =====
+    const fadeInUpElements = document.querySelectorAll('.fade-in-up');
+    
+    if (fadeInUpElements.length > 0) {
+      const fadeObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('in-view');
+          }
+        });
+      }, {
+        threshold: 0.1,
+        rootMargin: '0px 0px -10% 0px'
+      });
+
+      fadeInUpElements.forEach(el => {
+        fadeObserver.observe(el);
+      });
+    }
+
+    // ===== CTA Section Animations =====
+    const ctaElements = document.querySelectorAll('.cta-animate');
+    
+    if (ctaElements.length > 0) {
+      const ctaObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            // Stagger the animations
+            const element = entry.target as HTMLElement;
+            const siblings = Array.from(ctaElements);
+            const index = siblings.indexOf(element);
+            
+            setTimeout(() => {
+              element.classList.add('in-view');
+            }, index * 100);
+          }
+        });
+      }, {
+        threshold: 0.2,
+        rootMargin: '0px 0px -10% 0px'
+      });
+
+      ctaElements.forEach(el => {
+        ctaObserver.observe(el);
+      });
+    }
+
+    // ===== CTA Logo Pattern Parallax =====
+    const ctaSection = document.querySelector('.cta-section');
+    const logoPattern = document.querySelector('.logo-pattern-inner') as HTMLElement;
+    
+    if (ctaSection && logoPattern) {
+      // Use scroll position directly for smoother, more visible parallax
+      const updatePatternParallax = () => {
+        const rect = ctaSection.getBoundingClientRect();
+        const viewportHeight = window.innerHeight;
+        
+        // Only apply effect when section is in view
+        if (rect.top < viewportHeight && rect.bottom > 0) {
+          // Calculate scroll position relative to section (creates continuous movement)
+          const scrollOffset = window.scrollY;
+          
+          // Use modulo to create continuous movement effect
+          const translateY = (scrollOffset * 0.15) % 200;
+          const translateX = (scrollOffset * 0.08) % 100;
+          
+          logoPattern.style.transform = `rotate(-12deg) translate(${-translateX}px, ${-translateY}px)`;
+        }
+      };
+
+      // Use requestAnimationFrame for smooth 60fps updates
+      let ticking = false;
+      window.addEventListener('scroll', () => {
+        if (!ticking) {
+          window.requestAnimationFrame(() => {
+            updatePatternParallax();
+            ticking = false;
+          });
+          ticking = true;
+        }
+      }, { passive: true });
+      
+      // Initial position
+      updatePatternParallax();
+    }
+  });
+</script>
