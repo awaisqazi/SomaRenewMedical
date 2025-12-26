@@ -4,36 +4,49 @@ const currentYear = new Date().getFullYear();
 ---
 
 <footer
-  class="relative"
+  class="footer-sanctuary relative overflow-hidden"
   style="background: linear-gradient(135deg, #36454F 0%, #2A363E 100%);"
 >
-  <!-- Top Gold Border -->
-  <div
-    class="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-[var(--soma-gold)]/40 to-transparent"
-  >
+  <!-- Enhanced Top Border with Glow -->
+  <div class="absolute top-0 left-0 w-full">
+    <div class="h-px bg-gradient-to-r from-transparent via-[var(--soma-gold)]/50 to-transparent"></div>
+    <div class="h-8 bg-gradient-to-b from-[var(--soma-gold)]/10 to-transparent"></div>
   </div>
 
-  <div class="container mx-auto px-6 py-16">
-    <div class="grid grid-cols-1 md:grid-cols-4 gap-12 lg:gap-16">
+  <!-- Repeating Logo Pattern Background -->
+  <div class="footer-logo-pattern absolute inset-0 overflow-hidden pointer-events-none" aria-hidden="true">
+    <div class="logo-pattern-inner absolute -inset-[50%] w-[200%] h-[200%]" style="
+      background-image: url('/logo.png');
+      background-size: 240px auto;
+      background-repeat: repeat;
+      opacity: 0.03;
+      filter: brightness(0) invert(1);
+      transform: rotate(-12deg);
+    "></div>
+  </div>
+
+  <div class="relative z-10 container mx-auto px-6 py-16 md:py-20">
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-10 md:gap-12 lg:gap-16">
       <!-- Brand Column -->
-      <div class="md:col-span-2">
+      <div class="md:col-span-2 text-center md:text-left">
         <a href="/" class="inline-block mb-6">
           <img
             src="/logo.png"
             alt="SomaRenew Medical Logo"
-            class="h-14 w-auto"
+            class="h-14 w-auto mx-auto md:mx-0"
           />
         </a>
-        <p class="text-gray-400 leading-relaxed max-w-md mb-6">
+        <p class="text-gray-400 leading-relaxed max-w-md mb-8 mx-auto md:mx-0">
           Your serene sanctuary for personalized, physician-guided wellness and
           transformation. Experience compassionate care in a warm, inviting
           environment.
         </p>
-        <!-- Social Links -->
-        <div class="flex gap-4">
+        <!-- Social Links - Gold Circles -->
+        <div class="flex gap-4 justify-center md:justify-start">
           <a
             href="#"
-            class="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center text-gray-400 hover:bg-[var(--soma-gold)] hover:text-[var(--charcoal)] transition-all duration-300"
+            class="social-icon w-11 h-11 rounded-full border border-[var(--soma-gold)]/30 flex items-center justify-center text-[var(--soma-gold)] hover:bg-[var(--soma-gold)] hover:text-[var(--charcoal)] hover:border-[var(--soma-gold)] transition-all duration-300"
+            aria-label="Follow us on Facebook"
           >
             <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"
               ><path
@@ -43,7 +56,8 @@ const currentYear = new Date().getFullYear();
           </a>
           <a
             href="#"
-            class="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center text-gray-400 hover:bg-[var(--soma-gold)] hover:text-[var(--charcoal)] transition-all duration-300"
+            class="social-icon w-11 h-11 rounded-full border border-[var(--soma-gold)]/30 flex items-center justify-center text-[var(--soma-gold)] hover:bg-[var(--soma-gold)] hover:text-[var(--charcoal)] hover:border-[var(--soma-gold)] transition-all duration-300"
+            aria-label="Follow us on Instagram"
           >
             <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"
               ><path
@@ -55,46 +69,44 @@ const currentYear = new Date().getFullYear();
       </div>
 
       <!-- Quick Links -->
-      <div>
-        <h4 class="text-lg font-bold text-white mb-6">Quick Links</h4>
-        <ul class="space-y-3">
+      <div class="text-center md:text-left">
+        <h4 class="font-serif text-xl md:text-2xl font-semibold text-white mb-6 tracking-wide">
+          Quick Links
+        </h4>
+        <ul class="space-y-4">
           <li>
             <a
-              class="text-gray-400 hover:text-[var(--soma-gold)] transition-colors inline-flex items-center gap-2"
+              class="text-gray-400 hover:text-[var(--soma-gold)] transition-colors duration-300 inline-flex items-center gap-3 leading-relaxed"
               href="/aboutus"
             >
-              <span class="w-1.5 h-1.5 rounded-full bg-[var(--soma-gold)]/50"
-              ></span>
+              <span class="w-1.5 h-1.5 rounded-full bg-[var(--soma-gold)]/50 flex-shrink-0"></span>
               About Us
             </a>
           </li>
           <li>
             <a
-              class="text-gray-400 hover:text-[var(--soma-gold)] transition-colors inline-flex items-center gap-2"
+              class="text-gray-400 hover:text-[var(--soma-gold)] transition-colors duration-300 inline-flex items-center gap-3 leading-relaxed"
               href="/services"
             >
-              <span class="w-1.5 h-1.5 rounded-full bg-[var(--soma-gold)]/50"
-              ></span>
+              <span class="w-1.5 h-1.5 rounded-full bg-[var(--soma-gold)]/50 flex-shrink-0"></span>
               Services
             </a>
           </li>
           <li>
             <a
-              class="text-gray-400 hover:text-[var(--soma-gold)] transition-colors inline-flex items-center gap-2"
+              class="text-gray-400 hover:text-[var(--soma-gold)] transition-colors duration-300 inline-flex items-center gap-3 leading-relaxed"
               href="/patientjourney"
             >
-              <span class="w-1.5 h-1.5 rounded-full bg-[var(--soma-gold)]/50"
-              ></span>
+              <span class="w-1.5 h-1.5 rounded-full bg-[var(--soma-gold)]/50 flex-shrink-0"></span>
               The Patient Journey
             </a>
           </li>
           <li>
             <a
-              class="text-gray-400 hover:text-[var(--soma-gold)] transition-colors inline-flex items-center gap-2"
+              class="text-gray-400 hover:text-[var(--soma-gold)] transition-colors duration-300 inline-flex items-center gap-3 leading-relaxed"
               href="/contact"
             >
-              <span class="w-1.5 h-1.5 rounded-full bg-[var(--soma-gold)]/50"
-              ></span>
+              <span class="w-1.5 h-1.5 rounded-full bg-[var(--soma-gold)]/50 flex-shrink-0"></span>
               Contact Us
             </a>
           </li>
@@ -102,69 +114,82 @@ const currentYear = new Date().getFullYear();
       </div>
 
       <!-- Contact Info -->
-      <div>
-        <h4 class="text-lg font-bold text-white mb-6">Contact</h4>
-        <div class="space-y-4">
-          <div class="flex items-start gap-3">
-            <svg
-              class="w-5 h-5 text-[var(--soma-gold)] mt-0.5 flex-shrink-0"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="1.5"
-                d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
-              ></path>
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="1.5"
-                d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
-            </svg>
-            <p class="text-gray-400">
+      <div class="text-center md:text-left">
+        <h4 class="font-serif text-xl md:text-2xl font-semibold text-white mb-6 tracking-wide">
+          Contact
+        </h4>
+        <div class="space-y-5">
+          <a 
+            href="https://maps.google.com/?q=1867+Bay+Scott+Cir,+Naperville,+IL+60540"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="flex items-start gap-4 justify-center md:justify-start group"
+          >
+            <div class="w-10 h-10 rounded-full border border-[var(--soma-gold)]/20 flex items-center justify-center flex-shrink-0 group-hover:border-[var(--soma-gold)]/50 transition-colors duration-300">
+              <svg
+                class="w-5 h-5 text-[var(--soma-gold)]"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="1.5"
+                  d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
+                ></path>
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="1.5"
+                  d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+              </svg>
+            </div>
+            <span class="text-gray-400 leading-relaxed text-left group-hover:text-[var(--soma-gold)] transition-colors duration-300">
               1867 Bay Scott Cir<br />Naperville, IL 60540
-            </p>
-          </div>
-          <div class="flex items-center gap-3">
-            <svg
-              class="w-5 h-5 text-[var(--soma-gold)] flex-shrink-0"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="1.5"
-                d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
-              ></path>
-            </svg>
+            </span>
+          </a>
+          <div class="flex items-center gap-4 justify-center md:justify-start">
+            <div class="w-10 h-10 rounded-full border border-[var(--soma-gold)]/20 flex items-center justify-center flex-shrink-0">
+              <svg
+                class="w-5 h-5 text-[var(--soma-gold)]"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="1.5"
+                  d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+                ></path>
+              </svg>
+            </div>
             <a
               href="mailto:contact@somarenew.com"
-              class="text-gray-400 hover:text-[var(--soma-gold)] transition-colors"
+              class="text-gray-400 hover:text-[var(--soma-gold)] transition-colors duration-300 leading-relaxed"
               >contact@somarenew.com</a
             >
           </div>
-          <div class="flex items-center gap-3">
-            <svg
-              class="w-5 h-5 text-[var(--soma-gold)] flex-shrink-0"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="1.5"
-                d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
-              ></path>
-            </svg>
+          <div class="flex items-center gap-4 justify-center md:justify-start">
+            <div class="w-10 h-10 rounded-full border border-[var(--soma-gold)]/20 flex items-center justify-center flex-shrink-0">
+              <svg
+                class="w-5 h-5 text-[var(--soma-gold)]"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="1.5"
+                  d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
+                ></path>
+              </svg>
+            </div>
             <a
               href="tel:+13105550123"
-              class="text-gray-400 hover:text-[var(--soma-gold)] transition-colors"
+              class="text-gray-400 hover:text-[var(--soma-gold)] transition-colors duration-300 leading-relaxed"
               >(310) 555-0123</a
             >
           </div>
@@ -174,23 +199,52 @@ const currentYear = new Date().getFullYear();
 
     <!-- Bottom Bar -->
     <div
-      class="mt-12 pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4"
+      class="mt-14 pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4"
     >
-      <p class="text-gray-500 text-sm">
+      <p class="text-gray-500 text-sm text-center md:text-left order-2 md:order-1">
         © {currentYear} SomaRenew Medical. All Rights Reserved.
       </p>
-      <div class="flex gap-6 text-sm">
+      <div class="flex gap-6 text-sm order-1 md:order-2">
         <a
           href="#"
-          class="text-gray-500 hover:text-[var(--soma-gold)] transition-colors"
+          class="text-gray-500 hover:text-[var(--soma-gold)] transition-colors duration-300"
           >Privacy Policy</a
         >
         <a
           href="#"
-          class="text-gray-500 hover:text-[var(--soma-gold)] transition-colors"
+          class="text-gray-500 hover:text-[var(--soma-gold)] transition-colors duration-300"
           >Terms of Service</a
         >
       </div>
     </div>
   </div>
 </footer>
+
+<style>
+  /* Footer Logo Pattern */
+  .footer-logo-pattern {
+    pointer-events: none;
+  }
+  
+  .logo-pattern-inner {
+    will-change: transform;
+  }
+
+  /* Responsive pattern sizing */
+  @media (max-width: 768px) {
+    .logo-pattern-inner {
+      background-size: 160px auto !important;
+    }
+  }
+  
+  @media (min-width: 769px) and (max-width: 1024px) {
+    .logo-pattern-inner {
+      background-size: 200px auto !important;
+    }
+  }
+
+  /* Social icon hover glow */
+  .social-icon:hover {
+    box-shadow: 0 0 20px rgba(192, 178, 131, 0.3);
+  }
+</style>
