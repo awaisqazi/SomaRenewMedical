@@ -5,19 +5,23 @@ import heroImage from "../images/hero.png";
 
 <MainLayout title="Home">
   <!-- Hero Section with Premium Glassmorphism -->
-  <section class="hero-section relative min-h-[90vh] md:min-h-screen flex items-center justify-center overflow-hidden">
-    <!-- Hero Background Image - Full Visibility -->
+  <section class="hero-section relative min-h-[80svh] sm:min-h-[85svh] md:min-h-screen flex items-center justify-center overflow-hidden">
+    <!-- Hero Background Image - Luxurious Scaling -->
     <div class="absolute inset-0 z-0">
-      <img
-        src={heroImage.src}
-        alt="SomaRenew Medical Hero"
-        class="w-full h-full object-cover object-center md:object-top"
-        loading="eager"
-      />
-      <!-- Sophisticated Gradient Overlay -->
-      <div class="absolute inset-0 bg-gradient-to-b from-charcoal/40 via-charcoal/30 to-charcoal/50"></div>
+      <div class="hero-image-container absolute inset-0">
+        <img
+          src={heroImage.src}
+          alt="SomaRenew Medical Hero"
+          class="hero-bg-image w-full h-full object-cover"
+          loading="eager"
+        />
+      </div>
+      <!-- Sophisticated Gradient Overlay - Enhanced for mobile legibility -->
+      <div class="absolute inset-0 bg-gradient-to-b from-charcoal/50 via-charcoal/35 to-charcoal/60 md:from-charcoal/40 md:via-charcoal/30 md:to-charcoal/50"></div>
       <!-- Subtle warm tint overlay -->
       <div class="absolute inset-0 bg-gradient-to-tr from-charcoal/20 via-transparent to-soma-gold/10"></div>
+      <!-- Mobile bottom fade for scroll indicator visibility -->
+      <div class="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-charcoal/40 to-transparent md:hidden"></div>
     </div>
     
     <!-- Floating Parallax Orbs (behind glass card) -->
@@ -406,6 +410,75 @@ import heroImage from "../images/hero.png";
 </MainLayout>
 
 <style>
+  /* ===== Hero Background Image - Luxurious Widescreen Scaling ===== */
+  .hero-image-container {
+    overflow: hidden;
+  }
+
+  .hero-bg-image {
+    /* Default: Cover with center focus */
+    object-fit: cover;
+    object-position: center center;
+    /* Subtle Ken Burns zoom effect for premium feel */
+    animation: heroKenBurns 25s ease-in-out infinite alternate;
+    transform-origin: center center;
+  }
+
+  /* Mobile: Position to show the person (main subject) */
+  @media (max-width: 639px) {
+    .hero-bg-image {
+      /* Focus on the person - center-left of image, upper body visible */
+      object-position: 35% 45%;
+      /* Subtle animation */
+      animation: heroKenBurnsMobile 30s ease-in-out infinite alternate;
+      transform-origin: 35% 45%;
+    }
+  }
+
+  /* Small mobile landscape - show full scene */
+  @media (max-width: 639px) and (orientation: landscape) {
+    .hero-bg-image {
+      object-position: center center;
+      transform-origin: center center;
+    }
+  }
+
+  /* Tablet: Balanced view, show upper portion */
+  @media (min-width: 640px) and (max-width: 1023px) {
+    .hero-bg-image {
+      object-position: center 25%;
+      transform-origin: center 25%;
+    }
+  }
+
+  /* Desktop: Show top portion (as originally intended) */
+  @media (min-width: 1024px) {
+    .hero-bg-image {
+      object-position: center top;
+      transform-origin: center 20%;
+    }
+  }
+
+  /* Ken Burns animation - subtle zoom for luxury feel */
+  @keyframes heroKenBurns {
+    0% {
+      transform: scale(1);
+    }
+    100% {
+      transform: scale(1.06);
+    }
+  }
+
+  /* Mobile Ken Burns - subtle and smooth */
+  @keyframes heroKenBurnsMobile {
+    0% {
+      transform: scale(1);
+    }
+    100% {
+      transform: scale(1.05);
+    }
+  }
+
   /* Hero Animations */
   .hero-animate {
     transform: translateY(30px);
