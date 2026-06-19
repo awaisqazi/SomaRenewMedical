@@ -1,407 +1,280 @@
 ---
 import MainLayout from "../layouts/MainLayout.astro";
+import { Image } from "astro:assets";
 import heroImage from "../images/hero.png";
+
+const pillars = [
+  {
+    n: "01",
+    title: "FDA-approved, evidence-led",
+    body: "Only regulated medications and medical-grade protocols (GLP-1 therapy, peptides) chosen for what the science actually supports.",
+  },
+  {
+    n: "02",
+    title: "Built around one body: yours",
+    body: "No protocols off a shelf. Comprehensive labs and a physician's read of your history shape a plan that fits how you actually live.",
+  },
+  {
+    n: "03",
+    title: "High-tech, genuinely high-touch",
+    body: "Modern diagnostics and body contouring, paired with unhurried, one-to-one attention from the people overseeing your care.",
+  },
+  {
+    n: "04",
+    title: "Results that outlast the program",
+    body: "We're less interested in a number on a scale and more in the habits, energy and confidence that keep it there.",
+  },
+];
+
+const modalities = [
+  { name: "Medical Weight Loss", note: "GLP-1 consultation & monthly medication", from: "from $199" },
+  { name: "Body Contouring", note: "CoolSculpting & U-Shape 2 sculpting", from: "from $175" },
+  { name: "Peptide Therapy", note: "Injectable & nasal-spray protocols", from: "from $99" },
+  { name: "IV Hydration", note: "Targeted drips & NAD+ boosters", from: "from $49" },
+  { name: "Nutrition Counseling", note: "Assessments & follow-up sessions", from: "from $75" },
+  { name: "Signature Packages", note: "Multi-month transformation programs", from: "from $599" },
+];
+
+const faqs = [
+  {
+    q: "Are your treatments safe?",
+    a: "Yes. We use only FDA-approved medications and medical-grade equipment, every plan overseen by a board-certified physician.",
+  },
+  {
+    q: "Do I need a referral or prior diagnosis?",
+    a: "No referral is needed. We begin with a thorough health assessment and design a plan from there.",
+  },
+  {
+    q: "How soon will I see results?",
+    a: "Every journey differs, but most patients notice measurable changes within the first few weeks of consistent, supported care.",
+  },
+];
 ---
 
 <MainLayout title="Home">
-  <!-- Hero Section with Premium Glassmorphism -->
-  <section class="hero-section relative min-h-[80svh] sm:min-h-[85svh] md:min-h-screen flex items-center justify-center overflow-hidden">
-    <!-- Hero Background Image - Luxurious Scaling -->
-    <div class="absolute inset-0 z-0">
-      <div class="hero-image-container absolute inset-0">
-        <img
-          src={heroImage.src}
-          alt="SomaRenew Medical Hero"
-          class="hero-bg-image w-full h-full object-cover"
-          loading="eager"
-        />
+  <!-- ══ HERO ══════════════════════════════════════════════════════════ -->
+  <section class="relative bg-bone overflow-hidden">
+    <!-- Masthead micro-row -->
+    <div class="mx-auto max-w-[1400px] px-5 sm:px-8">
+      <div class="flex items-center justify-between py-4 border-b border-line font-mono text-[0.62rem] sm:text-[0.68rem] tracking-[0.18em] uppercase text-ink/45">
+        <span>Naperville, Illinois</span>
+        <span class="hidden sm:inline">Physician-led wellness</span>
+        <span>Est. MMXXIV</span>
       </div>
-      <!-- Sophisticated Gradient Overlay - Enhanced for mobile legibility -->
-      <div class="absolute inset-0 bg-gradient-to-b from-charcoal/50 via-charcoal/35 to-charcoal/60 md:from-charcoal/40 md:via-charcoal/30 md:to-charcoal/50"></div>
-      <!-- Subtle warm tint overlay -->
-      <div class="absolute inset-0 bg-gradient-to-tr from-charcoal/20 via-transparent to-soma-gold/10"></div>
-      <!-- Mobile bottom fade for scroll indicator visibility -->
-      <div class="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-charcoal/40 to-transparent md:hidden"></div>
     </div>
-    
-    <!-- Floating Parallax Orbs (behind glass card) -->
-    <div class="parallax-orb orb-1 absolute w-[500px] h-[500px] rounded-full opacity-20 blur-[120px] pointer-events-none z-[1]"
-         style="background: radial-gradient(circle, var(--soma-gold) 0%, transparent 70%); top: 5%; right: 5%;"></div>
-    <div class="parallax-orb orb-2 absolute w-[350px] h-[350px] rounded-full opacity-15 blur-[100px] pointer-events-none z-[1]"
-         style="background: radial-gradient(circle, var(--sage-green) 0%, transparent 70%); bottom: 15%; left: 10%;"></div>
 
-    <!-- Hero Content with Premium Glass Card -->
-    <div class="relative z-10 container mx-auto px-4 md:px-6 text-center">
-      <!-- Premium Glassmorphism Card -->
-      <div class="hero-glass-card hero-animate hero-delay-1 inline-block px-8 py-10 md:px-16 md:py-14 lg:px-20 lg:py-16 rounded-[2rem] max-w-4xl mx-auto opacity-0">
-        
-        <!-- Overline -->
-        <p class="hero-animate hero-delay-2 text-soma-gold uppercase tracking-[0.2em] md:tracking-[0.3em] text-xs md:text-sm mb-5 font-semibold opacity-0">
-          Welcome to SomaRenew Medical
-        </p>
-        
-        <!-- Main Headline - Editorial Typography -->
-        <h1 class="hero-animate hero-delay-3 text-white text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-serif font-bold mb-5 md:mb-6 leading-[1.15] opacity-0">
-          The Physician-Led Path<br class="hidden sm:block" />
-          <span class="text-soma-gold">to Transformation</span>
-        </h1>
-        
-        <!-- Subheadline -->
-        <p class="hero-animate hero-delay-4 text-sm md:text-base lg:text-lg max-w-2xl mx-auto mb-8 md:mb-10 text-gray-200/90 leading-relaxed opacity-0">
-          Combining GLP-1 Medications, Peptide Therapy, and Advanced Body
-          Contouring for personalized, lasting results in a serene, luxury
-          environment.
-        </p>
-        
-        <!-- CTA Buttons -->
-        <div class="hero-animate hero-delay-5 flex flex-col sm:flex-row gap-3 md:gap-4 justify-center opacity-0">
-          <a
-            class="inline-flex items-center justify-center gap-2 bg-soma-gold hover:bg-[#D4C89A] text-charcoal py-3.5 md:py-4 px-8 md:px-10 rounded-full text-base md:text-lg font-semibold transition-all duration-300 hover:scale-[1.02] shadow-lg hover:shadow-xl group"
-            href="/consultation"
-          >
-            <span>Schedule My Consultation</span>
-            <svg class="w-4 h-4 md:w-5 md:h-5 transition-transform duration-300 group-hover:translate-x-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
-            </svg>
-          </a>
-          <a
-            class="inline-flex items-center justify-center py-3.5 md:py-4 px-8 md:px-10 rounded-full text-base md:text-lg font-semibold border-2 border-white/30 text-white transition-all duration-300 hover:bg-white/10 hover:border-white/50"
-            href="/services"
-          >
-            View Our Services
-          </a>
+    <div class="mx-auto max-w-[1400px] px-5 sm:px-8">
+      <div class="grid lg:grid-cols-12 gap-y-12 lg:gap-x-12 items-center pt-12 md:pt-16 lg:pt-20 pb-16 md:pb-24">
+        <!-- Copy -->
+        <div class="lg:col-span-6 lg:pr-6">
+          <p class="label reveal mb-7">
+            <span class="inline-block w-9 h-px bg-gold/60"></span> SomaRenew Medical
+          </p>
+          <h1 class="reveal d-1 font-serif text-ink leading-[0.95] text-[clamp(2.35rem,8.8vw,3.1rem)] sm:text-7xl xl:text-[5.6rem] mb-8">
+            The physician-led<br />
+            path to <span class="accent-word">transformation.</span>
+          </h1>
+          <p class="reveal d-2 max-w-md text-lg text-secondary-text leading-relaxed mb-10">
+            GLP-1 medications, peptide therapy and advanced body contouring,
+            composed into one considered plan, and looked after by people who
+            know your name.
+          </p>
+          <div class="reveal d-3 flex flex-col sm:flex-row gap-4">
+            <a href="/consultation" class="btn-primary">
+              Book a Consultation
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M5 12h14m0 0l-6-6m6 6l-6 6"/></svg>
+            </a>
+            <a href="/services" class="btn-secondary">View the Menu</a>
+          </div>
         </div>
-      </div>
-    </div>
 
-    <!-- Scroll Indicator -->
-    <div class="absolute bottom-6 md:bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 hero-animate hero-delay-6 opacity-0">
-      <span class="text-[10px] md:text-xs uppercase tracking-[0.2em] text-white/50 font-medium">Discover</span>
-      <div class="scroll-indicator w-5 h-8 md:w-6 md:h-10 rounded-full border-2 border-white/30 flex justify-center pt-1.5 md:pt-2">
-        <div class="w-1 h-1 md:w-1.5 md:h-1.5 rounded-full bg-soma-gold animate-bounce"></div>
+        <!-- Image panel -->
+        <div class="lg:col-span-6 reveal d-2">
+          <figure class="hero-frame relative">
+            <Image
+              src={heroImage}
+              alt="A calm treatment space at SomaRenew Medical"
+              class="hero-photo w-full h-[48vh] sm:h-[60vh] lg:h-[78vh] object-cover"
+              widths={[640, 960, 1400]}
+              sizes="(min-width: 1024px) 50vw, 100vw"
+              format="webp"
+              quality={70}
+              loading="eager"
+              fetchpriority="high"
+            />
+            <div class="hero-tint absolute inset-0"></div>
+            <!-- floating credential chip -->
+            <figcaption class="hero-chip">
+              <span class="font-mono text-[0.6rem] tracking-[0.18em] uppercase text-ink/55">Overseen by</span>
+              <span class="block font-serif text-xl text-ink leading-tight mt-1">Dr. Youssef Hedroug, MD</span>
+              <span class="font-mono text-[0.6rem] tracking-[0.14em] uppercase text-gold-deep">Board-Certified · ABEM</span>
+            </figcaption>
+          </figure>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- Welcome/Philosophy Section -->
-  <section
-    class="py-24 md:py-32 relative overflow-hidden"
-    style="background: linear-gradient(135deg, #FDFDFD 0%, #F8F6F0 100%);"
-  >
-    <!-- Decorative Background Elements -->
-    <div class="absolute top-0 right-0 w-96 h-96 bg-[var(--soma-gold)]/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2"></div>
-    <div class="absolute bottom-0 left-0 w-64 h-64 bg-[var(--sage-green)]/5 rounded-full blur-3xl translate-y-1/2 -translate-x-1/2"></div>
-
-    <div class="container mx-auto px-6 text-center relative z-10">
-      <div class="fade-in-up inline-block mb-6">
-        <span class="text-soma-gold uppercase tracking-[0.25em] text-sm font-semibold">Our Philosophy</span>
-        <div class="h-px w-16 bg-soma-gold mx-auto mt-3"></div>
-      </div>
-      <h2 class="fade-in-up text-4xl md:text-5xl lg:text-6xl font-serif font-bold mb-8 text-charcoal">
-        Where Personalized Medicine<br class="hidden md:block" /> Meets Modern Wellness
-      </h2>
-      <p class="fade-in-up max-w-3xl mx-auto text-lg md:text-xl text-secondary-text leading-relaxed">
-        Welcome to SomaRenew Medical, a sanctuary dedicated to helping you
-        achieve your transformation goals safely and effectively. Our expert
-        medical team combines FDA-approved medications, cutting-edge technology,
-        and personalized physician guidance to help you build a foundation for
-        lifelong health and vitality.
-      </p>
-    </div>
-  </section>
-
-  <!-- Premium Feature Grid - Sanctuary Cards -->
-  <section class="py-24 md:py-32 relative" style="background-color: #F5F3ED;">
-    <div class="container mx-auto px-6">
-      <!-- Section Header -->
-      <div class="text-center mb-16">
-        <span class="fade-in-up text-soma-gold uppercase tracking-[0.25em] text-sm font-semibold">Our Approach</span>
-        <div class="fade-in-up h-px w-16 bg-soma-gold mx-auto mt-3 mb-6"></div>
-        <h2 class="fade-in-up text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-charcoal">
-          Your Transformation is Our Priority
-        </h2>
-      </div>
-
-      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
-        <!-- Card 1: FDA-Approved Solutions -->
-        <div
-          class="sanctuary-feature-card fade-in-up group relative bg-white rounded-3xl p-8 border border-[var(--soma-gold)]/20 transition-all duration-500 hover:-translate-y-1 hover:shadow-warm-lg"
-        >
-          <!-- Icon Container -->
-          <div class="relative mb-8">
-            <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-soma-gold/20 to-soma-gold/5 flex items-center justify-center transition-all duration-500 group-hover:scale-110">
-              <svg class="h-8 w-8 text-soma-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 10V3L4 14h7v7l9-11h-7z"/>
-              </svg>
-            </div>
-          </div>
-
-          <h3 class="text-xl font-serif font-bold mb-4 text-charcoal">
-            FDA-Approved Solutions
-          </h3>
-          <p class="text-secondary-text leading-relaxed text-sm">
-            We use only safe, regulated treatments backed by clinical science.
-          </p>
-
-          <!-- Bottom Link -->
-          <a
-            href="/services"
-            class="inline-flex items-center gap-2 mt-6 text-soma-gold font-semibold text-sm group-hover:gap-3 transition-all duration-300"
-          >
-            Learn More
-            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
-            </svg>
-          </a>
+  <!-- ══ PHILOSOPHY ════════════════════════════════════════════════════ -->
+  <section class="section bg-cream">
+    <div class="mx-auto max-w-[1400px] px-5 sm:px-8">
+      <div class="grid lg:grid-cols-12 gap-y-10 lg:gap-x-16">
+        <div class="lg:col-span-4">
+          <p class="index-label reveal"><span class="num">I</span> &nbsp;·&nbsp;Philosophy</p>
+          <div class="reveal-line h-px bg-line mt-5 mb-8"></div>
+          <p class="reveal d-1 section-index text-7xl md:text-8xl">Soma</p>
         </div>
-
-        <!-- Card 2: Personalized for Your Body -->
-        <div
-          class="sanctuary-feature-card fade-in-up group relative bg-white rounded-3xl p-8 border border-[var(--soma-gold)]/20 transition-all duration-500 hover:-translate-y-1 hover:shadow-warm-lg"
-        >
-          <!-- Icon Container -->
-          <div class="relative mb-8">
-            <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-sage-green/20 to-sage-green/5 flex items-center justify-center transition-all duration-500 group-hover:scale-110">
-              <svg class="h-8 w-8 text-sage-green" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
-              </svg>
-            </div>
-          </div>
-
-          <h3 class="text-xl font-serif font-bold mb-4 text-charcoal">
-            Personalized for Your Body
-          </h3>
-          <p class="text-secondary-text leading-relaxed text-sm">
-            No cookie-cutter plans—just the right path for your unique goals and health profile.
+        <div class="lg:col-span-8 lg:pl-4">
+          <p class="reveal font-serif text-[1.9rem] sm:text-4xl lg:text-[2.9rem] leading-[1.2] text-ink">
+            We treat weight, hormones and energy as one connected system,
+            because your body never experienced them as separate problems.
+            <span class="text-ink/45">Where personalized medicine meets a calmer kind of care, lasting change becomes the natural outcome, not the hard-won exception.</span>
           </p>
-
-          <!-- Bottom Link -->
-          <a
-            href="/services"
-            class="inline-flex items-center gap-2 mt-6 text-sage-green font-semibold text-sm group-hover:gap-3 transition-all duration-300"
-          >
-            Learn More
-            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
-            </svg>
-          </a>
-        </div>
-
-        <!-- Card 3: High-Tech, High-Touch Care -->
-        <div
-          class="sanctuary-feature-card fade-in-up group relative bg-white rounded-3xl p-8 border border-[var(--soma-gold)]/20 transition-all duration-500 hover:-translate-y-1 hover:shadow-warm-lg"
-        >
-          <!-- Icon Container -->
-          <div class="relative mb-8">
-            <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-dusty-blue/20 to-dusty-blue/5 flex items-center justify-center transition-all duration-500 group-hover:scale-110">
-              <svg class="h-8 w-8 text-dusty-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"/>
-              </svg>
-            </div>
-          </div>
-
-          <h3 class="text-xl font-serif font-bold mb-4 text-charcoal">
-            High-Tech, High-Touch Care
-          </h3>
-          <p class="text-secondary-text leading-relaxed text-sm">
-            We combine modern diagnostics with compassionate, one-on-one attention.
-          </p>
-
-          <!-- Bottom Link -->
-          <a
-            href="/services"
-            class="inline-flex items-center gap-2 mt-6 text-dusty-blue font-semibold text-sm group-hover:gap-3 transition-all duration-300"
-          >
-            Learn More
-            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
-            </svg>
-          </a>
-        </div>
-
-        <!-- Card 4: Real, Sustainable Results -->
-        <div
-          class="sanctuary-feature-card fade-in-up group relative bg-white rounded-3xl p-8 border border-[var(--soma-gold)]/20 transition-all duration-500 hover:-translate-y-1 hover:shadow-warm-lg"
-        >
-          <!-- Icon Container -->
-          <div class="relative mb-8">
-            <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-soma-gold/20 to-soma-gold/5 flex items-center justify-center transition-all duration-500 group-hover:scale-110">
-              <svg class="h-8 w-8 text-soma-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"/>
-              </svg>
-            </div>
-          </div>
-
-          <h3 class="text-xl font-serif font-bold mb-4 text-charcoal">
-            Real, Sustainable Results
-          </h3>
-          <p class="text-secondary-text leading-relaxed text-sm">
-            We're not just about losing weight. We're about helping you live better—long-term.
-          </p>
-
-          <!-- Bottom Link -->
-          <a
-            href="/consultation"
-            class="inline-flex items-center gap-2 mt-6 text-soma-gold font-semibold text-sm group-hover:gap-3 transition-all duration-300"
-          >
-            Get Started
-            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
-            </svg>
+          <a href="/aboutus" class="link-arrow reveal d-1 mt-10">
+            Our approach to care
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M5 12h14m0 0l-6-6m6 6l-6 6"/></svg>
           </a>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- FAQ Section -->
-  <section
-    class="py-24 md:py-32 relative overflow-hidden"
-    style="background: linear-gradient(135deg, #FDFDFD 0%, #F8F6F0 100%);"
-  >
-    <!-- Decorative Elements -->
-    <div class="absolute top-0 left-0 w-64 h-64 bg-[var(--soma-gold)]/5 rounded-full blur-3xl -translate-y-1/2 -translate-x-1/2"></div>
-    <div class="absolute bottom-0 right-0 w-96 h-96 bg-[var(--sage-green)]/5 rounded-full blur-3xl translate-y-1/2 translate-x-1/2"></div>
-
-    <div class="container mx-auto px-6 relative z-10">
-      <!-- Section Header -->
-      <div class="text-center mb-16">
-        <span class="fade-in-up text-soma-gold uppercase tracking-[0.25em] text-sm font-semibold">Have Questions?</span>
-        <div class="fade-in-up h-px w-16 bg-soma-gold mx-auto mt-3 mb-6"></div>
-        <h2 class="fade-in-up text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-charcoal">
-          Frequently Asked Questions
-        </h2>
-      </div>
-
-      <!-- FAQ Accordion -->
-      <div class="max-w-3xl mx-auto space-y-4">
-        <!-- FAQ Item 1 -->
-        <div class="fade-in-up bg-white rounded-3xl overflow-hidden border border-[var(--soma-gold)]/20 shadow-warm">
-          <details class="group">
-            <summary class="flex items-center justify-between gap-4 p-6 cursor-pointer list-none font-serif font-semibold text-charcoal text-lg hover:text-soma-gold transition-colors">
-              <span>Are your treatments safe?</span>
-              <svg class="w-5 h-5 text-soma-gold flex-shrink-0 transition-transform duration-300 group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
-              </svg>
-            </summary>
-            <div class="px-6 pb-6 text-secondary-text leading-relaxed">
-              Yes. We only use <strong class="text-charcoal">FDA-approved medications</strong> and <strong class="text-charcoal">medical-grade equipment</strong>, all overseen by licensed healthcare professionals.
-            </div>
-          </details>
+  <!-- ══ APPROACH · numbered index ═════════════════════════════════════ -->
+  <section class="section bg-bone">
+    <div class="mx-auto max-w-[1400px] px-5 sm:px-8">
+      <div class="grid lg:grid-cols-12 gap-y-12 lg:gap-x-16">
+        <!-- Sticky heading -->
+        <div class="lg:col-span-4">
+          <div class="lg:sticky lg:top-32">
+            <p class="index-label reveal"><span class="num">II</span> &nbsp;·&nbsp;The Approach</p>
+            <div class="reveal-line h-px bg-line mt-5 mb-8"></div>
+            <h2 class="reveal d-1 font-serif text-4xl md:text-5xl leading-[1.05] text-ink">
+              Four principles<br />we don't<br /><span class="accent-word">compromise on.</span>
+            </h2>
+          </div>
         </div>
 
-        <!-- FAQ Item 2 -->
-        <div class="fade-in-up bg-white rounded-3xl overflow-hidden border border-[var(--soma-gold)]/20 shadow-warm">
-          <details class="group">
-            <summary class="flex items-center justify-between gap-4 p-6 cursor-pointer list-none font-serif font-semibold text-charcoal text-lg hover:text-soma-gold transition-colors">
-              <span>Do I need a referral or prior diagnosis?</span>
-              <svg class="w-5 h-5 text-soma-gold flex-shrink-0 transition-transform duration-300 group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
-              </svg>
-            </summary>
-            <div class="px-6 pb-6 text-secondary-text leading-relaxed">
-              No referral is needed. We will perform a <strong class="text-charcoal">thorough health assessment</strong> to design a plan just for you.
-            </div>
-          </details>
-        </div>
-
-        <!-- FAQ Item 3 -->
-        <div class="fade-in-up bg-white rounded-3xl overflow-hidden border border-[var(--soma-gold)]/20 shadow-warm">
-          <details class="group">
-            <summary class="flex items-center justify-between gap-4 p-6 cursor-pointer list-none font-serif font-semibold text-charcoal text-lg hover:text-soma-gold transition-colors">
-              <span>How soon will I see results?</span>
-              <svg class="w-5 h-5 text-soma-gold flex-shrink-0 transition-transform duration-300 group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
-              </svg>
-            </summary>
-            <div class="px-6 pb-6 text-secondary-text leading-relaxed">
-              While every journey is unique, most clients begin to see <strong class="text-charcoal">measurable changes in the first few weeks</strong> with consistent support.
-            </div>
-          </details>
+        <!-- List -->
+        <div class="lg:col-span-8">
+          <ul>
+            {pillars.map((p, i) => (
+              <li class={`reveal d-${i + 1} group grid grid-cols-[auto_1fr] gap-x-6 sm:gap-x-10 py-9 ${i === 0 ? "border-t" : ""} border-b border-line`}>
+                <span class="font-mono text-sm text-gold-deep pt-2.5">{p.n}</span>
+                <div>
+                  <h3 class="font-serif text-2xl sm:text-3xl text-ink mb-3 transition-transform duration-500 group-hover:translate-x-1">
+                    {p.title}
+                  </h3>
+                  <p class="text-secondary-text leading-relaxed max-w-xl">{p.body}</p>
+                </div>
+              </li>
+            ))}
+          </ul>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Premium CTA Section - Patterned Logo Background -->
-  <section class="cta-section relative py-32 md:py-40 overflow-hidden">
-    <!-- Background -->
-    <div class="absolute inset-0 bg-gradient-to-br from-charcoal via-[#2A363E] to-[#1E2A32]"></div>
-    
-    <!-- Decorative Elements -->
-    <div class="absolute inset-0 overflow-hidden pointer-events-none">
-      <!-- Top Gold Line -->
-      <div class="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-soma-gold/40 to-transparent"></div>
-      <!-- Bottom Gold Line -->
-      <div class="absolute bottom-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-soma-gold/40 to-transparent"></div>
-      
-      <!-- Repeating Logo Pattern Background -->
-      <div class="cta-logo-pattern absolute inset-0 overflow-hidden" aria-hidden="true">
-        <div class="logo-pattern-inner absolute -inset-[50%] w-[200%] h-[200%]" style="
-          background-image: url('/logo.png');
-          background-size: 280px auto;
-          background-repeat: repeat;
-          opacity: 0.025;
-          filter: brightness(0) invert(1);
-          transform: rotate(-12deg);
-        "></div>
-      </div>
-      
-      <!-- Floating Orb -->
-      <div class="absolute w-[500px] h-[500px] rounded-full blur-[150px] opacity-20 -top-48 -right-48"
-           style="background: radial-gradient(circle, var(--soma-gold) 0%, transparent 70%);"></div>
-    </div>
-
-    <!-- Content -->
-    <div class="relative z-10 container mx-auto px-6 text-center">
-      <div class="cta-content max-w-3xl mx-auto">
-        <!-- Overline -->
-        <span class="cta-animate inline-block text-soma-gold uppercase tracking-[0.3em] text-sm font-semibold mb-6 opacity-0">
-          Begin Today
-        </span>
-        
-        <!-- Headline -->
-        <h2 class="cta-animate text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-white mb-8 leading-tight opacity-0">
-          Ready to Begin Your
-          <span class="block text-soma-gold">Transformation?</span>
-        </h2>
-        
-        <!-- Body -->
-        <p class="cta-animate text-lg sm:text-xl text-white/60 max-w-xl mx-auto leading-relaxed mb-12 opacity-0">
-          Schedule your complimentary consultation today and discover your
-          personalized path to lasting results with our expert medical team.
-        </p>
-        
-        <!-- CTA Button -->
-        <a
-          href="/consultation"
-          class="cta-animate inline-flex items-center gap-4 bg-soma-gold hover:bg-[#D4C89A] text-charcoal rounded-full px-12 py-6 text-lg font-semibold transition-all duration-300 hover:scale-105 shadow-gold-glow opacity-0 group"
-        >
-          <span>Book My Free Consultation</span>
-          <svg class="w-6 h-6 transition-transform duration-300 group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
-          </svg>
+  <!-- ══ MODALITIES preview ════════════════════════════════════════════ -->
+  <section class="section bg-cream">
+    <div class="mx-auto max-w-[1400px] px-5 sm:px-8">
+      <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-12">
+        <div>
+          <p class="index-label reveal"><span class="num">III</span> &nbsp;·&nbsp;The Menu</p>
+          <h2 class="reveal d-1 font-serif text-4xl md:text-5xl text-ink mt-5">What we offer</h2>
+        </div>
+        <a href="/services" class="link-arrow reveal d-1">
+          Full service menu & pricing
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M5 12h14m0 0l-6-6m6 6l-6 6"/></svg>
         </a>
-        
-        <!-- Trust Indicators -->
-        <div class="cta-animate mt-16 flex flex-wrap justify-center gap-8 text-white/40 text-sm opacity-0">
-          <div class="flex items-center gap-2">
-            <svg class="w-5 h-5 text-soma-gold" fill="currentColor" viewBox="0 0 20 20">
-              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
-            </svg>
-            <span>Physician-Guided</span>
+      </div>
+
+      <div class="border-t border-line">
+        {modalities.map((m, i) => (
+          <a href="/services" class={`reveal d-${(i % 4) + 1} group flex items-center justify-between gap-4 py-7 border-b border-line transition-colors duration-300 hover:bg-bone/60 -mx-4 px-4`}>
+            <div class="flex items-baseline gap-4 sm:gap-8 min-w-0">
+              <span class="font-mono text-xs text-gold-deep/70 shrink-0">0{i + 1}</span>
+              <h3 class="font-serif text-2xl sm:text-4xl text-ink truncate transition-transform duration-500 group-hover:translate-x-2">
+                {m.name}
+              </h3>
+            </div>
+            <div class="flex items-center gap-5 sm:gap-10 shrink-0">
+              <span class="hidden md:block text-sm text-secondary-text max-w-[18rem] text-right">{m.note}</span>
+              <span class="font-mono text-[0.7rem] tracking-[0.12em] uppercase text-ink/55 whitespace-nowrap">{m.from}</span>
+              <svg class="w-5 h-5 text-gold-deep opacity-0 -translate-x-2 transition-all duration-300 group-hover:opacity-100 group-hover:translate-x-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6" d="M5 12h14m0 0l-6-6m6 6l-6 6"/></svg>
+            </div>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ FAQ ═══════════════════════════════════════════════════════════ -->
+  <section class="section bg-bone">
+    <div class="mx-auto max-w-[1400px] px-5 sm:px-8">
+      <div class="grid lg:grid-cols-12 gap-y-10 lg:gap-x-16">
+        <div class="lg:col-span-4">
+          <p class="index-label reveal"><span class="num">IV</span> &nbsp;·&nbsp;Questions</p>
+          <h2 class="reveal d-1 font-serif text-4xl md:text-5xl text-ink mt-5">
+            Before you<br />begin.
+          </h2>
+        </div>
+        <div class="lg:col-span-8">
+          {faqs.map((f, i) => (
+            <div
+              x-data="{ open: false }"
+              class={`faq reveal d-${i + 1} ${i === 0 ? "border-t" : ""} border-b border-line`}
+            >
+              <button
+                type="button"
+                @click="open = !open"
+                :aria-expanded="open"
+                class="group w-full flex items-start justify-between gap-6 py-7 text-left"
+              >
+                <span class="flex items-baseline gap-5">
+                  <span class="font-mono text-xs text-gold-deep/70">0{i + 1}</span>
+                  <span class="font-serif text-2xl sm:text-3xl text-ink transition-colors duration-300 group-hover:text-gold-deep">{f.q}</span>
+                </span>
+                <span class="faq-plus relative mt-2 w-4 h-4 shrink-0" :class="{ 'is-open': open }"></span>
+              </button>
+              <div class="faq-body" :class="{ 'is-open': open }">
+                <div class="faq-inner">
+                  <p class="pb-8 pl-0 sm:pl-[2.6rem] text-secondary-text leading-relaxed max-w-2xl">{f.a}</p>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ CLOSING INVITATION ════════════════════════════════════════════ -->
+  <section class="on-dark relative bg-ink text-cream overflow-hidden">
+    <div class="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-[var(--soma-gold)]/40 to-transparent"></div>
+    <div class="mx-auto max-w-[1400px] px-5 sm:px-8 section">
+      <div class="grid lg:grid-cols-12 gap-y-12 lg:gap-x-16 items-center">
+        <div class="lg:col-span-7">
+          <p class="label label--light reveal mb-7">
+            <span class="inline-block w-9 h-px bg-soma-gold/60"></span> Begin Today
+          </p>
+          <h2 class="reveal d-1 font-serif text-5xl sm:text-6xl lg:text-7xl leading-[0.98] text-cream">
+            Your first consultation<br />is on us.
+          </h2>
+          <p class="reveal d-2 mt-8 max-w-md text-cream/55 text-lg leading-relaxed">
+            Spend an unhurried hour with our team. We'll review your goals, your
+            labs and your options, and you'll leave with a clear, honest picture
+            of what's possible.
+          </p>
+        </div>
+        <div class="lg:col-span-5 lg:pl-8">
+          <div class="reveal d-2 flex flex-col gap-4">
+            <a href="/consultation" class="btn-gold w-full">Book My Free Consultation</a>
+            <a href="/services" class="btn-secondary btn-secondary--light w-full">Explore Treatments</a>
           </div>
-          <div class="flex items-center gap-2">
-            <svg class="w-5 h-5 text-soma-gold" fill="currentColor" viewBox="0 0 20 20">
-              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
-            </svg>
-            <span>Personalized Care</span>
-          </div>
-          <div class="flex items-center gap-2">
-            <svg class="w-5 h-5 text-soma-gold" fill="currentColor" viewBox="0 0 20 20">
-              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
-            </svg>
-            <span>Lasting Results</span>
+          <div class="reveal d-3 mt-10 grid grid-cols-3 gap-4 pt-8 border-t border-line-on-dark">
+            {["Physician-guided", "Personalized", "Lasting results"].map((t) => (
+              <span class="font-mono text-[0.6rem] sm:text-[0.66rem] tracking-[0.1em] uppercase text-cream/45 leading-snug">{t}</span>
+            ))}
           </div>
         </div>
       </div>
@@ -410,339 +283,59 @@ import heroImage from "../images/hero.png";
 </MainLayout>
 
 <style>
-  /* ===== Hero Background Image - Luxurious Widescreen Scaling ===== */
-  .hero-image-container {
+  /* Hero image framing & warm tint */
+  .hero-frame {
+    border: 1px solid var(--line);
+    border-radius: 4px;
     overflow: hidden;
+    box-shadow: 0 50px 90px -55px rgba(27, 34, 39, 0.5);
   }
-
-  .hero-bg-image {
-    /* Default: Cover with center focus */
-    object-fit: cover;
-    object-position: center center;
-    /* Subtle Ken Burns zoom effect for premium feel */
-    animation: heroKenBurns 25s ease-in-out infinite alternate;
-    transform-origin: center center;
+  .hero-photo {
+    animation: kenburns 28s ease-in-out infinite alternate;
+    transform-origin: 60% 40%;
   }
-
-  /* Mobile: Position to show the person (main subject) */
-  @media (max-width: 639px) {
-    .hero-bg-image {
-      /* Focus on the person - center-left of image, upper body visible */
-      object-position: 35% 45%;
-      /* Subtle animation */
-      animation: heroKenBurnsMobile 30s ease-in-out infinite alternate;
-      transform-origin: 35% 45%;
-    }
-  }
-
-  /* Small mobile landscape - show full scene */
-  @media (max-width: 639px) and (orientation: landscape) {
-    .hero-bg-image {
-      object-position: center center;
-      transform-origin: center center;
-    }
-  }
-
-  /* Tablet: Balanced view, show upper portion */
-  @media (min-width: 640px) and (max-width: 1023px) {
-    .hero-bg-image {
-      object-position: center 25%;
-      transform-origin: center 25%;
-    }
-  }
-
-  /* Desktop: Show top portion (as originally intended) */
-  @media (min-width: 1024px) {
-    .hero-bg-image {
-      object-position: center top;
-      transform-origin: center 20%;
-    }
-  }
-
-  /* Ken Burns animation - subtle zoom for luxury feel */
-  @keyframes heroKenBurns {
-    0% {
-      transform: scale(1);
-    }
-    100% {
-      transform: scale(1.06);
-    }
-  }
-
-  /* Mobile Ken Burns - subtle and smooth */
-  @keyframes heroKenBurnsMobile {
-    0% {
-      transform: scale(1);
-    }
-    100% {
-      transform: scale(1.05);
-    }
-  }
-
-  /* Hero Animations */
-  .hero-animate {
-    transform: translateY(30px);
-    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
-  }
-  
-  .hero-animate.in-view {
-    opacity: 1 !important;
-    transform: translateY(0);
-  }
-  
-  .hero-delay-1 { transition-delay: 0.1s; }
-  .hero-delay-2 { transition-delay: 0.2s; }
-  .hero-delay-3 { transition-delay: 0.3s; }
-  .hero-delay-4 { transition-delay: 0.5s; }
-  .hero-delay-5 { transition-delay: 0.7s; }
-  .hero-delay-6 { transition-delay: 0.9s; }
-
-  /* Premium Glassmorphism Card */
-  .hero-glass-card {
-    background: linear-gradient(
-      135deg,
-      rgba(54, 69, 79, 0.85) 0%,
-      rgba(54, 69, 79, 0.75) 50%,
-      rgba(42, 54, 62, 0.80) 100%
-    );
-    backdrop-filter: blur(24px) saturate(1.2);
-    -webkit-backdrop-filter: blur(24px) saturate(1.2);
-    border: 1px solid rgba(192, 178, 131, 0.25);
-    box-shadow: 
-      0 32px 64px -12px rgba(0, 0, 0, 0.35),
-      0 16px 32px -8px rgba(0, 0, 0, 0.25),
-      inset 0 1px 0 rgba(255, 255, 255, 0.08),
-      inset 0 -1px 0 rgba(0, 0, 0, 0.1),
-      0 0 0 1px rgba(192, 178, 131, 0.1);
-    position: relative;
-    overflow: hidden;
-  }
-
-  /* Subtle inner glow effect */
-  .hero-glass-card::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 1px;
-    background: linear-gradient(
-      90deg,
-      transparent 0%,
-      rgba(192, 178, 131, 0.4) 20%,
-      rgba(255, 255, 255, 0.15) 50%,
-      rgba(192, 178, 131, 0.4) 80%,
-      transparent 100%
-    );
-  }
-
-  /* Ambient glow behind card */
-  .hero-glass-card::after {
-    content: '';
-    position: absolute;
-    inset: -2px;
-    background: linear-gradient(
-      135deg,
-      rgba(192, 178, 131, 0.15) 0%,
-      transparent 40%,
-      transparent 60%,
-      rgba(192, 178, 131, 0.1) 100%
-    );
-    border-radius: inherit;
-    z-index: -1;
-    filter: blur(20px);
-    opacity: 0.6;
-  }
-
-  /* Parallax Orbs - Mouse Movement */
-  .parallax-orb {
-    transition: transform 0.3s ease-out;
-    will-change: transform;
-  }
-
-  /* Fade In Up Animation for scroll-triggered elements */
-  .fade-in-up {
-    opacity: 0;
-    transform: translateY(30px);
-    transition: opacity 0.7s ease-out, transform 0.7s ease-out;
-  }
-  
-  .fade-in-up.in-view {
-    opacity: 1;
-    transform: translateY(0);
-  }
-
-  /* Stagger delays for cards */
-  .sanctuary-feature-card:nth-child(1) { transition-delay: 0.1s; }
-  .sanctuary-feature-card:nth-child(2) { transition-delay: 0.2s; }
-  .sanctuary-feature-card:nth-child(3) { transition-delay: 0.3s; }
-  .sanctuary-feature-card:nth-child(4) { transition-delay: 0.4s; }
-
-  /* CTA Animations */
-  .cta-animate {
-    transform: translateY(30px);
-    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
-  }
-  
-  .cta-animate.in-view {
-    opacity: 1 !important;
-    transform: translateY(0);
-  }
-  
-  .cta-animate:nth-child(1) { transition-delay: 0.1s; }
-  .cta-animate:nth-child(2) { transition-delay: 0.2s; }
-  .cta-animate:nth-child(3) { transition-delay: 0.3s; }
-  .cta-animate:nth-child(4) { transition-delay: 0.4s; }
-  .cta-animate:nth-child(5) { transition-delay: 0.5s; }
-
-  /* Scroll Indicator Animation */
-  .scroll-indicator .animate-bounce {
-    animation: scrollBounce 2s ease-in-out infinite;
-  }
-  
-  @keyframes scrollBounce {
-    0%, 100% { transform: translateY(0); opacity: 1; }
-    50% { transform: translateY(12px); opacity: 0.5; }
-  }
-
-  /* CTA Logo Pattern */
-  .cta-logo-pattern {
+  .hero-tint {
+    background: linear-gradient(180deg, rgba(27, 34, 39, 0.05) 0%, rgba(27, 34, 39, 0) 35%, rgba(27, 34, 39, 0.18) 100%),
+                linear-gradient(120deg, rgba(192, 178, 131, 0.12), transparent 55%);
     pointer-events: none;
   }
-  
-  .logo-pattern-inner {
-    will-change: transform;
+  @keyframes kenburns {
+    0% { transform: scale(1); }
+    100% { transform: scale(1.06); }
+  }
+  .hero-chip {
+    position: absolute;
+    left: 1.1rem;
+    bottom: 1.1rem;
+    background: rgba(251, 248, 242, 0.92);
+    backdrop-filter: blur(6px);
+    border: 1px solid var(--line);
+    border-radius: 3px;
+    padding: 0.85rem 1.1rem;
+    max-width: 78%;
   }
 
-  /* Responsive pattern sizing */
-  @media (max-width: 768px) {
-    .logo-pattern-inner {
-      background-size: 180px auto !important;
-    }
+  /* FAQ accordion */
+  .faq-plus::before,
+  .faq-plus::after {
+    content: '';
+    position: absolute;
+    background: var(--gold-deep);
+    transition: transform 0.35s ease, opacity 0.35s ease;
   }
-  
-  @media (min-width: 769px) and (max-width: 1024px) {
-    .logo-pattern-inner {
-      background-size: 220px auto !important;
-    }
+  .faq-plus::before { top: 50%; left: 0; width: 100%; height: 1.5px; transform: translateY(-50%); }
+  .faq-plus::after { left: 50%; top: 0; width: 1.5px; height: 100%; transform: translateX(-50%); }
+  .faq-plus.is-open::after { transform: translateX(-50%) scaleY(0); opacity: 0; }
+
+  .faq-body {
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows 0.45s cubic-bezier(0.2, 0.7, 0.2, 1);
+  }
+  .faq-body.is-open { grid-template-rows: 1fr; }
+  .faq-inner { overflow: hidden; min-height: 0; }
+
+  @media (prefers-reduced-motion: reduce) {
+    .hero-photo { animation: none; }
   }
 </style>
-
-<script>
-  // Wait for DOM to be ready
-  document.addEventListener('DOMContentLoaded', () => {
-    // ===== Hero Section Animations =====
-    const heroAnimateElements = document.querySelectorAll('.hero-animate');
-    
-    // Trigger hero animations after a short delay
-    setTimeout(() => {
-      heroAnimateElements.forEach(el => {
-        el.classList.add('in-view');
-      });
-    }, 100);
-
-    // ===== Parallax Effect for Background Orbs =====
-    const heroSection = document.querySelector('.hero-section');
-    const orbs = document.querySelectorAll('.parallax-orb');
-    
-    if (heroSection && orbs.length > 0) {
-      heroSection.addEventListener('mousemove', (e) => {
-        const rect = heroSection.getBoundingClientRect();
-        const x = (e.clientX - rect.left) / rect.width - 0.5;
-        const y = (e.clientY - rect.top) / rect.height - 0.5;
-        
-        orbs.forEach((orb, index) => {
-          const speed = (index + 1) * 20;
-          const orbElement = orb as HTMLElement;
-          orbElement.style.transform = `translate(${x * speed}px, ${y * speed}px)`;
-        });
-      });
-    }
-
-    // ===== Fade In Up Animation for scroll-triggered elements =====
-    const fadeInUpElements = document.querySelectorAll('.fade-in-up');
-    
-    if (fadeInUpElements.length > 0) {
-      const fadeObserver = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('in-view');
-          }
-        });
-      }, {
-        threshold: 0.1,
-        rootMargin: '0px 0px -10% 0px'
-      });
-
-      fadeInUpElements.forEach(el => {
-        fadeObserver.observe(el);
-      });
-    }
-
-    // ===== CTA Section Animations =====
-    const ctaElements = document.querySelectorAll('.cta-animate');
-    
-    if (ctaElements.length > 0) {
-      const ctaObserver = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            // Stagger the animations
-            const element = entry.target as HTMLElement;
-            const siblings = Array.from(ctaElements);
-            const index = siblings.indexOf(element);
-            
-            setTimeout(() => {
-              element.classList.add('in-view');
-            }, index * 100);
-          }
-        });
-      }, {
-        threshold: 0.2,
-        rootMargin: '0px 0px -10% 0px'
-      });
-
-      ctaElements.forEach(el => {
-        ctaObserver.observe(el);
-      });
-    }
-
-    // ===== CTA Logo Pattern Parallax =====
-    const ctaSection = document.querySelector('.cta-section');
-    const logoPattern = document.querySelector('.logo-pattern-inner') as HTMLElement;
-    
-    if (ctaSection && logoPattern) {
-      // Use scroll position directly for smoother, more visible parallax
-      const updatePatternParallax = () => {
-        const rect = ctaSection.getBoundingClientRect();
-        const viewportHeight = window.innerHeight;
-        
-        // Only apply effect when section is in view
-        if (rect.top < viewportHeight && rect.bottom > 0) {
-          // Calculate scroll position relative to section (creates continuous movement)
-          const scrollOffset = window.scrollY;
-          
-          // Use modulo to create continuous movement effect
-          const translateY = (scrollOffset * 0.15) % 200;
-          const translateX = (scrollOffset * 0.08) % 100;
-          
-          logoPattern.style.transform = `rotate(-12deg) translate(${-translateX}px, ${-translateY}px)`;
-        }
-      };
-
-      // Use requestAnimationFrame for smooth 60fps updates
-      let ticking = false;
-      window.addEventListener('scroll', () => {
-        if (!ticking) {
-          window.requestAnimationFrame(() => {
-            updatePatternParallax();
-            ticking = false;
-          });
-          ticking = true;
-        }
-      }, { passive: true });
-      
-      // Initial position
-      updatePatternParallax();
-    }
-  });
-</script>

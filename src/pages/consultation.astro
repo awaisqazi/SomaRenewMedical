@@ -5,12 +5,12 @@ const bookingUrl =
   "https://partner.pabau.com/online-bookings/soma-renew-medical?location=24088&staff=115036&fallback=true";
 
 const treatmentGroups = [
-  "Body Contouring",
-  "Medical Weight Loss",
-  "Nutrition",
-  "IV Hydration",
-  "Injectable Peptides",
-  "Nasal Sprays",
+  "Body Contouring & Fat Reduction",
+  "GLP-1 & Medical Weight Loss",
+  "Nutrition Counseling",
+  "IV Hydration Therapy",
+  "Peptide Therapy - Injectable",
+  "Peptide Therapy - Nasal Sprays",
   "Signature Packages",
 ];
 ---
@@ -18,28 +18,34 @@ const treatmentGroups = [
 <MainLayout title="Reserve Your Experience">
   <section class="booking-page">
     <div class="booking-container">
+      <div class="booking-masthead">
+        <span>Secure Booking</span>
+        <span class="hidden sm:inline">Pabau · Encrypted</span>
+        <span>Naperville, IL</span>
+      </div>
+
       <header class="booking-header">
         <div class="booking-copy">
-          <p class="booking-overline">SomaRenew Medical Services Menu</p>
-          <h1>Reserve Your Experience</h1>
-          <p>
+          <p class="booking-overline">
+            <span class="overline-tick"></span> Reserve Your Experience
+          </p>
+          <h1>Book in one<br /><span class="accent-word">secure flow.</span></h1>
+          <p class="booking-lede">
             Physician-guided weight loss, body sculpting, peptide therapy, IV
-            hydration, and wellness packages in one secure booking flow.
+            hydration and wellness packages, all in a single, encrypted booking
+            flow.
           </p>
         </div>
 
         <div class="booking-actions" aria-label="Booking assistance links">
           <a class="booking-action booking-action-primary" href={bookingUrl} target="_blank" rel="noopener noreferrer">
-            <span>Open Booking</span>
+            <span>Open in New Tab</span>
             <svg aria-hidden="true" viewBox="0 0 24 24" fill="none">
               <path d="M7 17L17 7M17 7H8M17 7V16" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path>
             </svg>
           </a>
-          <a class="booking-action booking-action-secondary" href="tel:+13105550123">
-            <span>Call Clinic</span>
-            <svg aria-hidden="true" viewBox="0 0 24 24" fill="none">
-              <path d="M5.6 4.5L8.3 3.9C9 3.8 9.6 4.1 9.9 4.7L11.1 7.5C11.4 8.1 11.2 8.8 10.7 9.2L9.4 10.3C10.3 12.1 11.8 13.7 13.7 14.6L14.8 13.3C15.2 12.8 15.9 12.6 16.5 12.9L19.3 14.1C19.9 14.4 20.2 15 20.1 15.7L19.5 18.4C19.4 19.1 18.8 19.5 18.1 19.5C10.6 19.5 4.5 13.4 4.5 5.9C4.5 5.2 4.9 4.6 5.6 4.5Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
-            </svg>
+          <a class="booking-action booking-action-secondary" href="tel:+16305550150">
+            <span>Call the Clinic</span>
           </a>
         </div>
       </header>
@@ -75,71 +81,79 @@ const treatmentGroups = [
       </div>
 
       <footer class="booking-assistance" aria-label="Booking support">
-        <span>Questions?</span>
-        <a href="tel:+13105550123">
-          <svg aria-hidden="true" viewBox="0 0 24 24" fill="none">
-            <path d="M5.6 4.5L8.3 3.9C9 3.8 9.6 4.1 9.9 4.7L11.1 7.5C11.4 8.1 11.2 8.8 10.7 9.2L9.4 10.3C10.3 12.1 11.8 13.7 13.7 14.6L14.8 13.3C15.2 12.8 15.9 12.6 16.5 12.9L19.3 14.1C19.9 14.4 20.2 15 20.1 15.7L19.5 18.4C19.4 19.1 18.8 19.5 18.1 19.5C10.6 19.5 4.5 13.4 4.5 5.9C4.5 5.2 4.9 4.6 5.6 4.5Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
-          </svg>
-          (310) 555-0123
-        </a>
-        <a href="mailto:contact@somarenew.com">
-          <svg aria-hidden="true" viewBox="0 0 24 24" fill="none">
-            <path d="M4.5 6.75H19.5V17.25H4.5V6.75Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"></path>
-            <path d="M5.25 7.5L12 12.25L18.75 7.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
-          </svg>
-          contact@somarenew.com
-        </a>
+        <span>Need a hand?</span>
+        <a href="tel:+16305550150">(630) 555-0150</a>
+        <a href="mailto:contact@somarenewmedical.com">contact@somarenewmedical.com</a>
       </footer>
     </div>
   </section>
 
   <style>
     .booking-page {
-      background:
-        linear-gradient(180deg, rgba(253, 253, 253, 0.96) 0%, rgba(248, 246, 240, 0.98) 52%, #fdfdfd 100%),
-        var(--warm-white);
-      min-height: calc(100svh - 80px);
-      padding: clamp(0.75rem, 2vw, 1.5rem);
+      background: var(--bone);
+      min-height: calc(100svh - 84px);
+      padding: clamp(1rem, 2.5vw, 2rem) clamp(1rem, 4vw, 2rem) 2rem;
     }
 
     .booking-container {
       margin: 0 auto;
-      width: min(100%, 1440px);
+      width: min(100%, 1400px);
+    }
+
+    .booking-masthead {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 0 0.9rem;
+      border-bottom: 1px solid var(--line);
+      font-family: 'DM Mono', ui-monospace, monospace;
+      font-size: 0.64rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: rgba(27, 34, 39, 0.45);
     }
 
     .booking-header {
-      align-items: end;
       display: grid;
-      gap: 1.25rem;
       grid-template-columns: minmax(0, 1fr) auto;
-      margin-bottom: 1rem;
-    }
-
-    .booking-copy {
-      max-width: 900px;
+      align-items: end;
+      gap: 1.5rem;
+      margin: 1.6rem 0 1.4rem;
     }
 
     .booking-overline {
-      color: var(--soma-gold);
-      font-size: 0.72rem;
-      font-weight: 700;
-      letter-spacing: 0.16em;
-      margin-bottom: 0.45rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.7rem;
+      color: var(--gold-deep);
+      font-family: 'DM Mono', ui-monospace, monospace;
+      font-size: 0.7rem;
+      font-weight: 500;
+      letter-spacing: 0.2em;
       text-transform: uppercase;
+      margin-bottom: 0.9rem;
+    }
+    .overline-tick {
+      width: 2rem;
+      height: 1px;
+      background: rgba(192, 178, 131, 0.6);
+      display: inline-block;
     }
 
     .booking-copy h1 {
-      color: var(--charcoal);
-      font-size: clamp(2rem, 4vw, 3.25rem);
+      color: var(--ink);
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: clamp(2.4rem, 5vw, 4.25rem);
+      line-height: 0.98;
       margin: 0;
     }
 
-    .booking-copy p:not(.booking-overline) {
+    .booking-lede {
       color: var(--secondary-text);
-      font-size: clamp(0.96rem, 1.7vw, 1.1rem);
+      font-size: clamp(0.96rem, 1.6vw, 1.1rem);
       line-height: 1.65;
-      margin: 0.55rem 0 0;
-      max-width: 840px;
+      margin: 1rem 0 0;
+      max-width: 640px;
     }
 
     .booking-actions {
@@ -150,265 +164,172 @@ const treatmentGroups = [
     }
 
     .booking-action {
-      align-items: center;
-      border-radius: 999px;
       display: inline-flex;
-      font-size: 0.88rem;
-      font-weight: 700;
+      align-items: center;
       gap: 0.55rem;
-      min-height: 44px;
-      padding: 0.78rem 1rem;
+      min-height: 50px;
+      padding: 0 1.4rem;
+      border-radius: 2px;
+      font-family: 'DM Mono', ui-monospace, monospace;
+      font-size: 0.74rem;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
       text-decoration: none;
-      transition:
-        background-color 180ms ease,
-        border-color 180ms ease,
-        color 180ms ease,
-        transform 180ms ease;
       white-space: nowrap;
+      transition: transform 200ms ease, background 200ms ease, border-color 200ms ease, color 200ms ease;
     }
-
-    .booking-action:hover {
-      transform: translateY(-1px);
-    }
-
-    .booking-action svg,
-    .booking-assistance svg {
-      height: 1rem;
-      width: 1rem;
-    }
+    .booking-action:hover { transform: translateY(-2px); }
+    .booking-action svg { height: 0.95rem; width: 0.95rem; }
 
     .booking-action-primary {
-      background: var(--soma-gold);
-      color: var(--charcoal);
+      background: var(--ink);
+      color: var(--cream);
+      border: 1px solid var(--ink);
     }
-
-    .booking-action-primary:hover {
-      background: #d4c89a;
-    }
+    .booking-action-primary:hover { background: var(--gold-deep); border-color: var(--gold-deep); }
 
     .booking-action-secondary {
-      background: rgba(255, 255, 255, 0.68);
-      border: 1px solid rgba(192, 178, 131, 0.38);
-      color: var(--charcoal);
+      background: transparent;
+      border: 1px solid var(--line-strong);
+      color: var(--ink);
     }
-
-    .booking-action-secondary:hover {
-      border-color: rgba(192, 178, 131, 0.7);
-      color: var(--soma-gold);
-    }
+    .booking-action-secondary:hover { border-color: var(--ink); }
 
     .treatment-strip {
-      align-items: center;
       display: flex;
+      align-items: center;
       gap: 0.5rem;
       list-style: none;
-      margin: 0 0 1rem;
-      overflow-x: auto;
+      margin: 0 0 1.2rem;
       padding: 0 0 0.2rem;
+      overflow-x: auto;
       scrollbar-width: none;
     }
-
-    .treatment-strip::-webkit-scrollbar {
-      display: none;
-    }
-
+    .treatment-strip::-webkit-scrollbar { display: none; }
     .treatment-strip li {
-      background: rgba(255, 255, 255, 0.74);
-      border: 1px solid rgba(192, 178, 131, 0.22);
-      border-radius: 999px;
-      color: var(--charcoal);
       flex: 0 0 auto;
-      font-size: 0.76rem;
-      font-weight: 700;
-      letter-spacing: 0.06em;
+      background: var(--cream);
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      color: rgba(27, 34, 39, 0.75);
+      font-family: 'DM Mono', ui-monospace, monospace;
+      font-size: 0.66rem;
+      font-weight: 500;
+      letter-spacing: 0.1em;
       line-height: 1;
-      padding: 0.68rem 0.82rem;
+      padding: 0.62rem 0.85rem;
       text-transform: uppercase;
     }
 
     .booking-shell {
-      background: #304552;
-      border: 1px solid rgba(192, 178, 131, 0.32);
-      border-radius: 8px;
-      box-shadow:
-        0 20px 55px rgba(54, 69, 79, 0.16),
-        0 1px 0 rgba(255, 255, 255, 0.9) inset;
-      height: clamp(720px, calc(100svh - 240px), 980px);
-      min-height: 720px;
-      overflow: hidden;
       position: relative;
+      background: var(--ink);
+      border: 1px solid var(--line-strong);
+      border-radius: 4px;
+      box-shadow: 0 40px 90px -55px rgba(27, 34, 39, 0.5);
+      height: clamp(700px, calc(100svh - 250px), 960px);
+      min-height: 700px;
+      overflow: hidden;
     }
 
     .booking-shell-bar {
-      align-items: center;
-      background: linear-gradient(90deg, rgba(54, 69, 79, 0.96), rgba(61, 78, 90, 0.96));
-      border-bottom: 1px solid rgba(192, 178, 131, 0.24);
-      color: rgba(253, 253, 253, 0.78);
       display: flex;
-      font-size: 0.74rem;
-      font-weight: 700;
+      align-items: center;
       justify-content: space-between;
-      letter-spacing: 0.08em;
-      min-height: 38px;
+      min-height: 40px;
       padding: 0 1rem;
-      text-transform: uppercase;
-    }
-
-    .booking-shell-title {
-      align-items: center;
-      display: inline-flex;
-      gap: 0.55rem;
-    }
-
-    .booking-shell-title span {
-      background: var(--soma-gold);
-      border-radius: 999px;
-      box-shadow: 0 0 0 4px rgba(192, 178, 131, 0.16);
-      height: 0.44rem;
-      width: 0.44rem;
-    }
-
-    .booking-frame {
-      background: #ffffff;
-      border: 0;
-      height: calc(100% - 38px);
-      position: relative;
-      width: 100%;
-      z-index: 2;
-    }
-
-    .booking-loading {
-      align-items: center;
-      background: linear-gradient(180deg, #ffffff 0%, #f8f6f0 100%);
-      color: var(--secondary-text);
-      display: flex;
-      flex-direction: column;
-      gap: 0.8rem;
-      inset: 38px 0 0;
-      justify-content: center;
-      opacity: 1;
-      pointer-events: none;
-      position: absolute;
-      transition: opacity 220ms ease;
-      z-index: 3;
-    }
-
-    .booking-loading span {
-      font-size: 0.72rem;
-      font-weight: 700;
+      background: var(--charcoal-deep);
+      border-bottom: 1px solid rgba(192, 178, 131, 0.2);
+      color: rgba(243, 239, 230, 0.7);
+      font-family: 'DM Mono', ui-monospace, monospace;
+      font-size: 0.66rem;
+      font-weight: 500;
       letter-spacing: 0.14em;
       text-transform: uppercase;
     }
-
-    .booking-shell.is-loaded .booking-loading {
-      opacity: 0;
-      visibility: hidden;
+    .booking-shell-title { display: inline-flex; align-items: center; gap: 0.55rem; }
+    .booking-shell-title span {
+      width: 0.42rem; height: 0.42rem;
+      background: var(--soma-gold);
+      border-radius: 999px;
+      box-shadow: 0 0 0 4px rgba(192, 178, 131, 0.16);
     }
+
+    .booking-frame {
+      position: relative;
+      z-index: 2;
+      width: 100%;
+      height: calc(100% - 40px);
+      border: 0;
+      background: #fff;
+    }
+
+    .booking-loading {
+      position: absolute;
+      inset: 40px 0 0;
+      z-index: 3;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 0.9rem;
+      background: linear-gradient(180deg, #fff 0%, var(--cream) 100%);
+      color: var(--secondary-text);
+      transition: opacity 220ms ease;
+      pointer-events: none;
+    }
+    .booking-loading span {
+      font-family: 'DM Mono', ui-monospace, monospace;
+      font-size: 0.66rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+    }
+    .booking-shell.is-loaded .booking-loading { opacity: 0; visibility: hidden; }
 
     .loading-spinner {
-      animation: spin 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
-      border: 2px solid rgba(192, 178, 131, 0.15);
+      width: 34px; height: 34px;
+      border: 2px solid rgba(192, 178, 131, 0.18);
+      border-top-color: var(--gold-deep);
       border-radius: 50%;
-      border-top-color: var(--soma-gold);
-      height: 32px;
-      width: 32px;
+      animation: spin 1.1s cubic-bezier(0.5, 0, 0.5, 1) infinite;
     }
-
-    @keyframes spin {
-      to {
-        transform: rotate(360deg);
-      }
-    }
+    @keyframes spin { to { transform: rotate(360deg); } }
 
     .booking-assistance {
-      align-items: center;
-      color: var(--secondary-text);
       display: flex;
       flex-wrap: wrap;
-      font-size: 0.9rem;
-      gap: 0.85rem 1.25rem;
-      justify-content: center;
-      padding: 1.05rem 0 0.2rem;
-    }
-
-    .booking-assistance span {
-      opacity: 0.7;
-    }
-
-    .booking-assistance a {
       align-items: center;
-      color: var(--charcoal);
-      display: inline-flex;
-      gap: 0.4rem;
-      text-decoration: none;
-      transition: color 180ms ease;
+      justify-content: center;
+      gap: 0.6rem 1.5rem;
+      padding: 1.2rem 0 0;
+      font-family: 'DM Mono', ui-monospace, monospace;
+      font-size: 0.72rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--secondary-text);
     }
-
-    .booking-assistance a:hover {
-      color: var(--soma-gold);
-    }
+    .booking-assistance span { opacity: 0.6; }
+    .booking-assistance a { color: var(--ink); text-decoration: none; transition: color 180ms ease; }
+    .booking-assistance a:hover { color: var(--gold-deep); }
 
     @media (max-width: 860px) {
-      .booking-header {
-        grid-template-columns: 1fr;
-      }
-
-      .booking-actions {
-        justify-content: flex-start;
-      }
+      .booking-header { grid-template-columns: 1fr; }
+      .booking-actions { justify-content: flex-start; }
     }
-
     @media (max-width: 640px) {
-      .booking-page {
-        padding: 0.9rem;
-      }
-
-      .booking-copy h1 {
-        font-size: 2.25rem;
-      }
-
-      .booking-copy p:not(.booking-overline) {
-        font-size: 0.94rem;
-      }
-
-      .booking-actions {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        width: 100%;
-      }
-
-      .booking-action {
-        justify-content: center;
-        padding-left: 0.75rem;
-        padding-right: 0.75rem;
-      }
-
-      .booking-shell {
-        height: 78svh;
-        min-height: 650px;
-      }
-
-      .booking-shell-bar {
-        font-size: 0.66rem;
-        padding: 0 0.75rem;
-      }
-
-      .booking-assistance {
-        align-items: flex-start;
-        flex-direction: column;
-        padding-left: 0.1rem;
-      }
+      .booking-actions { display: grid; grid-template-columns: 1fr 1fr; width: 100%; }
+      .booking-action { justify-content: center; padding: 0 0.75rem; }
+      .booking-shell { height: 76svh; min-height: 620px; }
+      .booking-assistance { flex-direction: column; align-items: flex-start; }
     }
   </style>
 
   <script>
     const bookingFrame = document.querySelector("[data-booking-frame]");
     const bookingShell = document.querySelector("[data-booking-shell]");
-    const revealBookingFrame = () => {
-      bookingShell?.classList.add("is-loaded");
-    };
-
-    bookingFrame?.addEventListener("load", revealBookingFrame, { once: true });
-    window.setTimeout(revealBookingFrame, 3200);
+    const reveal = () => bookingShell?.classList.add("is-loaded");
+    bookingFrame?.addEventListener("load", reveal, { once: true });
+    window.setTimeout(reveal, 3200);
   </script>
 </MainLayout>

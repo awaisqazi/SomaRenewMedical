@@ -1,552 +1,155 @@
 ---
 import MainLayout from "../layouts/MainLayout.astro";
+import { Image } from "astro:assets";
 import youssefImage from "../images/youssef.png";
+
+const credentials = [
+  "ABEM Board Certified",
+  "Emergency Medicine",
+  "Rush Medical College",
+];
 ---
 
 <MainLayout title="About Us">
-  <!-- Hero Section -->
-  <section
-    class="relative py-24 md:py-32 overflow-hidden"
-    style="background: linear-gradient(135deg, #FDFDFD 0%, #F8F6F0 100%);"
-  >
-    <!-- Ambient Background Orbs -->
-    <div
-      class="parallax-orb absolute w-[500px] h-[500px] rounded-full opacity-25 blur-[100px] pointer-events-none"
-      style="background: radial-gradient(circle, var(--soma-gold) 0%, transparent 70%); top: -15%; right: -10%;"
-    ></div>
-    <div
-      class="parallax-orb absolute w-[400px] h-[400px] rounded-full opacity-20 blur-[80px] pointer-events-none"
-      style="background: radial-gradient(circle, var(--sage-green) 0%, transparent 70%); bottom: -10%; left: -8%;"
-    ></div>
-    <div
-      class="parallax-orb absolute w-[250px] h-[250px] rounded-full opacity-15 blur-[60px] pointer-events-none"
-      style="background: radial-gradient(circle, var(--dusty-blue) 0%, transparent 70%); top: 50%; left: 30%;"
-    ></div>
+  <!-- ══ HERO ══════════════════════════════════════════════════════════ -->
+  <section class="bg-bone">
+    <div class="mx-auto max-w-[1400px] px-5 sm:px-8">
+      <div class="flex items-center justify-between py-4 border-b border-line font-mono text-[0.62rem] sm:text-[0.68rem] tracking-[0.18em] uppercase text-ink/45">
+        <span>About SomaRenew</span>
+        <span class="hidden sm:inline">Our story</span>
+        <span>Est. MMXXIV</span>
+      </div>
 
-    <div class="container mx-auto px-6 text-center relative z-10">
-      <!-- Eyebrow Text -->
-      <span
-        class="hero-animate inline-block text-[var(--soma-gold)] uppercase tracking-[0.25em] text-sm font-semibold mb-4 opacity-0"
-        >About SomaRenew</span
-      >
-      
-      <!-- Decorative Line -->
-      <div class="hero-animate hero-delay-1 h-px w-16 bg-gradient-to-r from-transparent via-[var(--soma-gold)] to-transparent mx-auto mb-8 opacity-0"></div>
-      
-      <!-- Hero Headline -->
-      <h1
-        class="hero-animate hero-delay-2 text-4xl md:text-6xl lg:text-7xl font-serif font-bold text-[var(--charcoal)] leading-tight mb-12 opacity-0"
-      >
-        Redefining Wellness Through<br class="hidden md:block" />
-        <span class="text-[var(--soma-gold)]">Innovation</span> and <span class="text-[var(--soma-gold)]">Compassionate Care</span>
-      </h1>
+      <div class="pt-16 md:pt-24 pb-16 md:pb-20 max-w-5xl">
+        <p class="label reveal mb-7">
+          <span class="inline-block w-9 h-px bg-gold/60"></span> Who We Are
+        </p>
+        <h1 class="reveal d-1 font-serif text-ink leading-[0.96] text-5xl sm:text-7xl xl:text-[5.4rem]">
+          Redefining wellness through
+          <span class="accent-word">innovation</span> &amp; <span class="accent-word">compassionate care.</span>
+        </h1>
+      </div>
+    </div>
+  </section>
 
-      <!-- Mission & Vision Cards - Glassmorphism Style -->
-      <div class="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto text-left">
-        <!-- Mission -->
-        <div
-          class="hero-animate hero-delay-3 opacity-0 glass-card bg-white/60 backdrop-blur-md rounded-3xl p-8 border border-[var(--soma-gold)]/20 transition-all duration-500 hover:shadow-lg hover:-translate-y-1"
-          style="box-shadow: 0 8px 32px rgba(192, 178, 131, 0.12);"
-        >
-          <div class="flex items-center gap-3 mb-4">
-            <div
-              class="w-12 h-12 rounded-2xl bg-gradient-to-br from-[var(--soma-gold)]/20 to-[var(--soma-gold)]/5 flex items-center justify-center"
-            >
-              <svg
-                class="w-6 h-6 text-[var(--soma-gold)]"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="1.5"
-                  d="M13 10V3L4 14h7v7l9-11h-7z"></path>
-              </svg>
-            </div>
-            <span class="text-[var(--soma-gold)] uppercase tracking-[0.25em] text-xs font-semibold">
-              Our Mission
-            </span>
-          </div>
-          <h2 class="text-2xl font-serif font-bold text-[var(--charcoal)] mb-4">
-            Empowering Your Journey
-          </h2>
-          <div class="h-px w-full bg-gradient-to-r from-[var(--soma-gold)]/40 via-[var(--soma-gold)]/20 to-transparent mb-4"></div>
-          <p class="text-gray-600 leading-relaxed">
-            To empower individuals on their weight loss journey through
-            personalized medical care, FDA-approved medications,
-            state-of-the-art technology, and science-based hydration solutions.
-            Promoting sustainable health, vitality, and lasting transformation.
+  <!-- ══ MISSION / VISION ══════════════════════════════════════════════ -->
+  <section class="section bg-cream border-t border-line">
+    <div class="mx-auto max-w-[1400px] px-5 sm:px-8">
+      <div class="grid md:grid-cols-2 gap-x-16 gap-y-14">
+        <div class="reveal">
+          <p class="index-label mb-5"><span class="num">01</span> &nbsp;·&nbsp;Our Mission</p>
+          <div class="reveal-line h-px bg-line mb-8"></div>
+          <h2 class="font-serif text-3xl md:text-4xl text-ink leading-[1.1] mb-6">Empowering your journey</h2>
+          <p class="text-secondary-text leading-relaxed text-lg">
+            To empower individuals through personalized medical care (FDA-approved
+            medications, state-of-the-art technology and science-based hydration),
+            promoting sustainable health, vitality and lasting transformation.
           </p>
         </div>
-
-        <!-- Vision -->
-        <div
-          class="hero-animate hero-delay-4 opacity-0 glass-card bg-white/60 backdrop-blur-md rounded-3xl p-8 border border-[var(--sage-green)]/20 transition-all duration-500 hover:shadow-lg hover:-translate-y-1"
-          style="box-shadow: 0 8px 32px rgba(138, 154, 91, 0.12);"
-        >
-          <div class="flex items-center gap-3 mb-4">
-            <div
-              class="w-12 h-12 rounded-2xl bg-gradient-to-br from-[var(--sage-green)]/20 to-[var(--sage-green)]/5 flex items-center justify-center"
-            >
-              <svg
-                class="w-6 h-6 text-[var(--sage-green)]"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="1.5"
-                  d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="1.5"
-                  d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"
-                ></path>
-              </svg>
-            </div>
-            <span class="text-[var(--sage-green)] uppercase tracking-[0.25em] text-xs font-semibold">
-              Our Vision
-            </span>
-          </div>
-          <h2 class="text-2xl font-serif font-bold text-[var(--charcoal)] mb-4">
-            The Premier Destination
-          </h2>
-          <div class="h-px w-full bg-gradient-to-r from-[var(--sage-green)]/40 via-[var(--sage-green)]/20 to-transparent mb-4"></div>
-          <p class="text-gray-600 leading-relaxed">
-            To be the premier destination for personalized, medically guided
-            weight loss. Where innovation, FDA-approved treatments, and
-            compassionate care come together to redefine wellness and inspire
-            lifelong confidence.
+        <div class="reveal d-1">
+          <p class="index-label mb-5"><span class="num">02</span> &nbsp;·&nbsp;Our Vision</p>
+          <div class="reveal-line h-px bg-line mb-8"></div>
+          <h2 class="font-serif text-3xl md:text-4xl text-ink leading-[1.1] mb-6">The premier destination</h2>
+          <p class="text-secondary-text leading-relaxed text-lg">
+            To be the premier destination for personalized, medically guided care,
+            where innovation, FDA-approved treatments and genuine compassion come
+            together to redefine wellness and inspire lifelong confidence.
           </p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Meet The Specialist Section - Editorial Profile -->
-  <section
-    class="specialist-section py-24 md:py-32 relative overflow-hidden"
-    style="background-color: #F5F3ED;"
-  >
-    <!-- Ambient Background Orbs -->
-    <div
-      class="parallax-orb absolute w-[600px] h-[600px] rounded-full opacity-20 blur-[120px] pointer-events-none"
-      style="background: radial-gradient(circle, var(--soma-gold) 0%, transparent 70%); top: -20%; right: -15%;"
-    ></div>
-    <div
-      class="parallax-orb absolute w-[450px] h-[450px] rounded-full opacity-15 blur-[100px] pointer-events-none"
-      style="background: radial-gradient(circle, var(--sage-green) 0%, transparent 70%); bottom: -15%; left: -10%;"
-    ></div>
-
-    <div class="container mx-auto px-6 relative z-10">
-      <!-- Section Header -->
-      <div class="text-center mb-20">
-        <span
-          class="specialist-animate inline-block text-[var(--soma-gold)] uppercase tracking-[0.25em] text-sm font-semibold mb-4 opacity-0"
-          >Expert Care</span
-        >
-        <div class="specialist-animate specialist-delay-1 h-px w-24 bg-gradient-to-r from-transparent via-[var(--soma-gold)] to-transparent mx-auto mb-8 opacity-0"></div>
-        <h2 class="specialist-animate specialist-delay-2 text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-[var(--charcoal)] opacity-0">
-          Meet The Specialist
-        </h2>
+  <!-- ══ MEET THE SPECIALIST ═══════════════════════════════════════════ -->
+  <section class="section bg-bone border-t border-line">
+    <div class="mx-auto max-w-[1400px] px-5 sm:px-8">
+      <div class="mb-14">
+        <p class="index-label reveal"><span class="num">03</span> &nbsp;·&nbsp;Expert Care</p>
+        <h2 class="reveal d-1 font-serif text-4xl md:text-6xl text-ink mt-5">Meet the specialist</h2>
       </div>
 
-      <!-- Luxury Editorial Profile Card -->
-      <div
-        class="specialist-animate specialist-delay-3 opacity-0 editorial-card max-w-6xl mx-auto bg-white/80 backdrop-blur-md rounded-[2.5rem] overflow-hidden border border-[var(--soma-gold)]/15"
-        style="box-shadow: 0 30px 100px rgba(54, 69, 79, 0.15), 0 0 0 1px rgba(255,255,255,0.5) inset;"
-      >
-        <div class="grid md:grid-cols-2 items-stretch">
-          <!-- Photo Section - Left -->
-          <div class="relative group">
-            <div class="h-[450px] md:h-full min-h-[500px] relative overflow-hidden">
-              <img
-                src={youssefImage.src}
-                alt="Dr. Youssef Hedroug, MD"
-                class="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105"
-              />
-              <!-- Elegant Gradient Overlay - Seamless blend -->
-              <div
-                class="absolute inset-0 bg-gradient-to-t from-[var(--charcoal)]/50 via-[var(--charcoal)]/10 to-transparent md:bg-gradient-to-r md:from-transparent md:via-transparent md:to-white/30"
-              ></div>
-              <!-- Additional edge blend for seamless transition on desktop -->
-              <div class="hidden md:block absolute inset-y-0 right-0 w-32 bg-gradient-to-r from-transparent to-white/80"></div>
-            </div>
-            
-            <!-- Decorative Corner Accents -->
-            <div
-              class="absolute top-8 left-8 w-24 h-24 border-l-2 border-t-2 border-[var(--soma-gold)]/50 rounded-tl-3xl pointer-events-none"
-            ></div>
-            <div
-              class="absolute bottom-8 right-8 md:hidden w-24 h-24 border-r-2 border-b-2 border-[var(--soma-gold)]/50 rounded-br-3xl pointer-events-none"
-            ></div>
-            
-            <!-- Floating Badge on Mobile -->
-            <div class="md:hidden absolute bottom-8 left-8 bg-white/90 backdrop-blur-sm px-4 py-2 rounded-full border border-[var(--soma-gold)]/20">
-              <span class="text-[var(--soma-gold)] text-xs uppercase tracking-[0.15em] font-semibold">Board Certified</span>
-            </div>
-          </div>
+      <div class="grid lg:grid-cols-12 gap-y-10 lg:gap-x-14 items-stretch">
+        <!-- Photo -->
+        <div class="lg:col-span-5 reveal">
+          <figure class="profile-frame relative">
+            <Image
+              src={youssefImage}
+              alt="Dr. Youssef Hedroug, MD"
+              class="w-full h-[460px] sm:h-[560px] lg:h-full object-cover object-top"
+              widths={[480, 720, 1000]}
+              sizes="(min-width: 1024px) 42vw, 100vw"
+              format="webp"
+              quality={74}
+              loading="lazy"
+            />
+            <figcaption class="absolute left-4 bottom-4 bg-cream/92 backdrop-blur-sm border border-line rounded-[3px] px-4 py-2">
+              <span class="font-mono text-[0.58rem] tracking-[0.18em] uppercase text-gold-deep">Board Certified</span>
+            </figcaption>
+          </figure>
+        </div>
 
-          <!-- Content Section - Right -->
-          <div
-            class="p-10 md:p-14 lg:p-20 flex flex-col justify-center relative"
-          >
-            <!-- Decorative Background Pattern -->
-            <div class="absolute top-0 right-0 w-full h-full opacity-[0.03] pointer-events-none" style="background-image: url('/logo.png'); background-size: 200px; background-repeat: repeat; background-position: center;"></div>
-            
-            <div class="relative z-10">
-              <!-- Credential Badge -->
-              <div class="inline-flex items-center gap-3 mb-8">
-                <div class="h-px w-12 bg-gradient-to-r from-[var(--soma-gold)] to-transparent"></div>
-                <span
-                  class="text-[var(--soma-gold)] uppercase tracking-[0.25em] text-xs font-bold"
-                >
-                  Board-Certified Physician
-                </span>
-              </div>
+        <!-- Bio -->
+        <div class="lg:col-span-7 lg:pl-6 flex flex-col justify-center reveal d-1">
+          <p class="label mb-6">Board-Certified Physician</p>
+          <h3 class="font-serif text-5xl md:text-6xl lg:text-7xl text-ink leading-[0.95]">
+            Dr. Youssef<br /><span class="accent-word">Hedroug</span>
+          </h3>
+          <p class="mt-5 font-mono text-sm tracking-[0.08em] uppercase text-secondary-text">MD, Emergency Medicine</p>
 
-              <!-- Name - Large Serif Typography -->
-              <h3
-                class="text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-[var(--charcoal)] mb-4 leading-[1.1]"
-              >
-                Dr. Youssef<br/>
-                <span class="text-[var(--soma-gold)]">Hedroug</span>
-              </h3>
+          <div class="h-px bg-line my-9"></div>
 
-              <!-- Title -->
-              <p
-                class="text-xl md:text-2xl text-[var(--charcoal)]/60 font-light tracking-wide mb-8"
-              >
-                MD — Emergency Medicine
-              </p>
+          <p class="text-secondary-text leading-relaxed text-lg max-w-2xl">
+            Dr. Hedroug is a board-certified emergency medicine physician with
+            extensive clinical experience across multiple hospital systems. A
+            graduate of <strong class="text-ink font-semibold">Rush Medical College</strong>,
+            he is certified by the <strong class="text-ink font-semibold">American Board of
+            Emergency Medicine</strong> and holds active licenses across Illinois,
+            Texas, Michigan, New York and Iowa. His background in acute care and
+            rapid patient assessment brings a uniquely evidence-based approach to
+            personalized wellness and medical weight management.
+          </p>
 
-              <!-- Elegant Gold Divider -->
-              <div class="flex items-center gap-4 mb-8">
-                <div
-                  class="h-px flex-1 bg-gradient-to-r from-[var(--soma-gold)]/50 via-[var(--soma-gold)]/30 to-transparent"
-                ></div>
-                <svg
-                  class="w-5 h-5 text-[var(--soma-gold)]"
-                  fill="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"
-                  ></path>
-                </svg>
-                <div
-                  class="h-px flex-1 bg-gradient-to-l from-[var(--soma-gold)]/50 via-[var(--soma-gold)]/30 to-transparent"
-                ></div>
-              </div>
-
-              <!-- Bio -->
-              <p class="text-gray-600 leading-relaxed text-base md:text-lg mb-10">
-                Dr. Hedroug is a board-certified emergency medicine physician with
-                extensive clinical experience across multiple hospital systems. A
-                graduate of <strong class="text-[var(--charcoal)]">Rush Medical College</strong> at Rush University Medical
-                Center, he is certified by the <strong class="text-[var(--charcoal)]">American Board of Emergency
-                Medicine</strong> and holds active medical licenses in multiple states
-                including Illinois, Texas, Michigan, New York, and Iowa. His
-                background in acute care and patient assessment brings a unique,
-                evidence-based approach to personalized wellness and medical
-                weight management.
-              </p>
-
-              <!-- Expertise Tags -->
-              <div class="flex flex-wrap gap-3">
-                <span
-                  class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-gradient-to-r from-[var(--soma-gold)]/15 to-[var(--soma-gold)]/5 text-[var(--charcoal)] text-sm font-medium border border-[var(--soma-gold)]/20 transition-all duration-300 hover:border-[var(--soma-gold)]/40"
-                >
-                  <svg
-                    class="w-4 h-4 text-[var(--soma-gold)]"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="2"
-                      d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-                  </svg>
-                  ABEM Board Certified
-                </span>
-                <span
-                  class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-gradient-to-r from-[var(--sage-green)]/15 to-[var(--sage-green)]/5 text-[var(--charcoal)] text-sm font-medium border border-[var(--sage-green)]/20 transition-all duration-300 hover:border-[var(--sage-green)]/40"
-                >
-                  <svg
-                    class="w-4 h-4 text-[var(--sage-green)]"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="2"
-                      d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-                  </svg>
-                  Emergency Medicine
-                </span>
-                <span
-                  class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-gradient-to-r from-[var(--dusty-blue)]/15 to-[var(--dusty-blue)]/5 text-[var(--charcoal)] text-sm font-medium border border-[var(--dusty-blue)]/20 transition-all duration-300 hover:border-[var(--dusty-blue)]/40"
-                >
-                  <svg
-                    class="w-4 h-4 text-[var(--dusty-blue)]"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="2"
-                      d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-                  </svg>
-                  Rush Medical College
-                </span>
-              </div>
-            </div>
+          <div class="mt-9 flex flex-wrap gap-3">
+            {credentials.map((c) => (
+              <span class="inline-flex items-center gap-2 px-4 py-2 border border-line rounded-full font-mono text-[0.66rem] tracking-[0.08em] uppercase text-ink/70">
+                <span class="w-1 h-1 rounded-full bg-gold-deep"></span>{c}
+              </span>
+            ))}
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- CTA Section -->
-  <section
-    class="cta-section relative py-24 md:py-32 overflow-hidden"
-    style="background: linear-gradient(135deg, #36454F 0%, #2A363E 100%);"
-  >
-    <!-- Top & Bottom Gold Lines -->
-    <div
-      class="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-[var(--soma-gold)]/40 to-transparent"
-    ></div>
-    <div
-      class="absolute bottom-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-[var(--soma-gold)]/40 to-transparent"
-    ></div>
-    
-    <!-- Background Pattern -->
-    <div class="absolute inset-0 overflow-hidden pointer-events-none" aria-hidden="true">
-      <div class="absolute -inset-[50%] w-[200%] h-[200%]" style="
-        background-image: url('/logo.png');
-        background-size: 280px auto;
-        background-repeat: repeat;
-        opacity: 0.02;
-        filter: brightness(0) invert(1);
-        transform: rotate(-12deg);
-      "></div>
-    </div>
-    
-    <!-- Floating Orb -->
-    <div class="absolute w-[500px] h-[500px] rounded-full blur-[150px] opacity-15 -top-48 -right-48 pointer-events-none"
-         style="background: radial-gradient(circle, var(--soma-gold) 0%, transparent 70%);"></div>
-
-    <div class="container mx-auto px-6 text-center relative z-10">
-      <span
-        class="cta-animate inline-block text-[var(--soma-gold)] uppercase tracking-[0.25em] text-sm font-semibold mb-6 opacity-0"
-        >Your Journey Starts Here</span
-      >
-      <h2 class="cta-animate cta-delay-1 text-3xl md:text-5xl lg:text-6xl font-serif font-bold text-white mb-8 opacity-0">
-        Begin Your<br class="md:hidden"/>
-        <span class="text-[var(--soma-gold)]">Transformation</span> Today
-      </h2>
-      <p class="cta-animate cta-delay-2 max-w-2xl mx-auto text-lg text-white/60 mb-12 leading-relaxed opacity-0">
-        Take the first step towards a healthier, more confident you. Our team is
-        ready to create your personalized path to wellness.
-      </p>
-      <a
-        class="cta-animate cta-delay-3 inline-flex items-center gap-3 rounded-full bg-[var(--soma-gold)] px-12 py-5 text-lg font-semibold text-[var(--charcoal)] transition-all duration-300 hover:bg-[#D4C89A] hover:scale-105 opacity-0 group"
-        style="box-shadow: 0 10px 40px rgba(192, 178, 131, 0.3);"
-        href="/consultation"
-      >
-        Schedule My Consultation
-        <svg
-          class="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1"
-          fill="none"
-          stroke="currentColor"
-          viewBox="0 0 24 24"
-          ><path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="2"
-            d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg
-        >
-      </a>
+  <!-- ══ CLOSING ═══════════════════════════════════════════════════════ -->
+  <section class="on-dark relative bg-ink text-cream overflow-hidden">
+    <div class="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-[var(--soma-gold)]/40 to-transparent"></div>
+    <div class="mx-auto max-w-[1400px] px-5 sm:px-8 section">
+      <div class="grid lg:grid-cols-12 gap-y-10 lg:gap-x-16 items-center">
+        <div class="lg:col-span-8">
+          <p class="label label--light reveal mb-7">Care that listens first</p>
+          <h2 class="reveal d-1 font-serif text-5xl md:text-6xl lg:text-7xl text-cream leading-[0.98]">
+            Bring your goals.<br />We'll bring the <span class="accent-word accent-word--light">medicine.</span>
+          </h2>
+        </div>
+        <div class="lg:col-span-4 lg:text-right">
+          <p class="reveal d-2 text-cream/55 leading-relaxed mb-7 lg:ml-auto lg:max-w-xs">
+            Sit down with Dr. Hedroug for an unhurried, honest conversation about
+            what's actually right for you.
+          </p>
+          <a href="/consultation" class="btn-gold reveal d-2">Schedule a Consultation</a>
+        </div>
+      </div>
     </div>
   </section>
 </MainLayout>
 
 <style>
-  /* Hero Animations */
-  .hero-animate {
-    transform: translateY(30px);
-    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
-  }
-  
-  .hero-animate.in-view {
-    opacity: 1 !important;
-    transform: translateY(0);
-  }
-  
-  .hero-delay-1 { transition-delay: 0.15s; }
-  .hero-delay-2 { transition-delay: 0.3s; }
-  .hero-delay-3 { transition-delay: 0.5s; }
-  .hero-delay-4 { transition-delay: 0.65s; }
-
-  /* Specialist Section Animations */
-  .specialist-animate {
-    transform: translateY(40px);
-    transition: opacity 0.9s ease-out, transform 0.9s ease-out;
-  }
-  
-  .specialist-animate.in-view {
-    opacity: 1 !important;
-    transform: translateY(0);
-  }
-  
-  .specialist-delay-1 { transition-delay: 0.15s; }
-  .specialist-delay-2 { transition-delay: 0.3s; }
-  .specialist-delay-3 { transition-delay: 0.5s; }
-
-  /* CTA Animations */
-  .cta-animate {
-    transform: translateY(30px);
-    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
-  }
-  
-  .cta-animate.in-view {
-    opacity: 1 !important;
-    transform: translateY(0);
-  }
-  
-  .cta-delay-1 { transition-delay: 0.15s; }
-  .cta-delay-2 { transition-delay: 0.3s; }
-  .cta-delay-3 { transition-delay: 0.45s; }
-
-  /* Parallax Orbs */
-  .parallax-orb {
-    transition: transform 0.4s ease-out;
-    will-change: transform;
-  }
-
-  /* Glassmorphism Card Hover Enhancement */
-  .glass-card {
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-  }
-
-  .glass-card:hover {
-    backdrop-filter: blur(16px);
-    -webkit-backdrop-filter: blur(16px);
-  }
-
-  /* Editorial Card Enhancements */
-  .editorial-card {
-    backdrop-filter: blur(16px);
-    -webkit-backdrop-filter: blur(16px);
+  .profile-frame {
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    overflow: hidden;
+    box-shadow: 0 40px 80px -50px rgba(27, 34, 39, 0.5);
+    height: 100%;
   }
 </style>
-
-<script>
-  document.addEventListener('DOMContentLoaded', () => {
-    // ===== Hero Section Animations =====
-    const heroAnimateElements = document.querySelectorAll('.hero-animate');
-    
-    // Trigger hero animations after a short delay (on page load)
-    setTimeout(() => {
-      heroAnimateElements.forEach(el => {
-        el.classList.add('in-view');
-      });
-    }, 100);
-
-    // ===== Specialist Section Animations - Scroll Triggered =====
-    const specialistElements = document.querySelectorAll('.specialist-animate');
-    
-    if (specialistElements.length > 0) {
-      const specialistObserver = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            // Get all specialist elements and trigger them in sequence
-            specialistElements.forEach(el => {
-              el.classList.add('in-view');
-            });
-            specialistObserver.disconnect(); // Only trigger once
-          }
-        });
-      }, {
-        threshold: 0.15,
-        rootMargin: '0px 0px -10% 0px'
-      });
-
-      // Observe the specialist section
-      const specialistSection = document.querySelector('.specialist-section');
-      if (specialistSection) {
-        specialistObserver.observe(specialistSection);
-      }
-    }
-
-    // ===== CTA Section Animations - Scroll Triggered =====
-    const ctaElements = document.querySelectorAll('.cta-animate');
-    
-    if (ctaElements.length > 0) {
-      const ctaObserver = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            ctaElements.forEach(el => {
-              el.classList.add('in-view');
-            });
-            ctaObserver.disconnect(); // Only trigger once
-          }
-        });
-      }, {
-        threshold: 0.2,
-        rootMargin: '0px 0px -10% 0px'
-      });
-
-      // Observe the CTA section
-      const ctaSection = document.querySelector('.cta-section');
-      if (ctaSection) {
-        ctaObserver.observe(ctaSection);
-      }
-    }
-
-    // ===== Parallax Effect for Background Orbs =====
-    const parallaxOrbs = document.querySelectorAll('.parallax-orb');
-    
-    if (parallaxOrbs.length > 0) {
-      let ticking = false;
-      
-      const updateParallax = () => {
-        const scrollY = window.scrollY;
-        
-        parallaxOrbs.forEach((orb, index) => {
-          const speed = (index % 3 + 1) * 0.03; // Vary speed per orb
-          const direction = index % 2 === 0 ? 1 : -1; // Alternate direction
-          const yOffset = scrollY * speed * direction;
-          const xOffset = scrollY * speed * 0.5 * direction;
-          
-          (orb as HTMLElement).style.transform = `translate(${xOffset}px, ${yOffset}px)`;
-        });
-      };
-      
-      window.addEventListener('scroll', () => {
-        if (!ticking) {
-          window.requestAnimationFrame(() => {
-            updateParallax();
-            ticking = false;
-          });
-          ticking = true;
-        }
-      }, { passive: true });
-      
-      // Initial position
-      updateParallax();
-    }
-  });
-</script>

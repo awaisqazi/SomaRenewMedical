@@ -3,258 +3,149 @@ import MainLayout from "../layouts/MainLayout.astro";
 ---
 
 <MainLayout title="Contact Us">
-  <!-- Hero Section -->
-  <section
-    class="relative py-16 md:py-20 overflow-hidden"
-    style="background: linear-gradient(135deg, #FDFDFD 0%, #F8F6F0 100%);"
-  >
-    <div
-      class="absolute top-0 right-0 w-64 h-64 bg-[var(--soma-gold)]/5 rounded-full blur-3xl translate-x-1/2 -translate-y-1/2"
-    >
-    </div>
+  <!-- ══ HERO ══════════════════════════════════════════════════════════ -->
+  <section class="bg-bone">
+    <div class="mx-auto max-w-[1400px] px-5 sm:px-8">
+      <div class="flex items-center justify-between py-4 border-b border-line font-mono text-[0.62rem] sm:text-[0.68rem] tracking-[0.18em] uppercase text-ink/45">
+        <span>Contact</span>
+        <span class="hidden sm:inline">Mon to Sat</span>
+        <span>Naperville, IL</span>
+      </div>
 
-    <div class="container mx-auto px-6 text-center relative z-10">
-      <span
-        class="inline-block text-[var(--soma-gold)] uppercase tracking-[0.25em] text-sm font-semibold mb-3"
-        >Contact Us</span
-      >
-      <div class="h-px w-16 bg-[var(--soma-gold)] mx-auto mb-6"></div>
-      <h1 class="text-4xl md:text-5xl font-bold text-[var(--charcoal)] mb-4">
-        Get in Touch
-      </h1>
-      <p class="text-lg text-gray-600 max-w-xl mx-auto">
-        We're here to answer any questions you may have. Reach out to us and
-        we'll respond as soon as we can.
-      </p>
+      <div class="pt-16 md:pt-24 pb-12 md:pb-16 max-w-4xl">
+        <p class="label reveal mb-7">
+          <span class="inline-block w-9 h-px bg-gold/60"></span> Get in Touch
+        </p>
+        <h1 class="reveal d-1 font-serif text-ink leading-[0.96] text-[clamp(2.6rem,11vw,3.75rem)] sm:text-7xl xl:text-[5.4rem]">
+          Let's start a <span class="accent-word">conversation.</span>
+        </h1>
+        <p class="reveal d-2 mt-7 max-w-xl text-lg text-secondary-text leading-relaxed">
+          Questions about a treatment, pricing or what's right for you? Send a
+          note. We read every message and reply quickly.
+        </p>
+      </div>
     </div>
   </section>
 
-  <!-- Main Content -->
-  <section class="py-16 md:py-24" style="background-color: #F5F3ED;">
-    <div class="container mx-auto px-6">
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20">
-        <!-- Contact Form -->
-        <div
-          class="bg-white rounded-3xl p-8 md:p-10"
-          style="box-shadow: 0 10px 40px rgba(54, 69, 79, 0.08);"
-        >
-          <h2 class="text-2xl font-bold text-[var(--charcoal)] mb-6">
-            Send Us a Message
-          </h2>
+  <!-- ══ FORM + INFO ═══════════════════════════════════════════════════ -->
+  <section class="section bg-cream border-t border-line">
+    <div class="mx-auto max-w-[1400px] px-5 sm:px-8">
+      <div class="grid lg:grid-cols-12 gap-y-16 lg:gap-x-20">
+        <!-- Form -->
+        <div class="lg:col-span-7 reveal">
+          <p class="index-label mb-5"><span class="num">01</span> &nbsp;·&nbsp;Send a Message</p>
+          <div class="reveal-line h-px bg-line mb-10"></div>
 
-          <form action="#" class="space-y-5" method="POST">
-            <div>
-              <label
-                class="block text-sm font-medium text-[var(--charcoal)] mb-2"
-                for="name">Your Name</label
-              >
-              <input
-                autocomplete="name"
-                class="block w-full rounded-xl border border-gray-200 bg-[var(--warm-white)] py-3.5 px-4 text-[var(--charcoal)] placeholder:text-gray-400 focus:border-[var(--soma-gold)] focus:ring-2 focus:ring-[var(--soma-gold)]/20 transition-all duration-300"
-                id="name"
-                name="name"
-                placeholder="John Smith"
-                type="text"
-              />
+          <form action="#" method="POST" class="space-y-9">
+            <div class="grid sm:grid-cols-2 gap-9">
+              <div class="field">
+                <label class="field-label" for="name">Your Name</label>
+                <input class="field-input" id="name" name="name" type="text" autocomplete="name" placeholder="John Smith" />
+              </div>
+              <div class="field">
+                <label class="field-label" for="email">Email Address</label>
+                <input class="field-input" id="email" name="email" type="email" autocomplete="email" placeholder="john@example.com" />
+              </div>
             </div>
-            <div>
-              <label
-                class="block text-sm font-medium text-[var(--charcoal)] mb-2"
-                for="email">Email Address</label
-              >
-              <input
-                autocomplete="email"
-                class="block w-full rounded-xl border border-gray-200 bg-[var(--warm-white)] py-3.5 px-4 text-[var(--charcoal)] placeholder:text-gray-400 focus:border-[var(--soma-gold)] focus:ring-2 focus:ring-[var(--soma-gold)]/20 transition-all duration-300"
-                id="email"
-                name="email"
-                placeholder="john@example.com"
-                type="email"
-              />
+            <div class="field">
+              <label class="field-label" for="phone">Phone Number</label>
+              <input class="field-input" id="phone" name="phone" type="tel" autocomplete="tel" placeholder="(630) 555-0150" />
             </div>
-            <div>
-              <label
-                class="block text-sm font-medium text-[var(--charcoal)] mb-2"
-                for="phone">Phone Number</label
-              >
-              <input
-                autocomplete="tel"
-                class="block w-full rounded-xl border border-gray-200 bg-[var(--warm-white)] py-3.5 px-4 text-[var(--charcoal)] placeholder:text-gray-400 focus:border-[var(--soma-gold)] focus:ring-2 focus:ring-[var(--soma-gold)]/20 transition-all duration-300"
-                id="phone"
-                name="phone"
-                placeholder="(310) 555-0123"
-                type="tel"
-              />
+            <div class="field">
+              <label class="field-label" for="message">Your Message</label>
+              <textarea class="field-input resize-none" id="message" name="message" rows="4" placeholder="How can we help you?"></textarea>
             </div>
-            <div>
-              <label
-                class="block text-sm font-medium text-[var(--charcoal)] mb-2"
-                for="message">Your Message</label
-              >
-              <textarea
-                class="block w-full rounded-xl border border-gray-200 bg-[var(--warm-white)] py-3.5 px-4 text-[var(--charcoal)] placeholder:text-gray-400 focus:border-[var(--soma-gold)] focus:ring-2 focus:ring-[var(--soma-gold)]/20 transition-all duration-300 resize-none"
-                id="message"
-                name="message"
-                placeholder="How can we help you?"
-                rows="5"></textarea>
-            </div>
-            <div class="pt-2">
-              <button
-                class="w-full rounded-full bg-[var(--soma-gold)] py-4 px-6 text-[var(--charcoal)] font-semibold transition-all duration-300 hover:bg-[#D4C89A] hover:scale-[1.02] shadow-md"
-                type="submit"
-              >
-                Send Message
-              </button>
-            </div>
+            <button type="submit" class="btn-primary">
+              Send Message
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M5 12h14m0 0l-6-6m6 6l-6 6"/></svg>
+            </button>
           </form>
         </div>
 
-        <!-- Contact Info & Map -->
-        <div class="space-y-8">
-          <!-- Quick Contact Cards -->
-          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-            <div
-              class="bg-white rounded-2xl p-6 text-center group transition-all duration-300 hover:-translate-y-1"
-              style="box-shadow: 0 10px 40px rgba(54, 69, 79, 0.08);"
-            >
-              <div
-                class="w-14 h-14 mx-auto mb-4 rounded-2xl bg-[var(--soma-gold)]/10 flex items-center justify-center"
-              >
-                <svg
-                  class="w-7 h-7 text-[var(--soma-gold)]"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="1.5"
-                    d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
-                  ></path>
-                </svg>
-              </div>
-              <h3 class="font-semibold text-[var(--charcoal)] mb-1">Phone</h3>
+        <!-- Info -->
+        <div class="lg:col-span-5 reveal d-1">
+          <p class="index-label mb-5"><span class="num">02</span> &nbsp;·&nbsp;Visit & Details</p>
+          <div class="reveal-line h-px bg-line mb-10"></div>
+
+          <div class="space-y-8">
+            <div>
+              <p class="field-label mb-2">Address</p>
               <a
-                class="text-gray-600 hover:text-[var(--soma-gold)] transition-colors"
-                href="tel:+15551234567">(555) 123-4567</a
+                href="https://maps.google.com/?q=1867+Bay+Scott+Cir,+Naperville,+IL+60540"
+                target="_blank" rel="noopener noreferrer"
+                class="font-serif text-2xl text-ink hover:text-gold-deep transition-colors leading-snug block"
               >
+                1867 Bay Scott Cir<br />Naperville, IL 60540
+              </a>
             </div>
 
-            <div
-              class="bg-white rounded-2xl p-6 text-center group transition-all duration-300 hover:-translate-y-1"
-              style="box-shadow: 0 10px 40px rgba(54, 69, 79, 0.08);"
-            >
-              <div
-                class="w-14 h-14 mx-auto mb-4 rounded-2xl bg-[var(--sage-green)]/10 flex items-center justify-center"
-              >
-                <svg
-                  class="w-7 h-7 text-[var(--sage-green)]"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="1.5"
-                    d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
-                  ></path>
-                </svg>
+            <div class="grid grid-cols-2 gap-8 pt-8 border-t border-line">
+              <div>
+                <p class="field-label mb-2">Phone</p>
+                <a href="tel:+16305550150" class="font-serif text-xl text-ink hover:text-gold-deep transition-colors">(630) 555-0150</a>
               </div>
-              <h3 class="font-semibold text-[var(--charcoal)] mb-1">Email</h3>
-              <a
-                class="text-gray-600 hover:text-[var(--soma-gold)] transition-colors"
-                href="mailto:contact@somarenew.com">contact@somarenew.com</a
-              >
-            </div>
-          </div>
-
-          <!-- Clinic Info Card -->
-          <div
-            class="bg-white rounded-3xl p-8"
-            style="box-shadow: 0 10px 40px rgba(54, 69, 79, 0.08);"
-          >
-            <h3 class="text-xl font-bold text-[var(--charcoal)] mb-6">
-              Clinic Information
-            </h3>
-
-            <div class="space-y-6">
-              <div class="flex items-start gap-4">
-                <div
-                  class="w-10 h-10 rounded-xl bg-[var(--dusty-blue)]/10 flex items-center justify-center flex-shrink-0"
-                >
-                  <svg
-                    class="w-5 h-5 text-[var(--dusty-blue)]"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="1.5"
-                      d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
-                    ></path>
-                    <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="1.5"
-                      d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
-                  </svg>
-                </div>
-                <div>
-                  <p class="font-medium text-[var(--charcoal)]">Address</p>
-                  <p class="text-gray-600">
-                    1867 Bay Scott Cir<br />Naperville, IL 60540
-                  </p>
-                </div>
-              </div>
-
-              <div class="flex items-start gap-4">
-                <div
-                  class="w-10 h-10 rounded-xl bg-[var(--soma-gold)]/10 flex items-center justify-center flex-shrink-0"
-                >
-                  <svg
-                    class="w-5 h-5 text-[var(--soma-gold)]"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="1.5"
-                      d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-                  </svg>
-                </div>
-                <div>
-                  <p class="font-medium text-[var(--charcoal)]">
-                    Hours of Operation
-                  </p>
-                  <ul class="text-gray-600 mt-1 space-y-0.5">
-                    <li>Monday - Friday: 9 AM - 6 PM</li>
-                    <li>Saturday: 10 AM - 4 PM</li>
-                    <li>Sunday: Closed</li>
-                  </ul>
-                </div>
+              <div>
+                <p class="field-label mb-2">Email</p>
+                <a href="mailto:contact@somarenewmedical.com" class="text-ink hover:text-gold-deep transition-colors break-words">contact@somarenewmedical.com</a>
               </div>
             </div>
-          </div>
 
-          <!-- Map -->
-          <div
-            class="rounded-3xl overflow-hidden shadow-xl"
-            style="box-shadow: 0 10px 40px rgba(54, 69, 79, 0.08);"
-          >
-            <iframe
-              allowfullscreen=""
-              class="w-full h-[280px]"
-              loading="lazy"
-              src="https://maps.google.com/maps?q=1867+Bay+Scott+Cir,+Naperville,+IL+60540&t=&z=15&ie=UTF8&iwloc=&output=embed"
-              style="border: 0"></iframe>
+            <div class="pt-8 border-t border-line">
+              <p class="field-label mb-3">Hours</p>
+              <ul class="space-y-1.5 text-secondary-text">
+                <li class="flex justify-between max-w-xs"><span>Monday to Friday</span><span class="text-ink">9 AM to 6 PM</span></li>
+                <li class="flex justify-between max-w-xs"><span>Saturday</span><span class="text-ink">10 AM to 4 PM</span></li>
+                <li class="flex justify-between max-w-xs"><span>Sunday</span><span class="text-ink/50">Closed</span></li>
+              </ul>
+            </div>
+
+            <div class="map-frame mt-2">
+              <iframe
+                allowfullscreen=""
+                class="w-full h-[260px]"
+                loading="lazy"
+                title="SomaRenew Medical location map"
+                src="https://maps.google.com/maps?q=1867+Bay+Scott+Cir,+Naperville,+IL+60540&t=&z=15&ie=UTF8&iwloc=&output=embed"
+                style="border: 0"
+              ></iframe>
+            </div>
           </div>
         </div>
       </div>
     </div>
   </section>
 </MainLayout>
+
+<style>
+  .field-label {
+    display: block;
+    font-family: 'DM Mono', ui-monospace, monospace;
+    font-size: 0.68rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--gold-deep);
+  }
+  .field-input {
+    width: 100%;
+    margin-top: 0.6rem;
+    background: transparent;
+    border: 0;
+    border-bottom: 1px solid var(--line-strong);
+    padding: 0.6rem 0;
+    color: var(--ink);
+    font-family: 'Raleway', sans-serif;
+    font-size: 1.05rem;
+    transition: border-color 0.35s ease;
+  }
+  .field-input::placeholder { color: rgba(91, 103, 112, 0.5); }
+  .field-input:focus {
+    outline: none;
+    border-bottom-color: var(--gold-deep);
+  }
+  .map-frame {
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    overflow: hidden;
+    filter: grayscale(0.25) contrast(0.95);
+  }
+</style>

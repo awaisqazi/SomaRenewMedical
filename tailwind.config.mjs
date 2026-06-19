@@ -4,37 +4,62 @@ export default {
   theme: {
     extend: {
       colors: {
-        // Core Brand Colors (Serene Sanctuary Palette)
+        // ── Editorial Apothecary palette ──────────────────────────
+        // Ink & charcoal — text and dark sections
+        'ink': '#1B2227',
         'charcoal': '#36454F',
+        'charcoal-deep': '#283036',
+
+        // Warm paper backgrounds (no more stark white)
+        'bone': '#F3EFE6',
+        'cream': '#FBF8F2',
+        'sand': '#E9E1D2',
+        'warm-white': '#FBF8F2',
+
+        // Brand gold + an accessible gold for text on light
         'soma-gold': '#C0B283',
-        'warm-white': '#FDFDFD',
-        'sage-green': '#8A9A5B',
-        'dusty-blue': '#778899',
-        
-        // Semantic Aliases for convenience
-        'primary-text': '#36454F',
-        'background': '#FDFDFD',
+        'gold': '#C0B283',
+        'gold-deep': '#8E7B43',
+
+        // Botanical accents — used sparingly
+        'sage-green': '#7E8E55',
+        'sage': '#7E8E55',
+        'dusty-blue': '#6F8090',
+        'dusty': '#6F8090',
+        'clay': '#B07A52',
+
+        // Semantic aliases
+        'primary-text': '#1B2227',
+        'background': '#F3EFE6',
         'accent-gold': '#C0B283',
-        'accent-green': '#8A9A5B',
-        'accent-blue': '#778899',
-        'secondary-text': '#5E6C77',
+        'accent-green': '#7E8E55',
+        'accent-blue': '#6F8090',
+        'secondary-text': '#5B6770',
       },
       fontFamily: {
-        // Headlines: Cormorant Garamond - Sophisticated, Title Case
-        serif: ['Cormorant Garamond', 'serif'],
-        // Body/Buttons: Raleway - Clean, Geometric
-        sans: ['Raleway', 'sans-serif'],
+        serif: ['Cormorant Garamond', 'Georgia', 'serif'],
+        sans: ['Raleway', 'system-ui', 'sans-serif'],
+        mono: ['DM Mono', 'ui-monospace', 'monospace'],
+      },
+      letterSpacing: {
+        label: '0.22em',
+        wide2: '0.34em',
       },
       boxShadow: {
-        // Warm shadows for sanctuary feel (not clinical)
-        'warm': '0 4px 24px rgba(54, 69, 79, 0.08)',
-        'warm-lg': '0 8px 32px rgba(54, 69, 79, 0.08)',
-        'gold-glow': '0 4px 20px rgba(192, 178, 131, 0.25)',
+        'warm': '0 18px 50px -28px rgba(27, 34, 39, 0.30)',
+        'warm-lg': '0 40px 90px -45px rgba(27, 34, 39, 0.40)',
+        'gold-glow': '0 18px 44px -18px rgba(192, 178, 131, 0.55)',
+        'lift': '0 28px 60px -32px rgba(27, 34, 39, 0.35)',
       },
       backgroundImage: {
-        // Warm gradient for serene sections
-        'serene-gradient': 'linear-gradient(135deg, #FDFDFD 0%, #F8F6F0 100%)',
-      }
+        'serene-gradient': 'linear-gradient(180deg, #FBF8F2 0%, #F3EFE6 100%)',
+      },
+      keyframes: {
+        'reveal-up': {
+          '0%': { opacity: '0', transform: 'translateY(28px)' },
+          '100%': { opacity: '1', transform: 'translateY(0)' },
+        },
+      },
     },
   },
   plugins: [],
